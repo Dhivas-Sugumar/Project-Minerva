@@ -42,6 +42,15 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# simple form to make form making easier
+gem 'simple_form', '~> 5.1'
+
+# devise for user authentication.
+gem 'devise', '~> 4.8', '>= 4.8.1'
+
+# gem for making progress bars easier
+gem 'ruby-progressbar', '~> 1.11.0'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
