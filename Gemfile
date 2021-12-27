@@ -51,8 +51,13 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 # gem for making progress bars easier
 gem 'ruby-progressbar', '~> 1.11.0'
 
-# Use Sass to process CSS
-# gem "sassc-rails"
+# for css styling
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>= 2.1.0'
+
+# for js
+gem 'jquery-rails'
+
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"

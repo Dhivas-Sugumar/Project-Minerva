@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  description: MyText
+  members: 1
+  average: 1
+  rating: 1
+  course_id: 1
+
+two:
+  title: MyText
+  description: MyText
+  members: 1
+  average: 1
+  rating: 1
+  course_id: 1
