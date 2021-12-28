@@ -36,7 +36,7 @@ class VideoUploader < CarrierWave::Uploader::Base
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_allowlist
-    %w(mp4 mpeg avi 3gp ogg wmv)
+    %w(mp4 mpeg MPEG-4 avi 3gp ogg wmv)
   end
 
   # Override the filename of the uploaded files:

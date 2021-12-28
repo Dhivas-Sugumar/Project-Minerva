@@ -8,7 +8,15 @@
     <%= f.input :description %>
     <%= f.file_field :thumbnail %>
     <%= f.file_field :videofile %>
+
+
   </div>
+
+<!--  <div class ="view-uploaded">-->
+    <%#= image_tag @video.thumbnail.url if @video.thumbnail?%>
+    <%#= video_tag @video.videofile.url if @video.videofile? %>
+<!--  </div>-->
+
 
   <div class="form-actions">
     <%= f.button :submit %>

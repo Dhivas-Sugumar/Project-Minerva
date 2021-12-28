@@ -11,12 +11,12 @@
 
   <p>
     <strong>Thumbnail:</strong>
-    <%= video.thumbnail %>
+    <%= image_tag @video.thumbnail.url if @video.thumbnail?%>
   </p>
 
   <p>
     <strong>Videofile:</strong>
-    <%= video.videofile %>
+    <%= video_tag @video.videofile.url if @video.videofile? %>
   </p>
 
 </div>
