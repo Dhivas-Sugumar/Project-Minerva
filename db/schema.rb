@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_28_014443) do
+ActiveRecord::Schema.define(version: 2021_12_28_021244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,12 @@ ActiveRecord::Schema.define(version: 2021_12_28_014443) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "categories_courses", id: false, force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "course_id", null: false
+    t.index ["category_id", "course_id"], name: "index_categories_courses_on_category_id_and_course_id"
+  end
+
   create_table "courses", force: :cascade do |t|
     t.text "title"
     t.text "description"
@@ -84,10 +90,13 @@ ActiveRecord::Schema.define(version: 2021_12_28_014443) do
     t.string "videofile"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "lesson_id"
+    t.index ["lesson_id"], name: "index_videos_on_lesson_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "lessons", "sections"
   add_foreign_key "sections", "courses"
+  add_foreign_key "videos", "lessons"
 end
