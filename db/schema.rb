@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_27_040821) do
+ActiveRecord::Schema.define(version: 2021_12_28_014443) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2021_12_27_040821) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category"
-    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -56,7 +55,6 @@ ActiveRecord::Schema.define(version: 2021_12_27_040821) do
     t.integer "members"
     t.integer "average"
     t.integer "rating"
-    t.integer "course_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -64,7 +62,6 @@ ActiveRecord::Schema.define(version: 2021_12_27_040821) do
   create_table "lessons", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.integer "lesson_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "section_id", null: false
