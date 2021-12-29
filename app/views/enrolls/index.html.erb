@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Enrolls</h1>
+
+<div id="enrolls">
+  <% @enrolls.each do |enroll| %>
+    <%= render enroll %>
+    <p>
+      <%= link_to "Show this enroll", enroll %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New enroll", new_enroll_path %>

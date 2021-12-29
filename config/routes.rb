@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :enrolls
   devise_for :users
   resources :reviews
   resources :categories

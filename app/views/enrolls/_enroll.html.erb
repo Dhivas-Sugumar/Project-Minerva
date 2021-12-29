@@ -1,0 +1,17 @@
+<div id="<%= dom_id enroll %>">
+  <p>
+    <strong>User:</strong>
+    <%= enroll.user_id %>
+  </p>
+
+  <p>
+    <strong>Course:</strong>
+    <%= course_url(enroll.course_id)%>
+  </p>
+
+  <p>
+    <strong>Completed:</strong>
+    <%= enroll.completed %>
+  </p>
+
+</div>
