@@ -48,6 +48,7 @@
     <orderEntry type="library" scope="PROVIDED" name="binding_of_caller (v1.0.0, rbenv: 3.0.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.9.3, rbenv: 3.0.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v3.4.1, rbenv: 3.0.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bootstrap_form (v4.5.0, rbenv: 3.0.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, rbenv: 3.0.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v2.2.33, rbenv: 3.0.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capybara (v3.36.0, rbenv: 3.0.3) [gem]" level="application" />

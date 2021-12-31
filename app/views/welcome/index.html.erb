@@ -1,0 +1,34 @@
+<%= render 'shared_views/header' %>
+
+<!--<h1>Home</h1>-->
+
+<div id="enrolls">
+  <h2>Enrolls</h2>
+  <% @enrolls.each do |enroll| %>
+    <%= render enroll %>
+    <p>
+      <%= link_to "Show this enroll", enroll %>
+    </p>
+  <% end %>
+</div>
+
+
+<div id="courses">
+  <h2>Courses</h2>
+  <% @courses.each do |course| %>
+    <%= render course %>
+    <p>
+      <%= link_to "Show this course", course %>
+    </p>
+  <% end %>
+</div>
+
+<div id="categories">
+  <h2>Category</h2>
+  <% @categories.each do |category| %>
+    <%= render category %>
+    <p>
+      <%= link_to "Show this category", category %>
+    </p>
+  <% end %>
+</div>

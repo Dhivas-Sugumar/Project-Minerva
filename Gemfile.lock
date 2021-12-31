@@ -62,7 +62,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-    autoprefixer-rails (10.3.3.0)
+    autoprefixer-rails (10.4.0.0)
       execjs (~> 2)
     bcrypt (3.1.16)
     better_errors (2.9.1)
@@ -77,6 +77,9 @@ GEM
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
+    bootstrap_form (4.5.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     builder (3.2.4)
     capybara (3.36.0)
       addressable
@@ -279,7 +282,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.5.1)
+    zeitwerk (2.5.3)
 
 PLATFORMS
   x86_64-linux
@@ -289,6 +292,7 @@ DEPENDENCIES
   binding_of_caller
   bootsnap
   bootstrap-sass (~> 3.4.1)
+  bootstrap_form (~> 4.5)
   capybara
   carrierwave (~> 2.0)
   debug

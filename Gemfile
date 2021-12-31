@@ -54,6 +54,7 @@ gem 'ruby-progressbar', '~> 1.11.0'
 # for css styling
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
+gem 'bootstrap_form', '~> 4.5'
 
 # for js
 gem 'jquery-rails'
