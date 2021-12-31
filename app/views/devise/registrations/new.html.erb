@@ -12,6 +12,14 @@
         </div>
 
         <div class="field">
+          <%= f.text_field :first_name, autocomplete: "first_name", class: "bg-light" %>
+        </div>
+
+        <div class="field">
+          <%= f.text_field :last_name, autocomplete: "last_name", class: "bg-light" %>
+        </div>
+
+        <div class="field">
           <%= f.password_field :password, autocomplete: "new-password", class: "bg-light" %>
         </div>
 
@@ -22,6 +30,7 @@
         <div class="actions d-flex justify-content-center mt-3">
           <%= f.submit "Sign up", class: "btn shadow btn-block bg-color text-white" %>
         </div>
+        <%= render "devise/shared/links" %>
       </div>
     <% end %>
   </div>
