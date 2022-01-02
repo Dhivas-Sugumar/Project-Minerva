@@ -1,0 +1,7 @@
+{
+  "name": "project_minerva",
+  "version": "1.0.0",
+  "dependencies": {
+    "@rails/actiontext": "^7.0.0"
+  }
+}

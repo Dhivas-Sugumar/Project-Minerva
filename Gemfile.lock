@@ -299,6 +299,7 @@ DEPENDENCIES
   devise (~> 4.8, >= 4.8.1)
   guard (~> 2.18)
   guard-livereload (~> 2.5, >= 2.5.2)
+  image_processing (~> 1.2)
   importmap-rails
   jbuilder
   jquery-rails
