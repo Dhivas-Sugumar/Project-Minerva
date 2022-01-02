@@ -8,15 +8,10 @@
     <strong>Body:</strong>
     <%= section.body %>
   </p>
-
-  <p>
-    <strong>Int:</strong>
-    <%= section.int %>
-  </p>
-
-  <p>
-    <strong>Section:</strong>
-    <%= section.section_id %>
-  </p>
+  <div>
+    <% @lessons.each do |lesson| %>
+      <li><%= link_to lesson.title, lesson_path(lesson) %></li>
+    <% end %>
+  </div>
 
 </div>

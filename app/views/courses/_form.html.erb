@@ -1,18 +1,30 @@
 
 <%= bootstrap_form_for(@course) do |f| %>
   <div class="form-inputs">
-    <%= f.text_area :title %>
-    <%= f.rich_text_area :description %>
+    <div class="field">
+      <%= f.text_area :title %>
+    </div>
+    <div class="field">
+      <%= f.rich_text_area :description %>
+    </div>
     <%#= f.input :members %>
     <%#= f.input :average %>
     <%#= f.input :rating %>
     <%#= f.input :course_id %>
+    <div>
+      <h2>Section:</h2>
+      <div id="sections">
+        <%= f.fields_for :sections do |section| %>
+          <%= render 'section_fields', f: section %>
+        <% end %>
+
+      </div>
+    </div>
   </div>
 
-  <%= link_to_add_association "Add Section", f, :sections, partial: 'section_fields' %>
-
-
-
+  <div class="links">
+    <%= link_to_add_association "Add Section", f, :sections, class: "btn btn-default" %>
+  </div>
 
   <div class="form-actions">
     <%= f.button :submit %>

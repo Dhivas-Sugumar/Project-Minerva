@@ -3,7 +3,7 @@
 <%= render @course %>
 <div>
   <% @sections.each do |section| %>
-  <li><%=section.title %></li>
+  <li><%= link_to section.title, section_path(section) %></li>
   <% end %>
 </div>
 
