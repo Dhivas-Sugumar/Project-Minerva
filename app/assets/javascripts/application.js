@@ -1,5 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-require("trix")
-require("@rails/actiontext")
+import "@hotwired/turbo-rails"
+import "controllers"
+import "trix"
+import "@rails/actiontext"
