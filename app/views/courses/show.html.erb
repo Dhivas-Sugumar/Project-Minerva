@@ -1,6 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @course %>
+<div>
+  <% @sections.each do |section| %>
+  <li><%=section.title %></li>
+  <% end %>
+</div>
 
 <div>
   <%= link_to "Edit this course", edit_course_path(@course) %> |

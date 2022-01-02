@@ -62,6 +62,10 @@ gem 'jquery-rails'
 # for handling file uploads
 gem 'carrierwave', '~> 2.0'
 
+#for handling nested forms
+gem "cocoon"
+
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
 

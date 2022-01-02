@@ -13,6 +13,7 @@ class CoursesController < ApplicationController
   # GET /courses/new
   def new
     @course = Course.new
+    @sections = @course.sections.build
   end
 
   # GET /courses/1/edit
@@ -61,10 +62,12 @@ class CoursesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.find(params[:id])
+      @sections = @course.sections
     end
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:title, :description, :members, :average, :rating, :course_id)
+      params.require(:course).permit(:title, :description, :members, :average, :rating, :course_id,
+                                     sections_attributes: [:title, :body])
     end
 end
