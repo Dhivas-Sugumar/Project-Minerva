@@ -1,6 +1,17 @@
 <div class="nested-fields">
   <%= f.text_area :title %>
   <%= f.rich_text_area :body %>
+</div>
 
-  <%= link_to_remove_association "Delete Lesson", f %>
+<div id="lessons">
+  <%= f.fields_for :videos do |video| %>
+    <%= render 'video_fields', f: video %>
+  <% end %>
+  <div class="links">
+    <%= link_to_add_association 'Add video', f, :videos, class: "btn btn-default" %>
+  </div>
+</div>
+
+<div class="links">
+  <%= link_to_remove_association "Delete Lesson", f ,class: "btn btn-default"%>
 </div>

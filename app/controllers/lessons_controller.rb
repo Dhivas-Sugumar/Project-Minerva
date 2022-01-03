@@ -13,6 +13,7 @@ class LessonsController < ApplicationController
   # GET /lessons/new
   def new
     @lesson = Lesson.new
+    @videos = @lesson.videos.build
   end
 
   # GET /lessons/1/edit
@@ -61,6 +62,7 @@ class LessonsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_lesson
       @lesson = Lesson.find(params[:id])
+      @videos = @lesson.videos
     end
 
     # Only allow a list of trusted parameters through.

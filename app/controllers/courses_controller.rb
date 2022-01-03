@@ -63,12 +63,12 @@ class CoursesController < ApplicationController
     def set_course
       @course = Course.find(params[:id])
       @sections = @course.sections
-      @lessons = @course.lessons
     end
 
     # Only allow a list of trusted parameters through.
     def course_params
       params.require(:course).permit(:title, :description, :members, :average, :rating, :course_id,
-                                     sections_attributes: [:title, :body, lessons_attributes: [:title, :body]])
+                                     sections_attributes: [:title, :body, lessons_attributes: [:title, :body,
+                                                                                               videos_attributes: [:title, :description, :thumbnail,:videofile]]])
     end
 end

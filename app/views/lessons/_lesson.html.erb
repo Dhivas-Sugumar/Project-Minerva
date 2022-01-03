@@ -9,5 +9,10 @@
     <%= lesson.body %>
   </p>
 
+  <div>
+    <% @videos.each do |video| %>
+      <li><%= link_to video.title, video_path(video) %></li>
+    <% end %>
+  </div>
 
 </div>
