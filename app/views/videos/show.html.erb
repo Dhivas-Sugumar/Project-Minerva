@@ -4,7 +4,7 @@
 
 <div>
   <%= link_to "Edit this video", edit_video_path(@video) %> |
-  <%= link_to "Back to videos", videos_path %>
+  <%= link_to "Back to lesson", lesson_url(@video.lesson_id) %>
 
   <%= button_to "Destroy this video", @video, method: :delete %>
 </div>

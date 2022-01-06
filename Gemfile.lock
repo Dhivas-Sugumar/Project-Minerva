@@ -120,6 +120,8 @@ GEM
     eventmachine (1.2.7)
     execjs (2.8.1)
     ffi (1.15.4)
+    font-awesome-rails (4.7.0.8)
+      railties (>= 3.2, < 8.0)
     formatador (0.3.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -299,6 +301,7 @@ DEPENDENCIES
   cocoon
   debug
   devise (~> 4.8, >= 4.8.1)
+  font-awesome-rails (~> 4.7, >= 4.7.0.2)
   guard (~> 2.18)
   guard-livereload (~> 2.5, >= 2.5.2)
   image_processing (~> 1.2)
