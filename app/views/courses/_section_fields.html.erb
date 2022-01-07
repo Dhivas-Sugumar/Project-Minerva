@@ -11,7 +11,7 @@
     <h3>Lesson:</h3>
     <div id="lessons">
       <%= f.fields_for :lessons do |lesson| %>
-        <%= render 'comment_fields', f: lesson %>
+        <%= render 'lesson_fields', f: lesson %>
       <% end %>
       <div class="links">
         <%= link_to_add_association 'Add Lesson', f, :lessons, class: "btn btn-default" %>

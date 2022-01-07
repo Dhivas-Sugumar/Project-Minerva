@@ -67,8 +67,12 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:title, :description, :members, :average, :rating, :course_id,
+      params.require(:course).permit(:title, :description, :members, :average, :rating, :course_id, :user_id,:_destroy,
                                      sections_attributes: [:title, :body, lessons_attributes: [:title, :body,
-                                                                                               videos_attributes: [:title, :description, :thumbnail,:videofile]]])
+                                                                                               videos_attributes: [:title, :description, :thumbnail,:videofile,:_destroy]]])
     end
 end
+
+{"authenticity_token"=>"[FILTERED]",
+ "course"=>{"user_id"=>"", "title"=>"sadasfds", "description"=>"<div>dfsdfs</div>", "sections_attributes"=>{"0"=>{"title"=>"asdfsdfa", "body"=>"<div>sdfsfd</div>", "lessons_attributes"=>{"1641593015743"=>{"title"=>"dfsdfsf", "body"=>"<div>dsfdsfsdf</div>", "_destroy"=>"false"}}, "_destroy"=>"false"}}}}
+

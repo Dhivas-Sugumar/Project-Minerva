@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :reviews
   has_many :enrolls
+  has_many :courses
   validates :username, presence: true, length: { minimum: 1, maximum: 50 }
   mount_uploader :avatar, AvatarUploader
 
