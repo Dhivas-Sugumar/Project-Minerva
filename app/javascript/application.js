@@ -2,10 +2,8 @@
 require("jquery")
 require("@nathanvda/cocoon")
 import "cocoon";
-
+import "@fortawesome/fontawesome-free/css/all.css";
 //= require jquery
-//= require jquery-ui
-//= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
