@@ -10,6 +10,8 @@ class Course < ApplicationRecord
 
   accepts_nested_attributes_for :sections
 
+  mount_uploader :header, HeaderUploader
+
 
   has_rich_text :description
 end

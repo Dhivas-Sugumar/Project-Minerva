@@ -1,5 +1,9 @@
 <p style="color: green"><%= notice %></p>
 
+<%= render "shared_views/header_main" %>
+
+
+
 <%= render @course %>
 <div>
   <% @sections.each do |section| %>
@@ -13,3 +17,5 @@
 
   <%= button_to "Destroy this course", @course, method: :delete %>
 </div>
+<%=render "shared_views/footer" %>
+
