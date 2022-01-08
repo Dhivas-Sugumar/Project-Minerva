@@ -1,4 +1,4 @@
-class HeaderUploader < CarrierWave::Uploader::Base
+class BannerUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -38,8 +38,6 @@ class HeaderUploader < CarrierWave::Uploader::Base
   def extension_allowlist
     %w(jpg jpeg gif png bmp )
   end
-
-
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
