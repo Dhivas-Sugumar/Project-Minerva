@@ -73,6 +73,4 @@ class CoursesController < ApplicationController
     end
 end
 
-{"authenticity_token"=>"[FILTERED]",
- "course"=>{"user_id"=>"", "title"=>"sadasfds", "description"=>"<div>dfsdfs</div>", "sections_attributes"=>{"0"=>{"title"=>"asdfsdfa", "body"=>"<div>sdfsfd</div>", "lessons_attributes"=>{"1641593015743"=>{"title"=>"dfsdfsf", "body"=>"<div>dsfdsfsdf</div>", "_destroy"=>"false"}}, "_destroy"=>"false"}}}}
 
