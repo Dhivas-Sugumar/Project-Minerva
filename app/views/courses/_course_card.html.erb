@@ -60,7 +60,7 @@
         <p class="card-text"><%=course.description %></p>
       </div>
       <div class="card-footer" style="background: inherit; border-color: inherit;">
-        <a href="#" class="btn btn-outline-primary">Read More</a>
+        <%= link_to "Open Course", course_url(course), class: "btn btn-outline-primary" %>
       </div>
     </div>
 

@@ -1,21 +1,28 @@
-<p style="color: green"><%= notice %></p>
+<!--<p style="color: green"><%#= notice %></p>-->
 
 <%= render "shared_views/header_main" %>
 
 
 
 <%= render @course %>
-<div>
+<div id="sections" class="text-center mb-5" >
+  <div class="mt-4 mb-4">
+    <h1>Sections</h1>
+  </div>
   <% @sections.each do |section| %>
-  <li><%= link_to section.title, section_path(section) %></li>
+  <%= render partial: "sections/section_card" , locals: {section: section}  %>
   <% end %>
 </div>
 
+<% if @course.user_id == current_user.id %>
 <div>
+
   <%= link_to "Edit this course", edit_course_path(@course) %> |
   <%= link_to "Back to courses", courses_path %>
 
   <%= button_to "Destroy this course", @course, method: :delete %>
+
 </div>
+<% end %>
 <%=render "shared_views/footer" %>
 

@@ -17,9 +17,6 @@
   <h2>Courses</h2>
   <% @courses.each do |course| %>
     <%= render partial: "courses/course_card", locals: {course: course} %>
-    <p>
-      <%= link_to "Show this course", course %>
-    </p>
   <% end %>
 </div>
 

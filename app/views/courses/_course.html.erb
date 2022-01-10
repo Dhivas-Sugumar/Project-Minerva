@@ -30,25 +30,71 @@
 <!--  </p>-->
 
 <!--</div>-->
+<style>
+    /* Default height for small devices */
+    #intro-example {
+        height: 400px;
+    }
 
+    /* Height for devices larger than 992px */
+    @media (min-width: 1080px) {
+        #intro-example {
+            height: 400px;
+        }
+    }
+</style>
+<!--<div-->
+<!--  class="p-5 text-center bg-image"-->
+  <%#if course.banner? %>
+<!--  style="-->
+<!--  background-image: <%#=image_url(course.banner) %>;-->
+<!--    height: 400px;-->
+<!--  "-->
+  <%#else %>
+<!--  style="-->
+<!--  background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');-->
+<!--    height: 400px;-->
+<!--  "-->
+  <%#end %>
+<!--  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">-->
+<!--    <div class="d-flex justify-content-center align-items-center h-100">-->
+<!--      <div class="text-white">-->
+<!--        <h1 class="mb-3"><%#=course.title %></h1>-->
+<!--        <a class="btn btn-outline-light btn-lg" href="#!" role="button"-->
+<!--        >Call to action</a-->
+<!--        >-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <h2><%#=course.description%></h2>-->
+
+<!--  </div>-->
+<!--</div>-->
+
+<!-- Background image -->
 <div
+  id="intro-example"
   class="p-5 text-center bg-image"
+  <%if course.banner? %>
   style="
   background-image: <%=image_url(course.banner) %>;
-    height: 400px;
   "
+  <%else %>
+  style="
+  background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
+
+  "
+  <%end %>
 >
-  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+  <div class="mask" style="background-color: rgba(0, 0, 0, 0.1);">
     <div class="d-flex justify-content-center align-items-center h-100">
       <div class="text-white">
-        <h1 class="mb-3">Heading</h1>
-        <h4 class="mb-3">Subheading</h4>
-        <a class="btn btn-outline-light btn-lg" href="#!" role="button"
-        >Call to action</a
-        >
+        <h1 class="mb-3"><%= course.title %></h1>
+        <h5 class="mb-4"><%=course.description %></h5>
       </div>
     </div>
   </div>
-</div>
 
+
+
+</div>
 
