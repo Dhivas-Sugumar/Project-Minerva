@@ -1,18 +1,41 @@
-<div id="<%= dom_id lesson %>">
-  <p>
-    <strong>Title:</strong>
-    <%= lesson.title %>
-  </p>
+<!--<div id="<%#= dom_id lesson %>">-->
+<!--  <p>-->
+<!--    <strong>Title:</strong>-->
+    <%#= lesson.title %>
+<!--  </p>-->
 
-  <p>
-    <strong>Body:</strong>
-    <%= lesson.body %>
-  </p>
+<!--  <p>-->
+<!--    <strong>Body:</strong>-->
+    <%#= lesson.body %>
+<!--  </p>-->
 
+<!--  <div>-->
+    <%# @videos.each do |video| %>
+<!--      <li><%#= link_to video.title, video_path(video) %></li>-->
+    <%# end %>
+<!--  </div>-->
+
+<!--</div>-->
+
+<header>
+  <h1><%=lesson.title %></h1>
+</header>
+<div class="container">
   <div>
-    <% @videos.each do |video| %>
-      <li><%= link_to video.title, video_path(video) %></li>
-    <% end %>
+    <%=lesson.body %>
   </div>
-
+  <% if @videos.size >= 1 %>
+  <div id="video lessons">
+    <h1>Videos</h1>
+  <% @videos.each do |video| %>
+      <div id="video">
+        <%= %>
+    <%= video_tag video.videofile.url if video.videofile? %>
+<!--    <li><%#= link_to video.title, video_path(video) %></li>-->
+      </div>
+  <% end %>
+  </div>
+    <%end %>
 </div>
+
+
