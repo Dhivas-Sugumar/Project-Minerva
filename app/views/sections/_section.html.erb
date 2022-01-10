@@ -1,17 +1,36 @@
-<div id="<%= dom_id section %>">
-  <p>
-    <strong>Title:</strong>
-    <%= section.title %>
-  </p>
+<!--<div id="<%#= dom_id section %>">-->
+<!--  <p>-->
+<!--    <strong>Title:</strong>-->
+    <%#= section.title %>
+<!--  </p>-->
 
-  <p>
-    <strong>Body:</strong>
-    <%= section.body %>
-  </p>
-  <div>
-    <% @lessons.each do |lesson| %>
-      <li><%= link_to lesson.title, lesson_path(lesson) %></li>
+<!--  <p>-->
+<!--    <strong>Body:</strong>-->
+    <%#= section.body %>
+<!--  </p>-->
+<!--  <div>-->
+    <%# @lessons.each do |lesson| %>
+<!--      <li><%#= link_to lesson.title, lesson_path(lesson) %></li>-->
+    <%# end %>
+<!--  </div>-->
+
+<!--</div>-->
+
+<div class="border border-bottom border-dark border-1">
+  <h1 class="text-center"><%=section.title %></h1>
+</div>
+<div>
+  <p><%=section.body %></p>
+</div>
+<div class="container">
+
+    <% @lessons.each_with_index do |lesson, index| %>
+    <div class="row">
+      <div class="col-sm-6 mx-auto">
+        <%=index + 1%>. <%= link_to lesson.title, lesson_path(lesson) %>
+      </div>
+    </div>
     <% end %>
-  </div>
+
 
 </div>
