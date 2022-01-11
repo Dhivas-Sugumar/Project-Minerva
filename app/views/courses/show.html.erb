@@ -5,15 +5,26 @@
 
 
 <%= render @course %>
+
 <div id="sections" class="text-center mb-5" >
+
+
   <div class="mt-4 mb-4">
+    <% if user_signed_in? %>
+      <td><%= button_to 'Enroll in Course' ,{:controller => 'enrolls', :enroll => {:action => 'create', :user_id => current_user.id, :course_id => @course.id, :completed => false}}, {:method => :post} %></td>
+    <%else %>
+      <%= link_to 'Sign In To Enroll', new_user_session_path, class: "btn btn-primary" %>
+    <%end %>
     <h1>Sections</h1>
+
+
   </div>
   <% @sections.each do |section| %>
   <%= render partial: "sections/section_card" , locals: {section: section}  %>
   <% end %>
 </div>
 
+<% if user_signed_in? %>
 <% if @course.user_id == current_user.id %>
 <div>
 
@@ -24,5 +35,6 @@
 
 </div>
 <% end %>
+  <%end %>
 <%=render "shared_views/footer" %>
 

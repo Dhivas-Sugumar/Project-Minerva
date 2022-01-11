@@ -5,10 +5,8 @@
 <div id="enrolls">
   <h2>Enrolls</h2>
   <% @enrolls.each do |enroll| %>
-    <%= render enroll %>
-    <p>
-      <%= link_to "Show this enroll", enroll %>
-    </p>
+    <%= render partial: "enrolls/enroll_card", locals: {enroll: enroll} %>
+
   <% end %>
 </div>
 
