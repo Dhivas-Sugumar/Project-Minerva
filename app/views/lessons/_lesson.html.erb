@@ -1,32 +1,18 @@
-<!--<div id="<%#= dom_id lesson %>">-->
-<!--  <p>-->
-<!--    <strong>Title:</strong>-->
-    <%#= lesson.title %>
-<!--  </p>-->
-
-<!--  <p>-->
-<!--    <strong>Body:</strong>-->
-    <%#= lesson.body %>
-<!--  </p>-->
-
-<!--  <div>-->
-    <%# @videos.each do |video| %>
-<!--      <li><%#= link_to video.title, video_path(video) %></li>-->
-    <%# end %>
-<!--  </div>-->
-
-<!--</div>-->
-
 <header>
-  <h1><%=lesson.title %></h1>
+  <div class="d-flex justify-content-between" style="background-color: 	#C0C0C0">
+      <h1><%= lesson.title %></h1>
+      <%= link_to "Back to Section", section_url(lesson.section_id), class: "btn btn-outline-secondary" %>
+  </div>
 </header>
+
+
 <div class="container">
   <div>
     <%=lesson.body %>
   </div>
   <% if @videos.size >= 1 %>
   <div id="video lessons">
-    <h1>Videos</h1>
+    <h3>Videos</h3>
   <% @videos.each do |video| %>
       <div id="video">
         <%= %>

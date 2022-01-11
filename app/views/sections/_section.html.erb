@@ -16,9 +16,15 @@
 
 <!--</div>-->
 
-<div class="border border-bottom border-dark border-1">
-  <h1 class="text-center"><%=section.title %></h1>
-</div>
+
+<header>
+  <div class="d-flex justify-content-between" style="background-color: 	#C0C0C0">
+    <h1><%= section.title %></h1>
+    <%= link_to "Back to Course", course_url(section.course_id), class: "btn btn-outline-secondary" %>
+  </div>
+</header>
+
+
 <div>
   <p><%=section.body %></p>
 </div>
