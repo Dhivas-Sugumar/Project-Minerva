@@ -1,7 +1,20 @@
 <p style="color: green"><%= notice %></p>
+<%= render "shared_views/header_main" %>
 
-<%= render @enroll %>
+<%= render Course.find(@enroll.course_id) %>
+<div id="sections" class="text-center mb-5" >
 
+
+  <div class="mt-4 mb-4">
+    <% if user_signed_in? %>
+      <td><%= button_to "Unenroll", @enroll, method: :delete ,class:"btn btn-outline-danger"%></td>
+    <% end %>
+    <h1>Sections</h1>
+  </div>
+  <% Course.find(@enroll.course_id).sections.each do |section| %>
+    <%= render partial: "sections/section_card" , locals: {section: section}  %>
+  <% end %>
+</div>
 <div>
   <%= link_to "Edit this enroll", edit_enroll_path(@enroll) %> |
   <%= link_to "Back to enrolls", enrolls_path %>

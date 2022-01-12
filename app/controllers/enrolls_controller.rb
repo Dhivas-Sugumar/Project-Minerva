@@ -52,7 +52,7 @@ class EnrollsController < ApplicationController
     @enroll.destroy
 
     respond_to do |format|
-      format.html { redirect_to enrolls_url, notice: "Enroll was successfully destroyed." }
+      format.html { redirect_to root_path, notice: "Successfully un enrolled." }
       format.json { head :no_content }
     end
   end

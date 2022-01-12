@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_08_061601) do
+ActiveRecord::Schema.define(version: 2022_01_12_212845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,11 +79,12 @@ ActiveRecord::Schema.define(version: 2022_01_08_061601) do
   end
 
   create_table "enrolls", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "course_id"
     t.boolean "completed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.bigint "course_id"
+    t.index ["user_id", "course_id"], name: "index_enrolls_on_user_id_and_course_id", unique: true
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -143,6 +144,8 @@ ActiveRecord::Schema.define(version: 2022_01_08_061601) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "courses", "users"
+  add_foreign_key "enrolls", "courses"
+  add_foreign_key "enrolls", "users"
   add_foreign_key "lessons", "sections"
   add_foreign_key "reviews", "courses"
   add_foreign_key "sections", "courses"

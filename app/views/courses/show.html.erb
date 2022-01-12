@@ -11,7 +11,7 @@
 
   <div class="mt-4 mb-4">
     <% if user_signed_in? %>
-      <td><%= button_to 'Enroll in Course' ,{:controller => 'enrolls', :enroll => {:action => 'create', :user_id => current_user.id, :course_id => @course.id, :completed => false}}, {:method => :post} %></td>
+      <td ><%= button_to 'Enroll in Course' ,{:controller => 'enrolls', :enroll => {:action => 'create', :user_id => current_user.id, :course_id => @course.id, :completed => false}}, {:method => :post} %></td>
     <%else %>
       <%= link_to 'Sign In To Enroll', new_user_session_path, class: "btn btn-primary" %>
     <%end %>
