@@ -1,5 +1,12 @@
 
+
 <div class="nested-fields">
+  <div class="d-flex">
+    <div><h2>Section</h2></div>
+    <div class="align-items-end"><%= link_to_remove_association "Delete Section", f, class: "btn btn-outline-danger "  %></div>
+  </div>
+
+
   <div class="field">
     <%= f.text_area :title %>
   </div>
@@ -8,18 +15,14 @@
   </div>
 
   <div>
-    <h3>Lesson:</h3>
     <div id="lessons">
       <%= f.fields_for :lessons do |lesson| %>
         <%= render 'lesson_fields', f: lesson %>
       <% end %>
       <div class="links">
-        <%= link_to_add_association 'Add Lesson', f, :lessons, class: "btn btn-default" %>
+        <%= link_to_add_association 'Add Lesson', f, :lessons, class: "btn btn-outline-primary" %>
       </div>
     </div>
-  </div>
-  <div class="links">
-    <%= link_to_remove_association "Remove Section", f, class: "btn btn-default" %>
   </div>
 
 </div>
