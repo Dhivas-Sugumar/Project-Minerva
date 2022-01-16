@@ -63,6 +63,7 @@ class CoursesController < ApplicationController
     def set_course
       @course = Course.find(params[:id])
       @sections = @course.sections
+      @enrolls = Enroll.all
     end
 
     # Only allow a list of trusted parameters through.
