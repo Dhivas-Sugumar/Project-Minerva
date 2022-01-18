@@ -45,7 +45,7 @@
     <!-- Left elements -->
     <div class="d-flex">
       <!-- Brand -->
-      <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+      <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="<%=root_path %>">
         <img
           src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
           height="20"
@@ -84,10 +84,9 @@
       </li>
 
       <% if user_signed_in? %>
-        <%= link_to current_user.username, edit_user_registration_path, class: "button is-info" %>
         <a
           class="dropdown-toggle d-flex align-items-center hidden-arrow"
-          href="#"
+          href="/users/<%=current_user.id %>"
           id="navbarDropdownMenuLink"
           role="button"
           data-mdb-toggle="dropdown"
