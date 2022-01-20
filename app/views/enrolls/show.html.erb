@@ -15,9 +15,5 @@
     <%= render partial: "sections/section_card" , locals: {section: section}  %>
   <% end %>
 </div>
-<div>
-  <%= link_to "Edit this enroll", edit_enroll_path(@enroll) %> |
-  <%= link_to "Back to enrolls", enrolls_path %>
 
-  <%= button_to "Destroy this enroll", @enroll, method: :delete %>
-</div>
+<%= render "shared_views/footer" %>

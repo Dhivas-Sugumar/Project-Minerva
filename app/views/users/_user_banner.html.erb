@@ -21,5 +21,5 @@
       <%= image_tag(current_user.avatar.url, :class => "rounded-circle mr-2 profile-pic-show", size: "150x150", alt: "Profile pic") %></h1>
     <%end %>
     <h4 class="mb-3"><strong><%= current_user.username %></strong></h4>
-    <a><%= link_to current_user.username, edit_user_registration_path , class: "button is-primary"%></a>
+    <a><%= link_to "account","/account" , class: "button is-primary"%></a>
 </div>
