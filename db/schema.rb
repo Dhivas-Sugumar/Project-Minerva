@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_212845) do
+ActiveRecord::Schema.define(version: 2022_01_21_032511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,12 +59,6 @@ ActiveRecord::Schema.define(version: 2022_01_12_212845) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "categories_courses", id: false, force: :cascade do |t|
-    t.bigint "category_id", null: false
-    t.bigint "course_id", null: false
-    t.index ["category_id", "course_id"], name: "index_categories_courses_on_category_id_and_course_id"
-  end
-
   create_table "courses", force: :cascade do |t|
     t.text "title"
     t.text "description"
@@ -75,6 +69,8 @@ ActiveRecord::Schema.define(version: 2022_01_12_212845) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.string "banner"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_courses_on_category_id"
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
@@ -143,6 +139,7 @@ ActiveRecord::Schema.define(version: 2022_01_12_212845) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "courses", "categories"
   add_foreign_key "courses", "users"
   add_foreign_key "enrolls", "courses"
   add_foreign_key "enrolls", "users"
