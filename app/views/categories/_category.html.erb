@@ -1,8 +1,9 @@
 <div id="<%= dom_id category %>">
-  <p>
-    <strong>Category:</strong>
-    <%= category.category %>
-  </p>
+  <h1><%=category.category %></h1>
+  <%@course_category = category.courses%>
+  <%@course_category.each do |course|%>
+    <%= render partial: "courses/course_card", locals: {course: course} %>
+<% end %>
 
 
 </div>

@@ -22,9 +22,6 @@
   <h2>Category</h2>
   <% @categories.each do |category| %>
     <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
   <% end %>
 </div>
 <%= render "shared_views/footer" %>
