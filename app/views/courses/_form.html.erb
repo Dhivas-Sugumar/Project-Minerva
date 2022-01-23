@@ -5,14 +5,16 @@
       <%= f.hidden_field :user_id, value: current_user.id %>
     </div>
     <div class="field">
+      <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "category") %>
+    </div>
+    <div class="field">
       <%= f.text_area :title %>
     </div>
     <div class="field">
       <%= f.rich_text_area :description %>
     </div>
-    <div class="field">
-      <%= f.text_area :category %>
-    </div>
+
+
     <%#= f.input :members %>
     <%#= f.input :average %>
     <%#= f.input :rating %>

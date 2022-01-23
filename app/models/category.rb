@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  has_many :courses, as: :courseable
+  has_many :courses
 end

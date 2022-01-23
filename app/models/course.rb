@@ -1,6 +1,7 @@
 class Course < ApplicationRecord
 
-  belongs_to :courseable, polymorphic: :true
+  belongs_to :user
+  belongs_to :category
 
   has_many :sections, dependent: :destroy
   has_many :lessons, :through => :sections

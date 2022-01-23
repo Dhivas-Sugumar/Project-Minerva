@@ -25,6 +25,9 @@
 
 <div id="sections" class="text-center mb-5" >
 
+  <a href= "<%=category_url(@course.category_id) %>">
+    <h6 class="mb-4">Category: <%=Category.find(@course.category_id).category%></h6>
+  </a>
 
   <div class="mt-4 mb-4">
     <% if user_signed_in? %>
