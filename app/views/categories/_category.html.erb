@@ -1,4 +1,20 @@
-<%@course_category = @category.courses%>
+<header>
+
+  <!-- Background image -->
+  <div>
+    <%= image_tag category.banner.url if category.banner? %>
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-black">
+          <h1 class="mb-3"><%=category.category %></h1>
+        </div>
+      </div>
+  </div>
+  <!-- Background image -->
+</header>
+
+
+
+<%@course_category = category.courses%>
 <%@course_category.each do |course|%>
   <%= render partial: "courses/course_card", locals: {course: course} %>
 <% end %>
