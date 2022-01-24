@@ -1,0 +1,7 @@
+<div class="card" style="width: 18rem;">
+  <%= image_tag category.banner.url if category.banner? %>
+  <div class="card-body">
+    <h4 class="card-text"><%=category.category %></h4>
+    <%= link_to "Show more", category_url(category), class: "btn btn-outline-primary" %>
+  </div>
+</div>

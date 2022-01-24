@@ -21,7 +21,7 @@
 <div id="categories">
   <h2>Category</h2>
   <% @categories.each do |category| %>
-    <%= render category %>
+    <%= render partial: "categories/category_card", locals: {category:category} %>
   <% end %>
 </div>
 <%= render "shared_views/footer" %>
