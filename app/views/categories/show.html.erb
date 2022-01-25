@@ -1,7 +1,10 @@
-<p style="color: green"><%= notice %></p>
 
 <%=render "shared_views/header_main" %>
 <%= render @category %>
+<%@course_category = @category.courses%>
+<%@course_category.each do |course|%>
+<%= render partial: "courses/course_card", locals: {course: course} %>
+<% end %>
 <%= render "shared_views/footer" %>
 
 
