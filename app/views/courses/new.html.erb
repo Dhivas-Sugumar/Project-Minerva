@@ -1,6 +1,13 @@
 
 <%= render "shared_views/header_main" %>
+<%if user_signed_in? %>
 <%= render "form", course: @course %>
+<%else %>
+  <div>
+    <p>You need to be signed in to make a course.</p>
+    <%= link_to 'Sign In', new_user_session_path, class: "btn btn-primary" %>
+  </div>
+  <%end %>
 <%= render "shared_views/footer" %>
 
 
