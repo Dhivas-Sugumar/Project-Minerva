@@ -18,7 +18,7 @@ by PostgreSQL. The entire web application was built using the Model View Control
 - Search function.
 
 ###Screenshots 
-![alt text](https://github.com/Dhivas-Sugumar/Project-Minerva/blob/main/Readme/Screenshot from 2022-02-03 22-19-01.png?raw=true)
+![alt text](https://github.com/Dhivas-Sugumar/Project-Minerva/blob/main/Readme/Screenshot%20from%202022-02-03%2022-18-20.png?raw=true)
 ![alt text](Readme/Screenshot from 2022-02-03 22-19-12.png?raw=true )
 ![alt text](Readme/Screenshot from 2022-02-03 22-18-20.png?raw=true )
 ![alt text](Readme/Screenshot from 2022-02-03 22-19-23.png?raw=true )
