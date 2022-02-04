@@ -19,12 +19,12 @@ by PostgreSQL. The entire web application was built using the Model View Control
 
 ###Screenshots 
 ![alt text](https://github.com/Dhivas-Sugumar/Project-Minerva/blob/main/Readme/Screenshot%20from%202022-02-03%2022-18-20.png?raw=true)
-![alt text](https://github.com/Dhivas-Sugumar/Project-Minerva/blob/main/Readme/Screenshot from 2022-02-03 22-19-12.png?raw=true )
-![alt text](https://github.com/Dhivas-Sugumar/Project-Minerva/blob/main/Readme/Screenshot from 2022-02-03 22-18-20.png?raw=true )
-![alt text](https://github.com/Dhivas-Sugumar/Project-Minerva/blob/main/Readme/Screenshot from 2022-02-03 22-19-23.png?raw=true )
-![alt text](https://github.com/Dhivas-Sugumar/Project-Minerva/blob/main/Readme/Screenshot from 2022-02-03 22-20-30.png?raw=true )
-![alt text](https://github.com/Dhivas-Sugumar/Project-Minerva/blob/main/Readme/Screenshot from 2022-02-03 22-20-54.png?raw=true )
-![alt text](https://github.com/Dhivas-Sugumar/Project-Minerva/blob/main/Readme/Screenshot from 2022-02-03 22-21-16.png?raw=true )
+![alt text](https://github.com/Dhivas-Sugumar/Project-Minerva/blob/main/Readme/Screenshot%20from%202022-02-03%2022-19-01.png?raw=true )
+![alt text](https://github.com/Dhivas-Sugumar/Project-Minerva/blob/main/Readme/Screenshot%20from%202022-02-03%2022-19-12.png?raw=true )
+![alt text](https://github.com/Dhivas-Sugumar/Project-Minerva/blob/main/Readme/Screenshot%20from%202022-02-03%2022-19-23.png?raw=true )
+![alt text](https://github.com/Dhivas-Sugumar/Project-Minerva/blob/main/Readme/Screenshot%20from%202022-02-03%2022-20-30.png?raw=true )
+![alt text](https://github.com/Dhivas-Sugumar/Project-Minerva/blob/main/Readme/Screenshot%20from%202022-02-03%2022-20-54.png?raw=true )
+![alt text](https://github.com/Dhivas-Sugumar/Project-Minerva/blob/main/Readme/Screenshot%20from%202022-02-03%2022-21-16.png?raw=true )
 
 ###Plans 
 Launch it as a fully fledged website using Heroku and Amazon Webservices. 
