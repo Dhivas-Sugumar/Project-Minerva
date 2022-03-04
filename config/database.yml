@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: project_minerva_production
-  username: project_minerva
+  username: dhivas
   password: <%= ENV["PROJECT_MINERVA_DATABASE_PASSWORD"] %>
