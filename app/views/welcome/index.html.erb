@@ -4,24 +4,34 @@
 
 <div id="enrolls">
   <h2>Enrolls</h2>
+  <div class="row pt-5 m-auto">
+
   <% @enrolls.each do |enroll| %>
     <%= render partial: "enrolls/enroll_card", locals: {enroll: enroll} %>
 
   <% end %>
+    </div>
 </div>
 
 
 <div id="courses">
   <h2>Courses</h2>
-  <% @courses.each do |course| %>
-    <%= render partial: "courses/course_card", locals: {course: course} %>
-  <% end %>
+  <div class="row pt-5 m-auto">
+    <% @courses.each do |course| %>
+      <%= render partial: "courses/course_card", locals: {course: course} %>
+    <% end %>
+  </div>
+
+
 </div>
 
 <div id="categories">
   <h2>Category</h2>
+  <div class="row ">
+
   <% @categories.each do |category| %>
     <%= render partial: "categories/category_card", locals: {category:category} %>
   <% end %>
+  </div>
 </div>
 <%= render "shared_views/footer" %>
