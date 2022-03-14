@@ -1,13 +1,16 @@
-
+<body class="d-flex flex-column min-vh-100">
 <%= render "shared_views/header_main" %>
 <%if user_signed_in? %>
 <%= render "form", course: @course %>
 <%else %>
-  <div>
+  <div class="row mx-auto mb-5">
     <p>You need to be signed in to make a course.</p>
+    <div >
     <%= link_to 'Sign In', new_user_session_path, class: "btn btn-primary" %>
+    </div>
   </div>
   <%end %>
 <%= render "shared_views/footer" %>
+</body>
 
 
