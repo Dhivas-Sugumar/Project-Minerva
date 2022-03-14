@@ -1,4 +1,5 @@
 <!--<p style="color: green"><%#= notice %></p>-->
+<body class="d-flex flex-column min-vh-100">
 <%= render "shared_views/header_main" %>
 
 <%= render @section %>
@@ -11,7 +12,8 @@
 
   <%= button_to "Destroy this section", @section, method: :delete %>
 </div>
+
 <% end %>
   <%end %>
-
+</body>
 <%= render "shared_views/footer" %>

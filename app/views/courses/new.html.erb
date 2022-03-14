@@ -3,7 +3,7 @@
 <%if user_signed_in? %>
 <%= render "form", course: @course %>
 <%else %>
-  <div class="row mx-auto mb-5">
+  <div class="row mx-auto">
     <p>You need to be signed in to make a course.</p>
     <div >
     <%= link_to 'Sign In', new_user_session_path, class: "btn btn-primary" %>
