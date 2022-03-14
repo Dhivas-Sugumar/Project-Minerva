@@ -2,16 +2,24 @@
 
 <!--<h1>Home</h1>-->
 
+
 <div id="enrolls">
+
   <h2>Enrolls</h2>
+  <%if user_signed_in?  %>
   <div class="row pt-5 m-auto">
 
   <% @enrolls.each do |enroll| %>
     <%= render partial: "enrolls/enroll_card", locals: {enroll: enroll} %>
 
   <% end %>
+  <%else %>
+  <p2>Sign in to enroll and view enrolls </p2>
+  <%end %>
     </div>
 </div>
+
+
 
 
 <div id="courses">
