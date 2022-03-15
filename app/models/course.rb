@@ -8,7 +8,7 @@ class Course < ApplicationRecord
   has_many :enrolls
   has_many :reviews
 
-  accepts_nested_attributes_for :sections
+  accepts_nested_attributes_for :sections, allow_destroy: true
 
   mount_uploader :banner, BannerUploader
 

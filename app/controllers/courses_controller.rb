@@ -4,9 +4,9 @@ class CoursesController < ApplicationController
   # GET /courses or /courses.json
   def index
     @courses = Course.all
-  end
+  end  # GET /courses/1 or /courses/1.json
 
-  # GET /courses/1 or /courses/1.json
+
   def show
   end
 
@@ -31,13 +31,18 @@ class CoursesController < ApplicationController
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @course.errors, status: :unprocessable_entity }
+
       end
+
     end
-  end
+    end
+
 
   # PATCH/PUT /courses/1 or /courses/1.json
   def update
+
     respond_to do |format|
+      @sections.destroy_all
       if @course.update(course_params)
         format.html { redirect_to course_url(@course), notice: "Course was successfully updated." }
         format.json { render :show, status: :ok, location: @course }
@@ -50,7 +55,6 @@ class CoursesController < ApplicationController
 
   # DELETE /courses/1 or /courses/1.json
   def destroy
-
 
     respond_to do |format|
       @course.destroy
