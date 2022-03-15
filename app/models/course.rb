@@ -14,4 +14,9 @@ class Course < ApplicationRecord
 
 
   has_rich_text :description
+
+  # Returns a boolean value representing if a course has enrolls.
+  def has_enroll?
+    return enrolls.any?
+  end
 end
