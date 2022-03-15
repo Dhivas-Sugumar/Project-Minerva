@@ -2,9 +2,16 @@
 <%=render "shared_views/header_main" %>
 <%= render @category %>
 <%@course_category = @category.courses%>
+<%if @course_category.any? %>
 <%@course_category.each do |course|%>
 <%= render partial: "courses/course_card", locals: {course: course} %>
 <% end %>
+<%else %>
+  <%=image_tag("Empty Course_Enroll.png", height: 500 ,width:400  , class: "rounded mx-auto d-block") %>
+  <div class="text-center ">
+    <h5>Oh no, looks like there are no courses.<br>Consider creating your own course in <%=@category.category %>!</h5>
+  </div>
+<%end %>
 <%= render "shared_views/footer" %>
 
 
