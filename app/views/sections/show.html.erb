@@ -4,16 +4,6 @@
 
 <%= render @section %>
 
-<%if user_signed_in? %>
-<% if Course.find(@section.course_id).user_id == current_user.id %>
-<div>
-  <%= link_to "Edit this section", edit_section_path(@section) %> |
-  <%= link_to "Back to course", course_url(@section.course_id) %>
 
-  <%= button_to "Destroy this section", @section, method: :delete %>
-</div>
-
-<% end %>
-  <%end %>
 </body>
 <%= render "shared_views/footer" %>

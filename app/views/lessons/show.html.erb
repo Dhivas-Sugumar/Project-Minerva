@@ -2,14 +2,4 @@
 <%= render "shared_views/header_main" %>
 <%= render @lesson %>
 
-<%if user_signed_in? %>
-<% if Course.find(Section.find(@lesson.section_id).course_id).user_id == current_user.id %>
-<div>
-  <%= link_to "Edit this lesson", edit_lesson_path(@lesson) %> |
-  <%= link_to "Back to section", section_url(@lesson.section_id) %>
-
-  <%= button_to "Destroy this lesson", @lesson, method: :delete %>
-</div>
-  <%end %>
-<%end %>
 <%= render "shared_views/footer" %>
