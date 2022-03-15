@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :lessons, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :sections, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :courses
-  resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
+  resources :users
 
 
   get '/account', to: 'users#account'

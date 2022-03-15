@@ -7,16 +7,27 @@
 
   <h2>Enrolls</h2>
   <%if user_signed_in?  %>
-  <div class="row pt-5 m-auto">
 
+  <% if @enrolls.any? %>
+      <div class="row pt-5 m-auto">
   <% @enrolls.each do |enroll| %>
     <%= render partial: "enrolls/enroll_card", locals: {enroll: enroll} %>
 
   <% end %>
+      </div>
   <%else %>
-  <p2>Sign in to enroll and view enrolls </p2>
-  <%end %>
+      <%=image_tag("Empty Course_Enroll.png", height: 400 ,width:300  , class: "rounded mx-auto d-block") %>
+      <div class="text-center ">
+        <h5>Oh no, looks like your enrolls are empty.<br>Go enroll in some courses and start your learning journey</h5>
+      </div>
+<%end %>
+      <%else %>
+    <%=image_tag("Empty Course_Enroll.png", height: 400 ,width:300  , class: "rounded mx-auto d-block") %>
+    <div class="text-center ">
+      <h5>Oh no, looks like your not signed in.<br><%=link_to("Sign In", new_user_session_path) %> to view your enrolls and continue your learning journey. </h5>
     </div>
+  <%end %>
+
 </div>
 
 
@@ -24,10 +35,17 @@
 
 <div id="courses">
   <h2>Courses</h2>
+  <%if @courses.any? %>
   <div class="row pt-5 m-auto">
     <% @courses.each do |course| %>
       <%= render partial: "courses/course_card", locals: {course: course} %>
     <% end %>
+  <%else %>
+    <%=image_tag("Empty Course_Enroll.png", height: 400 ,width:300 , class: "rounded mx-auto d-block")%>
+    <div class="text-center ">
+      <h5>Oh no, looks like there are no courses.<br>Consider creating your own course in anything that you love!</h5>
+    </div>
+  <%end %>
   </div>
 
 

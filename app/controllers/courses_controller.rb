@@ -55,7 +55,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       @course.destroy
       if @course.destroyed?
-        format.html { redirect_to courses_url, notice: "Course was successfully destroyed." }
+        format.html { redirect_to root_url, notice: "Course was successfully destroyed." }
         format.json { head :no_content }
       else
         format.html { render :show, status: :unprocessable_entity }
