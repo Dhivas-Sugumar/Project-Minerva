@@ -2,10 +2,11 @@
 <h1>Courses</h1>
 
 <div id="container">
-  <div class=""
+  <div class="row pt-5 m-auto">
   <% @courses.each do |course| %>
     <%= render partial: "courses/course_card", locals: {course: course} %>
   <% end %>
+  </div>
 </div>
 
 <%= render "shared_views/footer" %>
