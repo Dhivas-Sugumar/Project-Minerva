@@ -1,9 +1,12 @@
-
+<%=render "shared_views/header_main" %>
 <h1>Courses</h1>
 
-<div id="courses">
+<div id="container">
+  <div class=""
   <% @courses.each do |course| %>
     <%= render partial: "courses/course_card", locals: {course: course} %>
   <% end %>
 </div>
+
+<%= render "shared_views/footer" %>
 

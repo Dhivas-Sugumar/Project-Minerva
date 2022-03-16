@@ -16,7 +16,7 @@
 
   <p>
     <strong>Videofile:</strong>
-    <%= video_tag @video.videofile.url , :poster => @video.thumbnail.url, :controls => true, if @video.videofile? %>
+    <%= video_tag @video.videofile.url , poster: @video.thumbnail.url, controls:  true%>
   </p>
 
 </div>
