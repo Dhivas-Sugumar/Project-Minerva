@@ -32,8 +32,9 @@
 
   <div class="mt-4 mb-4">
     <% if user_signed_in? %>
-      <%if @enrolls.where(user_id: current_user.id, course_id: @course.id).empty? %>
-      <td ><%= button_to 'Enroll in Course' ,{:controller => 'enrolls', :enroll => {:action => 'create', :user_id => current_user.id, :course_id => @course.id, :completed => false}}, {:method => :post} %></td>
+      <%if !@course.enrolled?(current_user) %>
+      <td ><%= button_to 'Enroll in Course' , {:controller => 'enrolls', :enroll => {:action => 'create', :user_id => current_user.id, :course_id => @course.id, :completed => false}}, {:method => :post} %></td>
+<!--        <td><%#= button_to "Enroll in Course" ,  enroll_path(@course), method:"put", class: "btn btn-outline-success " %></td>-->
       <%else %>
         <% @id = @enrolls.where(user_id: current_user.id, course_id: @course.id).ids %>
         <td><%= button_to "Unenroll",enroll_path(@id), method: :delete ,class:"btn btn-outline-danger"%></td>

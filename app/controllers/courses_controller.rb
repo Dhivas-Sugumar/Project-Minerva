@@ -66,7 +66,12 @@ class CoursesController < ApplicationController
         format.json { render json: @course.errors, status: :unprocessable_entity }
     end
     end
-    end
+  end
+
+  def enroll
+    enroll = Enroll.create(course_id: params[:id], user_id: User.find(current_user.id).id, completed:false)
+    redirect_to enroll_path(enroll)
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

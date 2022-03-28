@@ -1,5 +1,6 @@
 <h1>My Enrolls</h1>
-
+<div class="row pt-5 m-auto">
 <% @user.enrolls.each do |enroll| %>
   <%= render partial: "enrolls/enroll_card", locals: {enroll: enroll} %>
 <% end %>
+</div>

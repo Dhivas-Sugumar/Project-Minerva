@@ -19,4 +19,8 @@ class Course < ApplicationRecord
   def has_enroll?
     return enrolls.any?
   end
+
+  def enrolled?(user)
+    !! self.enrolls.find{|enroll| enroll.user == user.id}
+  end
 end
