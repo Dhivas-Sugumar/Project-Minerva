@@ -1,9 +1,10 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy ]
 
-  # GET /courses or /courses.json
+  # GET /courses or /courses.json in order of created
   def index
-    @courses = Course.all
+    @courses = Course.order(created_at: :desc).page(params[:page])
+
   end  # GET /courses/1 or /courses/1.json
 
 
@@ -68,10 +69,6 @@ class CoursesController < ApplicationController
     end
   end
 
-  def enroll
-    enroll = Enroll.create(course_id: params[:id], user_id: User.find(current_user.id).id, completed:false)
-    redirect_to enroll_path(enroll)
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -86,7 +83,12 @@ class CoursesController < ApplicationController
       params.require(:course).permit(:title, :description, :members, :average, :rating, :course_id, :user_id,:_destroy,:category_id,
                                      sections_attributes: [:title, :body,:_destroy, lessons_attributes: [:title, :body,:_destroy,
                                                                                                videos_attributes: [:title, :description, :thumbnail,:videofile,:_destroy]]])
+
     end
+
+  # def page_params
+  #   params.require(:page).permit(:at)
+  # end
 end
 
 
