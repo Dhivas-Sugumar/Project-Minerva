@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root "welcome#index"
 
+  concern :paginatable do
+    get '(page/:page)', action: :index, on: :collection, as: ''
+  end
+
   resources :enrolls, only: [:show,:destroy,:new,:create, :index]
   devise_for :users
   resources :contacts, only: [:new, :create]
@@ -10,7 +14,7 @@ Rails.application.routes.draw do
   resources :videos, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :lessons, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :sections, only: [:new, :create, :show, :edit, :update, :destroy]
-  resources :courses
+  resources :courses , concerns: :paginatable
   resources :users
 
 

@@ -1,0 +1,7 @@
+<li class="page-item">
+  <% if not  current_page.last? %>
+  <%= link_to raw(t 'views.pagination.next'), url, rel: 'next', remote: remote, class: 'page-link' %>
+  <%else %>
+  <a rel="next", class="page-link" href="#">Next</a>
+  <% end %>
+</li>

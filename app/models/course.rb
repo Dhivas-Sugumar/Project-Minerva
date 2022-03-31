@@ -15,12 +15,13 @@ class Course < ApplicationRecord
 
   has_rich_text :description
 
-  paginates_per 40
+  paginates_per 8
   # Returns a boolean value representing if a course has enrolls.
   def has_enroll?
     return enrolls.any?
   end
 
+  # Returns a boolean value representing if a given user is enrolled in the course.
   def enrolled?(user)
     !! self.enrolls.find{|enroll| enroll.user == user.id}
   end

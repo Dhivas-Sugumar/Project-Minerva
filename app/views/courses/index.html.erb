@@ -1,14 +1,19 @@
 <%=render "shared_views/header_main" %>
-<h1>Courses</h1>
 
-<div id="container">
-  <div class="row pt-5 m-auto">
+<div class="d-flex justify-content-center mt-4">
+  <h1>Courses</h1>
+</div>
+
+
+  <div id="courses" class="row pt-5 m-auto">
   <% @courses.each do |course| %>
     <%= render partial: "courses/course_card", locals: {course: course} %>
   <% end %>
   </div>
+
+<div id="pagination" class="d-flex justify-content-center">
+  <%= paginate @courses %>
 </div>
-<%= paginate @courses %>
 
 <%= render "shared_views/footer" %>
 
