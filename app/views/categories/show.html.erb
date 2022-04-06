@@ -1,12 +1,14 @@
 
 <%=render "shared_views/header_main" %>
 <%= render @category %>
-<%@course_category = @category.courses%>
 <%if @course_category.any? %>
   <div class="row pt-5 m-auto">
 <%@course_category.each do |course|%>
 <%= render partial: "courses/course_card", locals: {course: course} %>
 <% end %>
+  </div>
+  <div id="paginate" class="d-flex justify-content-center">
+    <%= paginate @course_category %>
   </div>
 <%else %>
   <%=image_tag("Empty Course_Enroll.png", height: 500 ,width:400  , class: "rounded mx-auto d-block") %>

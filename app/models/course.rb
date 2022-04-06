@@ -15,7 +15,7 @@ class Course < ApplicationRecord
 
   has_rich_text :description
 
-  paginates_per 8
+  paginates_per 40
   # Returns a boolean value representing if a course has enrolls.
   def has_enroll?
     return enrolls.any?

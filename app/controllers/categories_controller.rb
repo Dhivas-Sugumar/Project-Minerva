@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
+    access_courses
   end
 
   # GET /categories/new
@@ -62,6 +63,12 @@ class CategoriesController < ApplicationController
     def set_category
       @category = Category.find(params[:id])
     end
+
+    def access_courses
+      @course_category = @category.courses.page(params[:page])
+    end
+
+
 
     # Only allow a list of trusted parameters through.
     def category_params
