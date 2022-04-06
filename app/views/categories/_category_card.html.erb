@@ -3,5 +3,6 @@
   <div class="card-body">
     <h4 class="card-text"><%=category.category %></h4>
     <%= link_to "Show Courses", category_url(category), class: "btn btn-outline-primary" %>
+    <h4 class="card-text text-end"><%=category.course_count %></h4>
   </div>
 </div>

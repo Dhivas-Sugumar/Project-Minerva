@@ -1,10 +1,10 @@
-<p style="color: green"><%= notice %></p>
-
+<%= render 'shared_views/header' %>
 <h1>Categories</h1>
 
-<div id="categories">
+<div id="categories" class="row pt-5 m-auto justify-content-center">
   <% @categories.each do |category| %>
-    <%= render category %>
+    <%= render partial: "categories/category_card", locals: {category: category} %>
   <% end %>
 </div>
 
+<%= render 'shared_views/footer' %>

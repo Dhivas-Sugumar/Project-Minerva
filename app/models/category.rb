@@ -2,5 +2,8 @@ class Category < ApplicationRecord
   has_many :courses
   mount_uploader :banner, BannerUploader
 
-  paginates_per 8
+
+  def course_count
+    courses.size
+  end
 end

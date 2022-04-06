@@ -18,7 +18,7 @@ class Course < ApplicationRecord
   paginates_per 40
   # Returns a boolean value representing if a course has enrolls.
   def has_enroll?
-    return enrolls.any?
+    enrolls.any?
   end
 
   # Returns a boolean value representing if a given user is enrolled in the course.
