@@ -44,10 +44,22 @@
   </div>
 
   <%if @courses.any? %>
-  <div class="row pt-5 m-auto">
-    <% @courses.each do |course| %>
-      <%= render partial: "courses/course_card", locals: {course: course} %>
-    <% end %>
+<!--  <div class="row pt-5 m-auto">-->
+
+    <div class="d-flex flex-row flex-nowrap overflow-auto">
+      <% @courses.each do |course| %>
+        <%= render partial: "courses/course_card", locals: {course: course} %>
+      <% end %>
+
+    </div>
+
+<!--    <div class="container-fluid py-2">-->
+<!--      <div class="d-flex flex-row flex-nowrap">-->
+        <%# @courses.each do |course| %>
+          <%#= render partial: "courses/course_card", locals: {course: course} %>
+        <%# end %>
+<!--      </div>-->
+<!--    </div>-->
   <%else %>
     <%=image_tag("Empty Course_Enroll.png", height: 400 ,width:300 , class: "rounded mx-auto d-block")%>
     <div class="text-center ">
