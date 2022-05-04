@@ -37,3 +37,6 @@ public/uploads
 # Ignore lock files
 /Gemfile.lock
 /yarn.lock
+
+#ignore environemnt files
+/config/environments/*
