@@ -1,12 +1,13 @@
 <% content_for(:title, 'Edit Account') %>
 <%= render "shared_views/header" %>
+<%= link_to :back do %>
+  <i style="font-size: 1.4rem"></i>
+<% end %>
 <div class="col-lg-4 container shadow mt-5 pt-4 pl-3 pb-4 profile">
   <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <div class="d-flex justify-content-between">
       <div class="d-flex">
-        <%= link_to :back do %>
-          <i style="font-size: 1.4rem"></i>
-        <% end %>
+
         <h4 class="mb-3 ml-3">Edit Account</h4>
       </div>
       <div class="actions">
