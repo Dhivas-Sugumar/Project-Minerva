@@ -38,5 +38,5 @@ public/uploads
 /Gemfile.lock
 /yarn.lock
 
-#ignore environemnt files
-/config/environments/*
+# Ignore application configuration
+/config/application.yml
