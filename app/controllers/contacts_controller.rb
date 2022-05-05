@@ -7,9 +7,9 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     @contact.request = request
     if @contact.deliver
-      flash.now[:success] = 'Message sent!'
+      flash[:success] = 'Message sent!'
     else
-      flash.now[:error] = 'Could not send message'
+      flash[:error] = 'Could not send message'
       render :new
     end
   end
@@ -18,5 +18,6 @@ end
 
 private
 def contact_params
+  puts params
   params.require(:contact).permit(:name,:email,:message,:nickname)
 end

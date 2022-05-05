@@ -1,5 +1,9 @@
 <%=render "shared_views/header" %>
-
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
 <div class="container">
   <h1>Contact Form</h1>
   <%= bootstrap_form_for @contact do |f| %>
