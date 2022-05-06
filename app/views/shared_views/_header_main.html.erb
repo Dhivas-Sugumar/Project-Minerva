@@ -37,9 +37,6 @@
       <% if user_signed_in? %>
         <li class="nav-item me-3 me-lg-1">
           <%if current_user.avatar? %>
-            <button class="btn btn-default">
-              <img src="http://i.stack.imgur.com/e2S63.png" width="20" /> Sign In with Facebook
-            </button>
             <%= link_to image_tag(current_user.avatar.url, height: 40 , width: 50, class: "rounded-circle ") , "/users/#{current_user.id}" , alt: "Profile pic" %>
 
           <%else %>
