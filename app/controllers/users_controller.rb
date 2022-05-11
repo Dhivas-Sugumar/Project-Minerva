@@ -14,11 +14,13 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = 'Profile successfully updated'
-      redirect_to user_path(@user)
+      format.html { redirect_to user_path(@user), notice: "User was successfully updated." }
+      format.json { render :show, status: :ok, location: @enroll }
     else
-      render 'edit'
+      format.html { render :edit, status: :unprocessable_entity }
+      format.json { render json: @enroll.errors, status: :unprocessable_entity }
     end
+
   end
 
 
