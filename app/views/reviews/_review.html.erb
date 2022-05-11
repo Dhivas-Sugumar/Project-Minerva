@@ -1,21 +1,29 @@
-<div id="<%= dom_id review %>">
-  <p>
-    <strong>User:</strong>
-    <%= review.get_user().username %>
-  </p>
-  <p>
-    <strong>Course:</strong>
-    <%= review.get_course().title %>
-  </p>
 
-  <p>
-    <strong>Rating:</strong>
-    <%= review.rating %>
-  </p>
 
-  <p>
-    <strong>Comment:</strong>
-    <%= review.comment %>
-  </p>
+<div class="card w-50 shadow-sm p-3 mb-5 bg-white rounded">
+  <div class="row d-flex">
+
+      <div class="d-inline-block">
+        <%= image_tag review.get_user.avatar.url , width: 70, height: 70, class: "rounded-circle"%>
+        <h4 class="mt-2 mb-0 d-inline-block"><%= review.get_user.username %></h4>
+        <p class="text-right text-muted pt-5 pt-sm-3"><%= review.created_at.strftime("%d  %b  %Y")  %></p>
+        <div >
+          <p class="text-left"><span class="text-muted"><%= review.rating %></span>
+            <%@remaining_stars = 5 - review.rating %>
+            <%review.rating.times do %>
+              <span class="fa fa-star star-active ml-3"></span>
+            <% end %>
+            <%@remaining_stars.times do %>
+              <span class="fa fa-star star-inactive ml-3"></span>
+
+          <% end %>
+
+        </div>
+
+      </div>
+  </div>
+  <div class="row text-left">
+    <p class="content"><%= review.comment %></p>
+  </div>
 
 </div>
