@@ -9,7 +9,7 @@ class CoursesController < ApplicationController
 
 
   def show
-
+    @review = Review.new
   end
 
   # GET /courses/new
@@ -78,6 +78,7 @@ class CoursesController < ApplicationController
       @sections = @course.sections
       @reviews = @course.reviews
       @enrolls = Enroll.all
+
     end
 
     # Only allow a list of trusted parameters through.

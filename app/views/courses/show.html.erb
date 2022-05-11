@@ -56,7 +56,13 @@
   <% end %>
 </div>
 
-<div>
+<div class="border-top text-center">
+  <h1 class="display-2">Reviews</h1>
+ <a href="#" id="show-review-form" class="btn btn-outline-primary">Add a review </a>
+  <div id="review-form" class="hidden">
+    <p1>hello</p1>
+    <%= render "reviews/form" %>
+  </div>
   <%@reviews.each do |review| %>
     <div class="row align-items-center justify-content-center my-4">
       <%= render review %>

@@ -1,17 +1,39 @@
 
-<%= simple_form_for(@review) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<%#= simple_form_for(@review) do |f| %>
+  <%#= f.error_notification %>
+  <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
+<!--  <div class="form-inputs">-->
+    <%#= f.hidden_field :user_id , value: current_user.id  %>
+    <%#= f.input :course_id   %>
+
+    <%#= f.input :rating %>
+    <%#= f.rich_text_area :comment %>
+<!--  </div>-->
+
+<!--  <div class="form-actions">-->
+    <%#= f.button :submit %>
+<!--  </div>-->
+<%# end %>
+<container class="w-50 justify-content-center">
+<%= bootstrap_form_for(@review) do |f| %>
   <div class="form-inputs">
-    <%= f.hidden_field :user_id , value: current_user.id  %>
-    <%= f.input :course_id   %>
+    <div class="field">
+      <%= f.hidden_field :user_id, value: current_user.id %>
+    </div>
+    <div class="field">
+      <%#= f.select :category_id, value: @course.course_id %>
+    </div>
+    <div class="field">
+      <%= f.select :rating, [["1 star", 1], ["2 star", 2], ["3 star",3], ["4 star",4], ["5 star",5]], { label: "How would you rate this course?:", wrapper: { class: 'has-warning', data: { foo: 'bar' } } }, { class: "selectpicker" } %>
 
-    <%= f.input :rating %>
-    <%= f.rich_text_area :comment %>
+    </div>
+    <div class="field">
+      <%= f.rich_text_area :comment %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit ,class: "btn btn-success" %>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+<%end %>
+</container>
