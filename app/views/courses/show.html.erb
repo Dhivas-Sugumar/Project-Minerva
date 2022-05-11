@@ -56,6 +56,12 @@
   <% end %>
 </div>
 
+<div>
+  <%@reviews.each do |review| %>
+  <%= render review %>
+  <% end %>
+</div>
+
 
 <%=render "shared_views/footer" %>
 

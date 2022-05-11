@@ -76,6 +76,7 @@ class CoursesController < ApplicationController
     def set_course
       @course = Course.find(params[:id])
       @sections = @course.sections
+      @reviews = @course.reviews
       @enrolls = Enroll.all
     end
 
