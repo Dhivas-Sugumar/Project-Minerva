@@ -1,5 +1,14 @@
 <div id="<%= dom_id review %>">
   <p>
+    <strong>User:</strong>
+    <%= review.get_user().username %>
+  </p>
+  <p>
+    <strong>Course:</strong>
+    <%= review.get_course().title %>
+  </p>
+
+  <p>
     <strong>Rating:</strong>
     <%= review.rating %>
   </p>
