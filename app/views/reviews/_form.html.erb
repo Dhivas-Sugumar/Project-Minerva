@@ -22,7 +22,7 @@
       <%= f.hidden_field :user_id, value: current_user.id %>
     </div>
     <div class="field">
-      <%#= f.select :category_id, value: @course.course_id %>
+      <%#= f.select :category_id, value: course.course_id %>
     </div>
     <div class="field">
       <%= f.select :rating, [["1 star", 1], ["2 star", 2], ["3 star",3], ["4 star",4], ["5 star",5]], { label: "How would you rate this course?:", wrapper: { class: 'has-warning', data: { foo: 'bar' } } }, { class: "selectpicker" } %>
