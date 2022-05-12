@@ -1,20 +1,4 @@
-<!--<div>-->
-  <%#= image_tag(@user.avatar.url, :class => "rounded-circle mr-2", size: "40x40", alt: "Profile pic") %>
-<!--  <strong class="d-none d-sm-block ms-1"><%#=current_user.username %></strong></a>-->
 
-<!--</div>-->
-
-<!--  <div class="d-inline-block">-->
-
-    <%# if current_user.avatar? %>
-        <%#= image_tag(current_user.avatar.url, :class => "rounded-circle mr-2 profile-pic-show", size: "150x150", alt: "Profile pic") %>
-<!--          <strong class="d-none d-sm-block ml-3"><%#= current_user.username %></strong>-->
-    <%#else %>
-<!--      <strong><%#= current_user.username %></strong>-->
-    <%#end %>
-
-
-<!--  </div>-->
 <div class="p-1 text-center bg-light">
   <h1 class="mb-3">
     <% if current_user.avatar? %>

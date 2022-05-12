@@ -1,5 +1,5 @@
 <h1>My Courses</h1>
-<div class="row pt-5 m-auto">
+<div class="d-flex flex-row flex-nowrap overflow-auto">
 <% @user.courses.each do |course| %>
   <%= render partial: "courses/course_card", locals: {course: course} %>
 <% end %>
