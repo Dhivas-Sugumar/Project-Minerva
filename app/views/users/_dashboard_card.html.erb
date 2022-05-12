@@ -6,13 +6,10 @@
     <p class="card-text"><%= element.get_description %></p>
 
     <div class="row">
-      <div class="col ">
-        <%= link_to "Open Course", course_url(element) ,class:"btn btn-outline-primary"%>
 
-      </div>
       <% if element.is_a?(Course)  %>
         <div class="col ">
-          <%= button_to "Edit Course", edit_course_path(element) ,class:"btn btn-outline-primary"%>
+          <%= link_to "Open Course", course_url(element) ,class:"btn btn-outline-primary"%>
 
         </div>
         <% if element.has_enroll? %>
@@ -32,12 +29,12 @@
       <%else %>
 
         <div class="col">
-          <%= link_to "Open Enroll",course_url(element.course_id), method: :delete ,class:"btn btn-outline-danger"%><
+          <%= link_to "Open Enroll",course_url(element.get_course),class:"btn btn-outline-primary"%>
 
         </div>
 
         <div class="col">
-          <%= button_to "Unenroll",enroll_path(element), method: :delete ,class:"btn btn-outline-danger"%><
+          <%= button_to "Unenroll",enroll_path(element), method: :delete ,class:"btn btn-outline-danger"%>
 
         </div>
       <%end %>

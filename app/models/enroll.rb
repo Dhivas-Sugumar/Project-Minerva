@@ -4,7 +4,7 @@ class Enroll < ApplicationRecord
   validates :user_id, uniqueness:  {scope: :course_id}
 
   def get_course
-    Course.find(course)
+    Course.find(course.id)
   end
 
   #Gets the course title.

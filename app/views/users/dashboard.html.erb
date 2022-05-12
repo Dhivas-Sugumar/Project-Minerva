@@ -1,5 +1,6 @@
 <%= render "shared_views/header" %>
 
+<%if user_signed_in? %>
 <div class="container">
   <div id="courses" class="my-2">
     <h1 class="display-3">My Courses</h1>
@@ -15,3 +16,11 @@
     <% end %>
   </div>
 </div>
+<%else %>
+  <%=image_tag("Empty Course_Enroll.png", height: 400 ,width:300  , class: "rounded mx-auto d-block") %>
+  <div class="text-center ">
+    <h5>Oh no, looks like your not signed in.<br><%=link_to("Sign In", new_user_session_path) %> to view your dashboard. </h5>
+  </div>
+<%end %>
+
+<%= render 'shared_views/footer' %>
