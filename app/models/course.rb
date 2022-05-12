@@ -23,6 +23,6 @@ class Course < ApplicationRecord
 
   # Returns a boolean value representing if a given user is enrolled in the course.
   def enrolled?(user)
-    !! self.enrolls.find{|enroll| enroll.user == user.id}
+    return self.enrolls.find{|enroll| enroll.user_id == user.id}
   end
 end

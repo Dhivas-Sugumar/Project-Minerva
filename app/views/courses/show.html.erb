@@ -2,9 +2,6 @@
 <%= javascript_include_tag 'review' %>
 <%= render "shared_views/header_main" %>
 
-
-
-
 <%= render @course %>
 <% if user_signed_in? %>
   <% if @course.user_id == current_user.id %>
@@ -33,16 +30,14 @@
 
   <div class="mt-4 mb-4">
     <% if user_signed_in? %>
-      <%if !@course.enrolled?(current_user) %>
-      <td ><%= button_to 'Enroll in Course' , {:controller => 'enrolls', :enroll => {:action => 'create', :user_id => current_user.id, :course_id => @course.id, :completed => false}}, {:method => :post} %></td>
-<!--        <td><%#= button_to "Enroll in Course" ,  enroll_path(@course), method:"put", class: "btn btn-outline-success " %></td>-->
-      <%else %>
+      <%if @course.enrolled?(current_user) %>
         <% @id = @enrolls.where(user_id: current_user.id, course_id: @course.id).ids %>
         <td><%= button_to "Unenroll",enroll_path(@id), method: :delete ,class:"btn btn-outline-danger"%></td>
 
-<!--        <td><%#= link_to "Delete", enroll_path(@enroll), method: :delete, class: "btn btn-danger" %></td>-->
+      <%else %>
+        <td ><%= button_to 'Enroll in Course' , {:controller => 'enrolls', :enroll => {:action => 'create', :user_id => current_user.id, :course_id => @course.id, :completed => false}}, {:method => :post} %></td>
 
-        <!--        <td><%#= button_to "Unenroll", @enroll, method: :destroy ,class:"btn btn-outline-danger"%></td>-->
+
 <%end %>
       <%else %>
       <%= link_to 'Sign In To Enroll', new_user_session_path, class: "btn btn-primary" %>
