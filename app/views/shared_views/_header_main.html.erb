@@ -37,7 +37,7 @@
       <% if user_signed_in? %>
         <li class="nav-item me-3 me-lg-1">
           <%if current_user.avatar? %>
-            <%= link_to image_tag(current_user.avatar.url, height: 40 , width: 50, class: "rounded-circle ") , "/#{users_path(current_user)}", alt: "Profile pic" %>
+            <%= link_to image_tag(current_user.get_avatar, height: 40 , width: 50, class: "rounded-circle ") , user_path(current_user), alt: "Profile pic" %>
 
           <%else %>
             <i class="fas fa-user"></i>

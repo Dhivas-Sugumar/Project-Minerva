@@ -15,5 +15,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  def get_avatar
+    avatar.url
+  end
 
 end
