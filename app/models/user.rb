@@ -2,6 +2,10 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+
+
   has_many :reviews
   has_many :enrolls, dependent: :destroy
   has_many :courses ,dependent: :destroy

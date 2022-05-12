@@ -80,6 +80,9 @@ gem 'high_voltage', '~> 3.1'
 # for sending a mail through form
 gem 'mail_form', '~> 1.5', '>= 1.5.1'
 
+#for pretty urls
+gem 'friendly_id', '~> 5.4.0'
+
 # for environmnet variables
 gem 'figaro'
 
