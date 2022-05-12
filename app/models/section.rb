@@ -5,4 +5,8 @@ class Section < ApplicationRecord
 
   accepts_nested_attributes_for :lessons
 
+  validates :body, length: {minimum: 25, maximum: 400 }, allow_blank: false
+  validates :title, length: {minimum: 1}
+
+
 end

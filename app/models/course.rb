@@ -1,7 +1,7 @@
 class Course < ApplicationRecord
 
-  belongs_to :user
-  belongs_to :category
+  belongs_to :user, validate: true
+  belongs_to :category, validate: true
 
   has_many :sections, dependent: :destroy
   has_many :lessons, :through => :sections
@@ -14,6 +14,10 @@ class Course < ApplicationRecord
 
 
   has_rich_text :description
+
+  validates :description, length: {minimum: 25, maximum: 280 }, allow_blank: false
+  validates :title, length: {minimum: 1}
+
 
   paginates_per 40
   # Returns a boolean value representing if a course has enrolls.
