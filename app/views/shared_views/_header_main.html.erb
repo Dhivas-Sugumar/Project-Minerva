@@ -44,7 +44,7 @@
             <strong class="d-none d-sm-block ms-1"><%=current_user.username %></strong>
           <%end %>        </li>
         <li class="nav-item me-3 me-lg-1">
-          <%= link_to "Sign out", destroy_user_session_path, :method => :delete , class: "btn btn-danger " %>
+          <%= button_to "Sign out", destroy_user_session_path, :method => :delete , class: "btn btn-danger " %>
         </li>
 
       <%else %>

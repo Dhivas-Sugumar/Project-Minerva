@@ -1,5 +1,5 @@
 <!--<p style="color: green"><%#= notice %></p>-->
-
+<%= javascript_include_tag 'review' %>
 <%= render "shared_views/header_main" %>
 
 
@@ -58,10 +58,12 @@
 
 <div class="border-top text-center">
   <h1 class="display-2">Reviews</h1>
+  <%if user_signed_in? %>
+
+
  <a href="#" id="show-review-form" class="btn btn-outline-primary">Add a review </a>
   <div id="review-form" class="hidden">
-    <p1>Fuck</p1>
-    <%#= render partial: "reviews/form" , locals: {course: @course}%>
+    <%= render partial: "reviews/form" , locals: {course: @course}%>
   </div>
   <%@reviews.each do |review| %>
     <div class="row align-items-center justify-content-center my-4">
@@ -69,6 +71,18 @@
 
     </div>
   <% end %>
+    <%else %>
+    <div>
+      <h2>Sign in to Add your own review.</h2>
+      <%= link_to 'Sign In', new_user_session_path, class: "btn btn-primary" %>
+    </div>
+    <%@reviews.each do |review| %>
+      <div class="row align-items-center justify-content-center my-4">
+        <%= render review %>
+
+      </div>
+    <% end %>
+  <%end %>
 </div>
 
 

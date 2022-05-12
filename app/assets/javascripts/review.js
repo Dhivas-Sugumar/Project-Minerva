@@ -1,6 +1,6 @@
-$(function() {
-    $('a#show-review-form').click(function(event){
-        event.preventDefault();
-        $('div#review-form').toggle();
+$(document).ready(function(){
+    $('a#show-review-form').click(function(eve){
+        eve.preventDefault();
+        $('#review-form').toggle();
     });
 });

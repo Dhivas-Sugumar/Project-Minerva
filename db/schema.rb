@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_11_065129) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_05_11_065129) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,8 +19,8 @@ ActiveRecord::Schema.define(version: 2022_05_11_065129) do
     t.text "body"
     t.string "record_type", null: false
     t.bigint "record_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
   end
 
@@ -30,7 +29,7 @@ ActiveRecord::Schema.define(version: 2022_05_11_065129) do
     t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
-    t.datetime "created_at", precision: 6, null: false
+    t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
@@ -43,7 +42,7 @@ ActiveRecord::Schema.define(version: 2022_05_11_065129) do
     t.string "service_name", null: false
     t.bigint "byte_size", null: false
     t.string "checksum"
-    t.datetime "created_at", precision: 6, null: false
+    t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
@@ -55,8 +54,8 @@ ActiveRecord::Schema.define(version: 2022_05_11_065129) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "banner"
   end
 
@@ -67,8 +66,8 @@ ActiveRecord::Schema.define(version: 2022_05_11_065129) do
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "courses", force: :cascade do |t|
@@ -77,8 +76,8 @@ ActiveRecord::Schema.define(version: 2022_05_11_065129) do
     t.integer "members"
     t.integer "average"
     t.integer "rating"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.string "banner"
     t.bigint "category_id"
@@ -88,8 +87,8 @@ ActiveRecord::Schema.define(version: 2022_05_11_065129) do
 
   create_table "enrolls", force: :cascade do |t|
     t.boolean "completed"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.bigint "course_id"
     t.index ["user_id", "course_id"], name: "index_enrolls_on_user_id_and_course_id", unique: true
@@ -98,8 +97,8 @@ ActiveRecord::Schema.define(version: 2022_05_11_065129) do
   create_table "lessons", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "section_id", null: false
     t.index ["section_id"], name: "index_lessons_on_section_id"
   end
@@ -107,8 +106,8 @@ ActiveRecord::Schema.define(version: 2022_05_11_065129) do
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "comment"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "course_id"
     t.bigint "user_id"
     t.index ["course_id"], name: "index_reviews_on_course_id"
@@ -117,25 +116,25 @@ ActiveRecord::Schema.define(version: 2022_05_11_065129) do
   create_table "sections", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "course_id", null: false
     t.index ["course_id"], name: "index_sections_on_course_id"
   end
 
   create_table "structures", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at", precision: 6
-    t.datetime "remember_created_at", precision: 6
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
     t.string "username"
@@ -149,8 +148,8 @@ ActiveRecord::Schema.define(version: 2022_05_11_065129) do
     t.text "description"
     t.string "thumbnail"
     t.string "videofile"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "lesson_id"
     t.index ["lesson_id"], name: "index_videos_on_lesson_id"
   end

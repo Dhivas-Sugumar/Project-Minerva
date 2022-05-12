@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :lessons, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :sections, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :courses , concerns: :paginatable
-  resources :users
+  resources :users, only: [:show,:edit, :index, :update]
 
 
   get '/account', to: 'users#account'
