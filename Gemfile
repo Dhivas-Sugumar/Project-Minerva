@@ -7,7 +7,7 @@ ruby "3.0.3"
 gem "rails", "~> 7.0.0"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
@@ -55,6 +55,7 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'ruby-progressbar', '~> 1.11.0'
 
 # for css styling
+gem 'bootstrap', '~> 5.1.3'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'bootstrap_form', '~> 4.5'
