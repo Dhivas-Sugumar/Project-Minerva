@@ -1,1 +1,17 @@
 <%= render "shared_views/header" %>
+
+<div class="container">
+  <div id="courses" class="my-2">
+    <h1 class="display-3">My Courses</h1>
+    <%current_user.get_courses.each do |element|%>
+      <%= render partial: "users/dashboard_card" , locals: {element: element}  %>
+    <% end %>
+  </div>
+
+  <div id="enrolls" class="my-2">
+    <h1 class="display-3">My Enrolls</h1>
+    <%current_user.get_enrolls.each do |element|%>
+      <%= render partial: "users/dashboard_card" , locals: {element: element}  %>
+    <% end %>
+  </div>
+</div>

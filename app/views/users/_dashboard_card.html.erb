@@ -1,0 +1,47 @@
+<div class="card my-3">
+  <div class="card-header">
+    <h3><%= element.get_title %></h3>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= element.get_description %></p>
+
+    <div class="row">
+      <div class="col ">
+        <%= link_to "Open Course", course_url(element) ,class:"btn btn-outline-primary"%>
+
+      </div>
+      <% if element.is_a?(Course)  %>
+        <div class="col ">
+          <%= button_to "Edit Course", edit_course_path(element) ,class:"btn btn-outline-primary"%>
+
+        </div>
+        <% if element.has_enroll? %>
+          <div class="col">
+            <%= button_to "Destroy Course", element, method: :delete , class:"btn btn-outline-danger disabled"%>
+            <p1 class="text-muted">Disabled since course has enrolls.</p1>
+
+          </div>
+        <%else %>
+          <div class="col">
+            <%= button_to "Destroy Course", element, method: :delete , class:"btn btn-outline-danger"%>
+
+          </div>
+
+        <%end  %>
+
+      <%else %>
+
+        <div class="col">
+          <%= link_to "Open Enroll",course_url(element.course_id), method: :delete ,class:"btn btn-outline-danger"%><
+
+        </div>
+
+        <div class="col">
+          <%= button_to "Unenroll",enroll_path(element), method: :delete ,class:"btn btn-outline-danger"%><
+
+        </div>
+      <%end %>
+    </div>
+
+  </div>
+</div>

@@ -25,4 +25,14 @@ class Course < ApplicationRecord
   def enrolled?(user)
      self.enrolls.find{|enroll| enroll.user_id == user.id}
   end
+
+  #Gets the course title.
+  def get_title
+    title
+  end
+
+  #Gets the course description
+  def get_description
+    description
+  end
 end
