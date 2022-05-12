@@ -1,19 +1,33 @@
-<%= render "shared_views/header" %>
+<%= render "shared_views/header_main" %>
 
 <%if user_signed_in? %>
 <div class="container">
-  <div id="courses" class="my-2">
+  <div id="courses" class="mb-5">
     <h1 class="display-3">My Courses</h1>
+    <%if current_user.courses.any? %>
     <%current_user.get_courses.each do |element|%>
       <%= render partial: "users/dashboard_card" , locals: {element: element}  %>
     <% end %>
+      <%else %>
+      <%=image_tag("Empty Course_Enroll.png", height: 400 ,width:300 , class: "rounded mx-auto d-block")%>
+      <div class="text-center ">
+        <h5>Oh no, looks like there are no courses.<br>Consider creating your own course in anything that you love!</h5>
+      </div>
+    <%end %>
   </div>
 
-  <div id="enrolls" class="my-2">
+  <div id="enrolls" class="my-5">
     <h1 class="display-3">My Enrolls</h1>
+    <% if current_user.get_enrolls.any? %>
     <%current_user.get_enrolls.each do |element|%>
       <%= render partial: "users/dashboard_card" , locals: {element: element}  %>
     <% end %>
+      <% else %>
+      <%=image_tag("Empty Course_Enroll.png", height: 400 ,width:300  , class: "rounded mx-auto d-block") %>
+      <div class="text-center ">
+        <h5>Oh no, looks like your enrolls are empty.<br>Go enroll in some courses and start your learning journey</h5>
+      </div>
+    <%end %>
   </div>
 </div>
 <%else %>

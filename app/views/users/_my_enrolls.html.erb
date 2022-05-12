@@ -1,6 +1,13 @@
 <h1>My Enrolls</h1>
+<% if @user.get_enrolls.any? %>
 <div class="d-flex flex-row flex-nowrap overflow-auto">
-<% @user.enrolls.each do |enroll| %>
+<% @user.get_enrolls.each do |enroll| %>
   <%= render partial: "enrolls/enroll_card", locals: {enroll: enroll} %>
 <% end %>
+  <% else %>
+  <%=image_tag("Empty Course_Enroll.png", height: 400 ,width:300  , class: "rounded mx-auto d-block") %>
+  <div class="text-center ">
+    <h5>Oh no, looks like your enrolls are empty.<br>Go enroll in some courses and start your learning journey</h5>
+  </div>
+  <%end %>
 </div>
