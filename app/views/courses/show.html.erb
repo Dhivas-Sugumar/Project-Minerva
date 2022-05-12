@@ -73,7 +73,7 @@
   <% end %>
     <%else %>
     <div>
-      <h2>Sign in to Add your own review.</h2>
+      <h4 class="text-muted">Sign in to add your own review.</h4>
       <%= link_to 'Sign In', new_user_session_path, class: "btn btn-primary" %>
     </div>
     <%@reviews.each do |review| %>
