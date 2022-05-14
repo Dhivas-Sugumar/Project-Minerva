@@ -1,5 +1,6 @@
 class Course < ApplicationRecord
 
+
   belongs_to :user, validate: true
   belongs_to :category, validate: true
 
@@ -15,7 +16,7 @@ class Course < ApplicationRecord
 
   has_rich_text :description
 
-  validates :description, length: {minimum: 25, maximum: 280 }, allow_blank: false
+  validates_with RichTextValidator
   validates :title, length: {minimum: 1}
 
 

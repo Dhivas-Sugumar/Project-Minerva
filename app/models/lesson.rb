@@ -4,7 +4,7 @@ class Lesson < ApplicationRecord
   has_many :videos, dependent: :destroy
   accepts_nested_attributes_for :videos
 
-  validates :body, length: {minimum: 400}, allow_blank: true
+  validates_with RichTextValidator , allow_blank: true
   validates :title, length: {minimum: 1}
 
 
