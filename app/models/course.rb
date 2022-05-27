@@ -1,5 +1,8 @@
 class Course < ApplicationRecord
 
+  scope :filter_by_draft, -> (draft) { where draft: draft }
+
+
 
   belongs_to :user, validate: true
   belongs_to :category, validate: true
@@ -18,6 +21,8 @@ class Course < ApplicationRecord
 
   validates_with RichTextValidator
   validates :title, length: {minimum: 1}
+
+  attr_accessor :draft
 
 
   paginates_per 40
@@ -40,4 +45,6 @@ class Course < ApplicationRecord
   def get_description
     description
   end
+
+
 end

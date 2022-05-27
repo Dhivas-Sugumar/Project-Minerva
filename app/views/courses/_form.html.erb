@@ -5,6 +5,9 @@
       <%= f.hidden_field :user_id, value: current_user.id %>
     </div>
     <div class="field">
+      <%= f.hidden_field :draft, value: 1 %>
+    </div>
+    <div class="field">
       <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "category") %>
     </div>
     <div class="field">

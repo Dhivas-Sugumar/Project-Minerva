@@ -17,6 +17,11 @@ Rails.application.routes.draw do
   resources :courses , concerns: :paginatable
   resources :users, only: [:show,:edit, :index, :update]
 
+  resources :courses do
+    member do
+      patch :publish, to: "courses#publish"
+    end
+  end
 
   get '/account', to: 'users#account'
   get "/dashboard" ,to: "users#dashboard"
