@@ -2,6 +2,7 @@
 <%= render "shared_views/header_main" %>
 
 <% if @course.draft? %>
+  <%if @course.instructor?(current_user) %>
   <%= render @course %>
 
   <%= render "course_instructor_controls" %>
@@ -11,6 +12,20 @@
       <h6 class="mb-4">Category: <%=Category.find(@course.category_id).category%></h6>
     </a>
   </div>
+
+    <div id="sections" class="text-center mb-5">
+      <h1>Sections</h1>
+      <% @sections.each do |section| %>
+        <%= render partial: "sections/section_card" , locals: {section: section}  %>
+      <% end %>
+
+    </div>
+
+    <% else %>
+    <h1 class="display-1">
+      ERROR
+    </h1>
+    <%end %>
 
 <%else %>
   <%= render @course %>
@@ -25,16 +40,18 @@
 
   <%= render "course_user_controls" %>
 
+  <div id="sections" class="text-center mb-5">
+    <h1>Sections</h1>
+    <% @sections.each do |section| %>
+      <%= render partial: "sections/section_card" , locals: {section: section}  %>
+    <% end %>
+
+  </div>
+
 <%end %>
 
 
-<div id="sections" class="text-center mb-5">
-  <h1>Sections</h1>
-  <% @sections.each do |section| %>
-    <%= render partial: "sections/section_card" , locals: {section: section}  %>
-  <% end %>
 
-</div>
 
 
 <%unless @course.draft? %>

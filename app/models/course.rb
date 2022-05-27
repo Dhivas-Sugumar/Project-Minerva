@@ -44,5 +44,9 @@ class Course < ApplicationRecord
     description
   end
 
+  def instructor?(user)
+    user.id == user_id
+  end
+
 
 end
