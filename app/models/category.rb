@@ -3,7 +3,11 @@ class Category < ApplicationRecord
   mount_uploader :banner, BannerUploader
 
 
+  def get_courses
+    courses.filter_by_draft(false)
+  end
+
   def course_count
-    courses.size
+    get_courses.size
   end
 end
