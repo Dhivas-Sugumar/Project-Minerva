@@ -9,9 +9,7 @@ class CoursesController < ApplicationController
 
 
   def show
-    if @course.draft
-
-    else
+    unless @course.draft
       @review = Review.new
     end
   end

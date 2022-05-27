@@ -15,18 +15,22 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # gets users avatar
   def get_avatar
     avatar.url
   end
 
+  # gets users courses
   def get_courses
     courses.filter_by_draft(false)
   end
 
+  # gets users enrolls
   def get_enrolls
     enrolls
   end
 
+  # Gets users drafts
   def get_drafts
     courses.filter_by_draft(true)
   end
