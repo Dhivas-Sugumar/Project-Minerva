@@ -22,8 +22,6 @@ class Course < ApplicationRecord
   validates_with RichTextValidator
   validates :title, length: {minimum: 1}
 
-  attr_accessor :draft
-
 
   paginates_per 40
   # Returns a boolean value representing if a course has enrolls.

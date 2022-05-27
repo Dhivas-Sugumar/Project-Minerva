@@ -31,28 +31,33 @@ class CoursesController < ApplicationController
     puts course_params[:draft]
 
     @course = Course.new(course_params)
+    puts @course.draft
+    #
+    # if @course.draft
+    #   if @course.save
+    #     flash.now[:notice] = "Course draft has been saved."
+    #   else
+    #     flash.now[:error] = "Course draft could not save succesfully."
+    #   end
+    # else
+
 
     respond_to do |format|
-      # if @course.draft
-      #   if @course.save
-      #     flash.now[:notice] = "Course draft has been saved."
-      #   else
-      #     format.html{redirect_to root_path, notice: "Draft did not save successfully."}
-      #   end
-      # else
+
         if @course.save
-          format.html { redirect_to course_url(@course), notice: "Course was successfully created." }
+          format.html { redirect_to course_url(@course), notice: "Course was successfully created. #{@course.attributes}" }
           format.json { render :show, status: :created, location: @course }
         else
           format.html { render :new, status: :unprocessable_entity }
           format.json { render json: @course.errors, status: :unprocessable_entity }
 
         end
-      end
+
 
 
     end
     # end
+    end
 
 
   # PATCH/PUT /courses/1 or /courses/1.json
@@ -60,7 +65,7 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       @sections.destroy_all
-      if @course.draft
+      if @course.draft?
         if @course.update(course_params)
           format.html { redirect_to course_url(@course), notice: "Draft was successfully updated." }
           format.json { render :show, status: :ok, location: @course }
@@ -129,13 +134,13 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-      if params[:course][:draft] == "0"
-        params[:course][:draft] = false
-      else
-        params[:course][:draft] = true
-
-      end
-      params.require(:course).permit(:title, :description, :members, :average, :rating, :course_id, :user_id,:_destroy,:category_id, :draft,
+      # if params[:course][:draft] == 0
+      #   params[:course][:draft] = false
+      # else
+      #   params[:course][:draft] = true
+      #
+      # end
+      params.require(:course).permit(:title, :description,:draft, :members, :average, :rating, :course_id, :user_id,:_destroy,:category_id,
                                      sections_attributes: [:title, :body,:_destroy, lessons_attributes: [:title, :body,:_destroy,
                                                                                                videos_attributes: [:title, :description, :thumbnail,:videofile,:_destroy]]])
 
