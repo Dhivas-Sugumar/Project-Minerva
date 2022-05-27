@@ -1,26 +1,41 @@
-<!--<p style="color: green"><%#= notice %></p>-->
 <%= javascript_include_tag 'review' %>
 <%= render "shared_views/header_main" %>
 
-<%= render @course %>
-<%= render "course_instructor_controls" %>
+<% if @course.draft? %>
+  <%= render @course %>
 
-<div id="sections" class="text-center mb-5" >
+  <%= render "course_instructor_controls" %>
 
-  <a href= "<%=category_url(@course.category_id) %>">
-    <h6 class="mb-4">Category: <%=Category.find(@course.category_id).category%></h6>
-  </a>
-
-  <div class="mt-4 mb-4">
-    <%= render "course_user_controls" %>
-    <h1>Sections</h1>
-
-
+  <div class="text-center mb-4" >
+    <a href= "<%=category_url(@course.category_id) %>">
+      <h6 class="mb-4">Category: <%=Category.find(@course.category_id).category%></h6>
+    </a>
   </div>
+
+<%else %>
+  <%= render @course %>
+
+  <%= render "course_instructor_controls" %>
+
+  <div class="text-center mb-4" >
+    <a href= "<%=category_url(@course.category_id) %>">
+      <h6 class="mb-4">Category: <%=Category.find(@course.category_id).category%></h6>
+    </a>
+  </div>
+
+  <%= render "course_user_controls" %>
+
+<%end %>
+
+
+<div id="sections" class="text-center mb-5">
+  <h1>Sections</h1>
   <% @sections.each do |section| %>
-  <%= render partial: "sections/section_card" , locals: {section: section}  %>
+    <%= render partial: "sections/section_card" , locals: {section: section}  %>
   <% end %>
+
 </div>
+
 
 <%unless @course.draft? %>
 <%= render partial:"reviews/reviews_course_show" %>

@@ -1,13 +1,15 @@
-<% if user_signed_in? %>
-  <%if @course.enrolled?(current_user) %>
-    <% @id = @enrolls.where(user_id: current_user.id, course_id: @course.id).ids %>
-    <td><%= button_to "Unenroll",enroll_path(@id), method: :delete ,class:"btn btn-outline-danger"%></td>
+<div class="text-center mb-5 ">
+  <% if user_signed_in? %>
+    <%if @course.enrolled?(current_user) %>
+      <% @id = @enrolls.where(user_id: current_user.id, course_id: @course.id).ids %>
+      <td><%= button_to "Unenroll",enroll_path(@id), method: :delete ,class:"btn btn-outline-danger"%></td>
 
+    <%else %>
+      <td ><%= button_to 'Enroll in Course' , {:controller => 'enrolls', :enroll => {:action => 'create', :user_id => current_user.id, :course_id => @course.id, :completed => false}}, {:method => :post} %></td>
+
+
+    <%end %>
   <%else %>
-    <td ><%= button_to 'Enroll in Course' , {:controller => 'enrolls', :enroll => {:action => 'create', :user_id => current_user.id, :course_id => @course.id, :completed => false}}, {:method => :post} %></td>
-
-
+    <%= link_to 'Sign In To Enroll', new_user_session_path, class: "btn btn-primary" %>
   <%end %>
-<%else %>
-  <%= link_to 'Sign In To Enroll', new_user_session_path, class: "btn btn-primary" %>
-<%end %>
+</div>
