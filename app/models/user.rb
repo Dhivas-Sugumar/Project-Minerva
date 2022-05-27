@@ -27,4 +27,8 @@ class User < ApplicationRecord
     enrolls
   end
 
+  def get_drafts
+    courses.filter_by_draft(true)
+  end
+
 end
