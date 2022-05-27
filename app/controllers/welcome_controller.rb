@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
     else
       @enrolls = nil
     end
-    @courses = Course.all
+    @courses = Course.all.filter_by_draft(false)
     @categories = Category.all
   end
 end

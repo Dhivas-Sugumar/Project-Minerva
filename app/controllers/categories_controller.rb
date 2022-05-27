@@ -64,8 +64,9 @@ class CategoriesController < ApplicationController
       @category = Category.find(params[:id])
     end
 
+
     def access_courses
-      @course_category = @category.courses.page(params[:page])
+      @course_category = @category.get_courses.page(params[:page])
     end
 
 

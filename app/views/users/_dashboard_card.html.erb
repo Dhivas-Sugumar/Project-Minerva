@@ -8,6 +8,18 @@
     <div class="row">
 
       <% if element.is_a?(Course)  %>
+        <% if element.draft? %>
+          <div class="col ">
+            <%= link_to "Open Draft", edit_course_path(element) ,class:"btn btn-outline-primary"%>
+
+          </div>
+          <div class="col">
+            <%= button_to "Destroy Draft", element, method: :delete , class:"btn btn-outline-danger"%>
+
+          </div>
+
+
+          <% else %>
         <div class="col ">
           <%= link_to "Open Course", course_url(element) ,class:"btn btn-outline-primary"%>
 
@@ -25,6 +37,7 @@
           </div>
 
         <%end  %>
+          <%end %>
 
       <%else %>
 

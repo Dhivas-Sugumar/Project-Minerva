@@ -1,5 +1,8 @@
 class Course < ApplicationRecord
 
+  scope :filter_by_draft, -> (draft) { where draft: draft }
+
+
 
   belongs_to :user, validate: true
   belongs_to :category, validate: true
@@ -7,7 +10,7 @@ class Course < ApplicationRecord
   has_many :sections, dependent: :destroy
   has_many :lessons, :through => :sections
   has_many :enrolls
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   accepts_nested_attributes_for :sections, allow_destroy: true
 
@@ -40,4 +43,10 @@ class Course < ApplicationRecord
   def get_description
     description
   end
+
+  def instructor?(user)
+    user.id == user_id
+  end
+
+
 end

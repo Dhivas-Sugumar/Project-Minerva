@@ -2,7 +2,7 @@
 <% if @user.get_courses.any? %>
 <div class="d-flex flex-row flex-nowrap overflow-auto">
 
-<% @user.courses.each do |course| %>
+<% @user.get_courses.each do |course| %>
   <%= render partial: "courses/course_card", locals: {course: course} %>
 <% end %>
   <% else %>

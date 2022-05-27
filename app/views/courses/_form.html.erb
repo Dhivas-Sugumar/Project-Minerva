@@ -1,8 +1,10 @@
-<h1>New course</h1>
 <%= bootstrap_form_for(@course) do |f| %>
   <div class="form-inputs">
     <div class="field">
       <%= f.hidden_field :user_id, value: current_user.id %>
+    </div>
+    <div class="field">
+      <%= f.select :draft, options_for_select([true, false])%>
     </div>
     <div class="field">
       <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "category") %>
