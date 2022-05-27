@@ -20,7 +20,7 @@ class User < ApplicationRecord
   end
 
   def get_courses
-    courses
+    courses.filter_by_draft(false)
   end
 
   def get_enrolls

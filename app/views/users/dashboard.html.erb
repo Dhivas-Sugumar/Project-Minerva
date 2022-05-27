@@ -14,7 +14,7 @@
 
   <div id="courses" class="mb-5">
     <h1 class="display-3">My Courses</h1>
-    <%if current_user.courses.any? %>
+    <%if current_user.get_courses.any? %>
     <%current_user.get_courses.each do |element|%>
       <%= render partial: "users/dashboard_card" , locals: {element: element}  %>
     <% end %>
