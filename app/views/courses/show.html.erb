@@ -52,34 +52,10 @@
   <% end %>
 </div>
 
-<div class="border-top text-center">
-  <h1 class="display-2">Reviews</h1>
-  <%if user_signed_in? %>
-
-
- <a href="#" id="show-review-form" class="btn btn-outline-primary">Add a review </a>
-  <div id="review-form" class="hidden">
-    <%= render partial: "reviews/form" , locals: {course: @course}%>
-  </div>
-  <%@reviews.each do |review| %>
-    <div class="row align-items-center justify-content-center my-4">
-      <%= render review %>
-
-    </div>
-  <% end %>
-    <%else %>
-    <div>
-      <h4 class="text-muted">Sign in to add your own review.</h4>
-      <%= link_to 'Sign In', new_user_session_path, class: "btn btn-primary" %>
-    </div>
-    <%@reviews.each do |review| %>
-      <div class="row align-items-center justify-content-center my-4">
-        <%= render review %>
-
-      </div>
-    <% end %>
+<%unless @course.draft? %>
+<%= render partial:"reviews/reviews_course_show" %>
   <%end %>
-</div>
+
 
 
 <%=render "shared_views/footer" %>

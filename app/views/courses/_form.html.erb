@@ -5,7 +5,7 @@
       <%= f.hidden_field :user_id, value: current_user.id %>
     </div>
     <div class="field">
-      <%= f.checkbox :draft, options_for_select([true, false])%>
+      <%= f.select :draft, options_for_select([true, false])%>
     </div>
     <div class="field">
       <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "category") %>
