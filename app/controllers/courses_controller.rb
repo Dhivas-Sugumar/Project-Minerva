@@ -121,6 +121,7 @@ class CoursesController < ApplicationController
   def set_course
     @course = Course.find(params[:id])
     @sections = @course.sections
+    @category = @course.category
 
     unless @course.draft
       @enrolls = Enroll.all
