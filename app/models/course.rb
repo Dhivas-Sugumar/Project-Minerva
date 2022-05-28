@@ -20,7 +20,7 @@ class Course < ApplicationRecord
   has_rich_text :description
 
   validates_with RichTextValidator, unless: :draft
-  validates :title, length: {minimum: 1}
+  validates :title, length: {minimum: 1}, unless: :draft
 
 
   paginates_per 40

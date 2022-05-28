@@ -6,7 +6,7 @@ class Section < ApplicationRecord
   accepts_nested_attributes_for :lessons
 
   validates_with RichTextValidator, unless: :course_draft?
-  validates :title, length: {minimum: 1}
+  validates :title, length: {minimum: 1}, unless: :course_draft?
 
   def course_draft?
     course.draft
