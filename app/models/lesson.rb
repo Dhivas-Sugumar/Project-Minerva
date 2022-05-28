@@ -4,8 +4,13 @@ class Lesson < ApplicationRecord
   has_many :videos, dependent: :destroy
   accepts_nested_attributes_for :videos
 
-  validates_with RichTextValidator , allow_blank: true
   validates :title, length: {minimum: 1}
+  validates_with RichTextValidator, unless: :course_draft?
+
+
+  def course_draft?
+    section.course_draft?
+  end
 
 
 
