@@ -12,10 +12,10 @@
     <div class="field">
       <%= f.hidden_field :user_id, value: current_user.id %>
     </div>
-    <div class="field">
+    <div class="field lead">
       <%= f.select :draft, options_for_select([true, false])%>
     </div>
-    <div class="field">
+    <div class="field lead">
       <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "category") %>
     </div>
     <div class="field lead ">
