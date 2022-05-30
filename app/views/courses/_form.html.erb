@@ -5,21 +5,22 @@
 <%= bootstrap_form_for(@course) do |f|  %>
     <div class="pt-2 shadow pb-4 mt-5 container mb-5">
 
-    <div class="actions text-end">
-      <%= f.button :submit ,class: "btn btn-success" %>
+    <div class="d-flex justify-content-between">
+      <div class= "lead text-start ">
+        <%= f.check_box :draft, switch: true%>
+      </div>
+        <%= f.button :submit ,class: "btn btn-success" %>
+
+
+
     </div>
 
     <div class="field">
       <%= f.hidden_field :user_id, value: current_user.id %>
     </div>
-    <div class="field lead">
-      <%= f.select :draft, options_for_select([true, false])%>
-    </div>
+
     <div class="field lead">
       <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "category") %>
-    </div>
-    <div class="field lead ">
-      <%= f.text_area :title%>
     </div>
     <div class="field lead">
       <%= f.rich_text_area :description %>
@@ -47,6 +48,5 @@
 <% end %>
   </div>
 </div>
-
 
 
