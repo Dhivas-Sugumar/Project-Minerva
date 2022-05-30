@@ -1,7 +1,7 @@
 <body class="d-flex flex-column min-vh-100">
 <%= render "shared_views/header_main" %>
 <%if user_signed_in? %>
-  <h1>New course</h1>
+  <h1 class="display-3 text-center pt-5">New course</h1>
 <%= render "form", course: @course %>
 <%else %>
   <%=image_tag("Empty Course_Enroll.png", height: 400 ,width:300  , class: "rounded mx-auto d-block") %>
