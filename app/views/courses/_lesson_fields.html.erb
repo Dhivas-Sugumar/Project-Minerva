@@ -1,9 +1,13 @@
 <div class="nested-fields">
-    <h2>Lesson</h2>
+    <h2 class="display-6">Lesson</h2>
     <%= link_to_remove_association "Delete Lesson", f, class: "btn btn-outline-danger" %>
 
-  <%= f.text_area :title %>
-  <%= f.rich_text_area :body %>
+  <div class="field lead">
+    <%= f.text_area :title %>
+  </div>
+  <div class="field lead">
+    <%= f.rich_text_area :body %>
+  </div>
 
   <div id="videos">
     <%= f.fields_for :videos do |video| %>
