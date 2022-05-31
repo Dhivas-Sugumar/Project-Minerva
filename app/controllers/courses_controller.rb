@@ -18,6 +18,7 @@ class CoursesController < ApplicationController
   def new
     @course = Course.new
     @sections = @course.sections.build
+    @category = Category.all
   end
 
   # GET /courses/1/edit
