@@ -15,6 +15,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  enum role: [:user, :admin]
+  after_initialize :set_default_role, :if => :new_record?
+
+  def set_default_role
+    self.role ||= :user
+  end
   # gets users avatar
   def get_avatar
     avatar.url
@@ -33,6 +39,11 @@ class User < ApplicationRecord
   # Gets users drafts
   def get_drafts
     courses.filter_by_draft(true)
+  end
+
+  #checks if a user should be assigned admin privilages
+  def assign_admin
+
   end
 
 end
