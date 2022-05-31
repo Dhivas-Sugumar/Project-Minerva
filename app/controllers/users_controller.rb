@@ -23,10 +23,26 @@ class UsersController < ApplicationController
 
   end
 
+  #controller for admin user's main dashboard
+  def admin_home
+    admin_setup
+
+  end
+
 
   private
 
   def user_params
     params.require(:user).permit( :avatar)
   end
+
+  #setups all the variables for the admin dashboard.
+  def admin_setup
+    @courses = Course.all
+    @users = User.all
+    @categories = Category.all
+    @enrolls = Enroll.all
+    @reviews = Review.all
+  end
+
 end

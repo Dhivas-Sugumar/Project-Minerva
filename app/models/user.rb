@@ -57,9 +57,4 @@ class User < ApplicationRecord
     courses.filter_by_draft(true)
   end
 
-  #checks if a user should be assigned admin privilages
-  def assign_admin
-
-  end
-
 end
