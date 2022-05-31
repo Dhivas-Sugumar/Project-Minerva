@@ -23,6 +23,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users do
+    member do
+      get :admin, to: "users#admin_home"
+    end
+  end
+
 
 
   get '/account', to: 'users#account'

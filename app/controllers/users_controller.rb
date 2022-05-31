@@ -1,14 +1,18 @@
 class UsersController < ApplicationController
+
+  before_action :is_admin? ,only: :admin_home
+
+
   def index
     @users = User.all
   end
 
   def show
-    @user = User.friendly.find(params[:id])
+    set_user
   end
 
   def edit
-    @user = User.find(params[:id])
+    set_user
   end
 
   def update
@@ -25,6 +29,7 @@ class UsersController < ApplicationController
 
   #controller for admin user's main dashboard
   def admin_home
+    set_user
     admin_setup
 
   end
@@ -36,6 +41,10 @@ class UsersController < ApplicationController
     params.require(:user).permit( :avatar)
   end
 
+  def set_user
+    @user = User.friendly.find(params[:id])
+  end
+
   #setups all the variables for the admin dashboard.
   def admin_setup
     @courses = Course.all
@@ -43,6 +52,11 @@ class UsersController < ApplicationController
     @categories = Category.all
     @enrolls = Enroll.all
     @reviews = Review.all
+  end
+
+  def is_admin?
+    set_user
+    @user.admin?
   end
 
 end
