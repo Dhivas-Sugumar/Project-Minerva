@@ -19,6 +19,12 @@
     <div class="field lead">
       <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "category") %>
     </div>
+
+      <div class="field lead">
+        <%= f.text_area :title %>
+      </div>
+
+
     <div class="field lead">
       <%= f.rich_text_area :description %>
     </div>
