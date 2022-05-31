@@ -1,18 +1,25 @@
-<%= bootstrap_form_for(@course, class: "form-card") do |f|  %>
-  <div class="form-inputs">
-    <div class="form-row">
+
+<div class="d-flex justify-content-center flex-lg-row flex-md-row flex-column mt-2">
+<div class="pb-5 col-lg-12 col-lg-12">
+
+<%= bootstrap_form_for(@course) do |f|  %>
+    <div class="pt-2 shadow pb-4 mt-5 container mb-5">
+
+    <div class="d-flex justify-content-between">
+      <div class= "lead text-start ">
+        <%= f.check_box :draft, switch: true%>
+      </div>
+        <%= f.button :submit ,class: "btn btn-success" %>
+    </div>
+
+    <div class="field">
       <%= f.hidden_field :user_id, value: current_user.id %>
     </div>
-    <div class="form-row">
-      <%= f.select :draft, options_for_select([true, false])%>
-    </div>
-    <div class="form-row">
+
+    <div class="field lead">
       <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "category") %>
     </div>
-    <div class="form-row">
-      <%= f.text_area :title %>
-    </div>
-    <div class="form-row">
+    <div class="field lead">
       <%= f.rich_text_area :description %>
     </div>
 
@@ -21,23 +28,22 @@
     <%#= f.input :average %>
     <%#= f.input :rating %>
     <%#= f.input :course_id %>
-    <div>
       <div id="sections">
         <%= f.fields_for :sections do |section| %>
           <%= render 'section_fields', f: section %>
         <% end %>
 
       </div>
+
+
+
+  <div class="links text-end">
+    <%= link_to_add_association "Add Section", f, :sections, class: "btn btn-outline-primary " %>
+  </div>
+
     </div>
-  </div>
-
-  <div class="links">
-    <%= link_to_add_association "Add Section", f, :sections, class: "btn btn-outline-primary" %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit ,class: "btn btn-success" %>
-  </div>
 <% end %>
+  </div>
+</div>
 
 
