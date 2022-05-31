@@ -18,9 +18,22 @@ class User < ApplicationRecord
   enum role: [:user, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
+  # sets the role for a user.
+  # Is either admin or user
   def set_default_role
-    self.role ||= :user
+    if assign_admin?
+      self.role = :admin
+    else
+    self.role = :user
+    end
+
   end
+
+  # checks if a given user's email is a minereducation domain.To assign admin privileges.
+  def assign_admin?
+    email =~ /\b[A-Z0-9._%a-z\-]+@minervaeducation\.us\z/
+  end
+
   # gets users avatar
   def get_avatar
     avatar.url
