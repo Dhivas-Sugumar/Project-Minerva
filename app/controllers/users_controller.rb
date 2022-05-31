@@ -31,6 +31,8 @@ class UsersController < ApplicationController
   def admin_home
     set_user
     admin_setup
+    render "users/admin/admin_home"
+
 
   end
 
