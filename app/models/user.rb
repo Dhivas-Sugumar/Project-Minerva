@@ -22,9 +22,11 @@ class User < ApplicationRecord
   # Is either admin or user
   def set_default_role
     if assign_admin?
-      self.role = :admin
+      puts "is admin"
+      :admin
     else
-    self.role = :user
+      puts "not admin "
+      :user
     end
 
   end
@@ -32,6 +34,7 @@ class User < ApplicationRecord
   # checks if a given user's email is a minereducation domain.To assign admin privileges.
   def assign_admin?
     email =~ /\b[A-Z0-9._%a-z\-]+@minervaeducation\.us\z/
+
   end
 
   # gets users avatar
