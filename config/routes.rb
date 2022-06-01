@@ -26,7 +26,16 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :admin, to: "users#admin_home"
+
     end
+  end
+
+  scope :admin do
+      get :users, to: "users#admin_users"
+      get :courses, to: "users#admin_courses"
+      get :reviews, to: "users#admin_reviews"
+      get :categories, to: "users#admin_categories"
+      get :enrolls, to: "users#admin_enrolls"
   end
 
 

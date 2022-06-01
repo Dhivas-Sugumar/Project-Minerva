@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-
-  before_action :is_admin? ,only: :admin_home
+  before_action :is_admin? ,only: %i[ admin_home]
 
 
   def index
