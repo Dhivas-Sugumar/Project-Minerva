@@ -31,9 +31,48 @@ class UsersController < ApplicationController
     set_user
     admin_setup
     render "users/admin/admin_home"
+  end
 
+  # method for allowing admins to view and edit users.
+  def admin_users
+    set_user
+    @users = User.all
+    render "users/admin/admin_users"
+  end
+
+  # method for allowing admins to view and edit courses.
+  def admin_courses
+    set_user
+    @courses = Course.all
+    render "users/admin/admin_courses"
 
   end
+
+  # method for allowing admins to view and edit categories.
+  def admin_categories
+    set_user
+    @categories = Category.all
+    render "users/admin/admin_categories"
+
+  end
+
+  # method for allowing admins to view and edit enrolls.
+  def admin_enrolls
+    set_user
+    @enrolls = Enroll.all
+    render "users/admin/admin_enrolls"
+
+  end
+
+  # method for allowing admins to view and edit reviews.
+  def admin_reviews
+    set_user
+    @reviews = Review.all
+    render "users/admin/admin_reviews"
+
+  end
+
+
 
 
   private
