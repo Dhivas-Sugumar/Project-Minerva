@@ -1,4 +1,7 @@
 <%= render "shared_views/header_main" %>
 
+<% @enrolls.each do |enroll| %>
+  <%= render partial: "users/admin/admin_cards/admin_enrolls", locals: {enroll: enroll} %>
+<% end %>
 
 <%= render "shared_views/footer" %>

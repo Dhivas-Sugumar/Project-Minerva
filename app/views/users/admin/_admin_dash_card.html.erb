@@ -1,7 +1,0 @@
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title"><%=model.first.class.name.downcase %></h5>
-    <p class="card-text">Count: <%=model.length %></p>
-    <%= link_to "More Actions", "/users/#{current_user.slug}/admin/#{model.first.class.name.pluralize.downcase}"%>
-  </div>
-</div>

@@ -1,0 +1,16 @@
+<div class="card pt-3">
+  <div class="card-header">
+    <h3> Enroll </h3>
+    <h5 >
+      <%= "User: " + enroll.user.username %>
+    </h5>
+    <h5>
+      <%="Title: " + enroll.course.title %>
+    </h5>
+  </div>
+
+  <div class="card-footer">
+    <%=button_to "Edit Enroll", edit_enroll_path(enroll), class: "btn btn-outline-primary" %>
+    <%=button_to "Delete Enroll", enroll , method: :delete, class: "btn btn-outline-danger" %>
+  </div>
+</div>
