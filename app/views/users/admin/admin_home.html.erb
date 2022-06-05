@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-Hello
-</body>
-</html>
+<%= render "shared_views/header_main" %>
+<h1 class="display-3 text-center">Admin Home</h1>
+<%= render partial: "users/admin/admin_dash_card" , locals: {model: @users}%>
+<%= render partial: "users/admin/admin_dash_card" , locals: {model: @courses}%>
+<%= render partial:  "users/admin/admin_dash_card" , locals: {model: @categories}%>
+<%= render partial:  "users/admin/admin_dash_card" , locals: {model: @enrolls}%>
+<%= render partial:  "users/admin/admin_dash_card" , locals: {model: @reviews}%>
+<%= render "shared_views/footer" %>
