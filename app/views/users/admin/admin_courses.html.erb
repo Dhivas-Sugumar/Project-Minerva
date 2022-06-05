@@ -1,0 +1,8 @@
+<%= render "shared_views/header_main" %>
+
+<%@courses.each do |course| %>
+  <%= render partial: "users/dashboard_card", locals: {element: course}  %>
+<% end %>
+
+
+<%= render "shared_views/footer" %>
