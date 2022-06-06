@@ -1,16 +1,22 @@
 <div class="card pt-3">
   <div class="card-header">
-    <h3> Enroll </h3>
-    <h5 >
-      <%= "User: " + enroll.user.username %>
-    </h5>
-    <h5>
-      <%="Title: " + enroll.course.title %>
-    </h5>
+    <div id="user" class="d-flex">
+      <h5 >
+        <%= "User: " + enroll.user.username%>
+      </h5>
+      <p class="lead text-muted"><%="Id: #{enroll.user_id}" %></p>
+    </div>
+    <div class="d-flex">
+      <h5>
+        <%="Title: " + enroll.course.title %>
+      </h5>
+      <p class="lead text-muted"><%="Id: #{enroll.course_id}" %></p>
+    </div>
+
   </div>
 
   <div class="card-footer">
-    <%=button_to "Edit Enroll", edit_enroll_path(enroll), class: "btn btn-outline-primary" %>
+    <%=link_to "Edit Enroll", edit_enroll_path(enroll), class: "btn btn-outline-primary" %>
     <%=button_to "Delete Enroll", enroll , method: :delete, class: "btn btn-outline-danger" %>
   </div>
 </div>

@@ -1,5 +1,8 @@
 <%= render "shared_views/header_main" %>
 
+<div class="text-center">
+  <h1 class="display-3">Enrolls</h1>
+</div>
 <% @enrolls.each do |enroll| %>
   <%= render partial: "users/admin/admin_cards/admin_enrolls", locals: {enroll: enroll} %>
 <% end %>
