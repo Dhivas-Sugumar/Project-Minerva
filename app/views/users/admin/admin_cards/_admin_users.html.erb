@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="card-header">
+    <h6><%=user.username %></h6>
+  </div>
+  <div class="card-body">
+    <div id="courses">
+      <h6>Courses</h6>
+      <% user.courses.each do |course| %>
+        <div class="border-top border-bottom">
+          <p><%= course.title %></p>
+          <p><%= course.draft %></p>
+        </div>
+      <% end %>
+    </div>
+
+    <div id="enrolls">
+      <h6>Enrolls</h6>
+
+      <% user.enrolls.each do |enroll| %>
+        <div class="border-top border-bottom">
+          <%= enroll.get_title %>
+        </div>
+      <% end %>
+    </div>
+
+    <div id="reviews">
+      <h6>Reviews</h6>
+
+      <% user.reviews.each do |review| %>
+        <div class="border-top border-bottom">
+          <%=review.title %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
+  <div class="card-footer">
+    <%= button_to "Open user", users_path(user) %>
+    <%= button_to "Edit user", edit_user_path(user) %>
+    <%= button_to "Delete user", user, method: :delete %>
+  </div>
+</div>

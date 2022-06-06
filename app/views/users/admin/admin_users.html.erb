@@ -1,4 +1,9 @@
 <%= render "shared_views/header_main" %>
 
+<h1 class="display-4">Users</h1>
+
+<%@users.each do |user| %>
+  <%= render partial: "users/admin/admin_cards/admin_users", locals: {user:user} %>
+<% end %>
 
 <%= render "shared_views/footer" %>
