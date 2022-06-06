@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :contacts, only: [:new, :create]
   resources :reviews, only: [:new, :create]
-  resources :categories, only:[:index, :new, :create, :show, :destroy]
+  resources :categories
   resources :videos, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :lessons, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :sections, only: [:new, :create, :show, :edit, :update, :destroy]
