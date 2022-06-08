@@ -1,2 +1,16 @@
+<div class="col-md-4 py-3">
 <div class="card">
+  <div class="card-header">
+    <h4 class="sort">
+      <i class="fa fa-sort-amount-desc"></i><%=model.name %>
+    </h4>
+  </div>
+  <div class="card-body">
+    <%="Count: #{model.count}" %>
+
+  </div>
+  <div class="card-footer">
+    <%= link_to "Open Controls", "/users/#{current_user.id}/admin/#{model.name.pluralize.downcase}" ,class: "btn btn-outline-primary" %>
+  </div>
+</div>
 </div>

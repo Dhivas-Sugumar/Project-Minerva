@@ -28,7 +28,8 @@
 
       <% user.reviews.each do |review| %>
         <div class="border-top border-bottom">
-          <%=review.title %>
+          <%=review.get_course.title %>
+          <%=review.rating %>
         </div>
       <% end %>
     </div>
@@ -36,8 +37,8 @@
   </div>
 
   <div class="card-footer">
-    <%= button_to "Open user", users_path(user) %>
-    <%= button_to "Edit user", edit_user_path(user) %>
-    <%= button_to "Delete user", user, method: :delete %>
+    <%= link_to "Open user", users_path(user) , class: "btn btn-primary-outline"%>
+    <%= button_to "Edit user", edit_user_path(user) , class: "btn btn-primary-outline"%>
+    <%= button_to "Delete user", user, method: :delete , class: "btn btn-danger-outline"%>
   </div>
 </div>
