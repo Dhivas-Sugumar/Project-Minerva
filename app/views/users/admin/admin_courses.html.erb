@@ -1,7 +1,7 @@
 <%= render "shared_views/header_main" %>
 
 <%@courses.each do |course| %>
-  <%= render partial: "users/dashboard_card", locals: {element: course}  %>
+  <%= render partial: "users/admin/admin_cards/admin_courses", locals: {course: course}  %>
 <% end %>
 
 

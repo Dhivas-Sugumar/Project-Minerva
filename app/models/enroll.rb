@@ -16,4 +16,10 @@ class Enroll < ApplicationRecord
   def get_description
     Course.find(course.id).description
   end
+
+  #Gets the username of the user
+  def get_username
+    User.find(user_id).username
+  end
+
 end

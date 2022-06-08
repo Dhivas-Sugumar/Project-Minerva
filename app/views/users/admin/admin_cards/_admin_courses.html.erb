@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header">
+    <%=course.title %>
+    <%=course.enrolls_count %>
+    <%= course.category.category %>
+  </div>
+  <div class="card-body">
+    <div id="enrolled-users">
+      <% course.enrolls.each do |enroll| %>
+        <%=enroll.get_username %>
+        <%=button_to "Remove enroll", enroll, method: :delete %>
+        <%=button_to "View enroll", enroll_path(enroll)%>
+    <% end %>
+    </div>
+
+    <div class="reviews">
+      <%course.reviews.each do |review| %>
+      <%=review.get_user %>
+        <%=review.rating %>
+        <%=button_to "Remove review", review, method: :delete %>
+        <%=button_to "View review", reviews_path(review)%>
+      <% end %>
+    </div>
+  </div>
+</div>
