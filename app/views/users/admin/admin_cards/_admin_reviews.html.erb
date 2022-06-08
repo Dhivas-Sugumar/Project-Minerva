@@ -1,5 +1,16 @@
 <div class="pt-3 card">
+  <div class="card-header">
+    <%= review.get_user.username %>
+    <%= review.get_course.title %>
+    <%= review.rating %>
+  </div>
   <div class="card-body">
+    <%=review.comment %>
+  </div>
+  <div class="card-footer">
+    <%= link_to "View Review", reviews_path(review) %>
+    <%= link_to "Edit Review", edit_review_path(review) %>
+    <%= button_to "Delete Review", review, method: :delete %>
 
   </div>
 </div>

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :enrolls
   devise_for :users
   resources :contacts, only: [:new, :create]
-  resources :reviews, only: [:new, :create]
+  resources :reviews, only: [:new, :create, :edit, :update]
   resources :categories
   resources :videos, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :lessons, only: [:new, :create, :show, :edit, :update, :destroy]

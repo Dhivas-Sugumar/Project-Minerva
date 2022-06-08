@@ -1,4 +1,6 @@
 <%= render "shared_views/header_main" %>
 
-
+<% @reviews.each do |review| %>
+  <%= render partial: "users/admin/admin_cards/admin_reviews", locals: {review:review} %>
+<% end %>
 <%= render "shared_views/footer" %>
