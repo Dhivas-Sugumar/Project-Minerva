@@ -1,0 +1,7 @@
+@import "bootstrap";
+
+.admin-card-content {
+  max-height: 12em;
+  @extend .col-md-4;
+  @extend .overflow-auto;
+}
