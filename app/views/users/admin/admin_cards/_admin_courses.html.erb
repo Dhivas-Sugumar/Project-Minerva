@@ -5,21 +5,28 @@
     <%= course.category.category %>
   </div>
   <div class="card-body">
-    <div id="enrolled-users">
+    <div class="row">
+    <div id="enrolled-users" class="admin-card-content">
       <% course.enrolls.each do |enroll| %>
-        <%=enroll.get_username %>
-        <%=button_to "Remove enroll", enroll, method: :delete %>
-        <%=button_to "View enroll", enroll_path(enroll)%>
+        <div class="d-flex">
+          <%=enroll.get_username %>
+          <%=button_to "Remove enroll", enroll, method: :delete %>
+          <%=link_to "View enroll", enroll_url(enroll), class: "btn btn-primary-outline"%>
+        </div>
     <% end %>
     </div>
 
-    <div class="reviews">
-      <%course.reviews.each do |review| %>
-      <%=review.get_user %>
-        <%=review.rating %>
-        <%=button_to "Remove review", review, method: :delete %>
-        <%=button_to "View review", reviews_path(review)%>
-      <% end %>
+    <div class="reviews" class="admin-card-content">
+      <div class="row d-flex">
+        <%course.reviews.each do |review| %>
+          <%=review.get_user %>
+          <%=review.rating %>
+          <%=button_to "Remove review", review, method: :delete %>
+          <%=link_to "View review", reviews_path(review) , class: "btn btn-primary-outline"%>
+        <% end %>
+      </div>
+
     </div>
+  </div>
   </div>
 </div>

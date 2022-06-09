@@ -31,10 +31,15 @@
         <div class="tab-content" id="v-pills-tabContent">
           <div class="tab-pane fade show account active ml-2" id="v-pills-account" role="tabpanel" aria-labelledby="v-pills-account-tab">
             <%= link_to "Edit Account", edit_user_registration_path(current_user), class: "text-decoration-none text-dark user-form w-100 d-block" %>
+
             <hr class="solid">
             <a><%= link_to "User Dashboard","/dashboard" , class: "text-decoration-none text-dark user-form w-100 d-block"%></a>
-
             <p1 class="text-muted">To view and manage user courses and enrolls. </p1>
+
+            <% if current_user.admin? %>
+              <hr class="solid">
+              <%= link_to "Admin Dashboard", admin_user_path(current_user), class: "text-decoration-none text-dark user-form w-100 d-block" %>
+            <%end %>
             <hr class="solid">
             <%= link_to "Change Password", new_user_password_path, class: "text-decoration-none text-dark user-form w-100 d-block" %>
             <hr class="solid">
