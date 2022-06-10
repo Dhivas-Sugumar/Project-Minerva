@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :is_admin? ,only: %i[ admin_home]
+  before_action :is_admin? ,
+                only: [ :admin_home, :admin_courses, :admin_categories, :admin_enrolls, :admin_reviews, :admin_users]
 
 
   def index
@@ -96,7 +97,7 @@ class UsersController < ApplicationController
 
   def is_admin?
     set_user
-    @user.admin?
+    redirect_to root_path unless @user.admin?
   end
 
 end
