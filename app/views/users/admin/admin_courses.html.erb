@@ -1,8 +1,15 @@
 <%= render "shared_views/header_main" %>
+<div class="py-3">
+  <h1 class="display-3 text-center">Courses</h1>
+</div>
 
-<%@courses.each do |course| %>
-  <%= render partial: "users/admin/admin_cards/admin_courses", locals: {course: course}  %>
-<% end %>
+<div>
+  <%@courses.each do |course| %>
+    <%= render partial: "users/admin/admin_cards/admin_courses", locals: {course: course}  %>
+  <% end %>
+</div>
+
+
 
 
 <%= render "shared_views/footer" %>
