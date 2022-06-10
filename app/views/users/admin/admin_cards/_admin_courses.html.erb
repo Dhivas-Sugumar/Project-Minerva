@@ -7,6 +7,7 @@
   <div class="card-body">
     <div class="row">
     <div id="enrolled-users" class="admin-card-content">
+      <h6>Enrolled Users</h6>
       <% course.enrolls.each do |enroll| %>
         <div class="d-flex">
           <%=enroll.get_username %>
@@ -17,15 +18,15 @@
     </div>
 
     <div class="reviews" class="admin-card-content">
+      <h6>Course Reviews</h6>
       <div class="row d-flex">
         <%course.reviews.each do |review| %>
-          <%=review.get_user %>
-          <%=review.rating %>
-          <%=button_to "Remove review", review, method: :delete %>
-          <%=link_to "View review", reviews_path(review) , class: "btn btn-primary-outline"%>
+          <%="Username: #{review.get_user.username}" %>
+          <%="Rating: #{review.rating} " %>
+          <%=button_to "Remove review", review, method: :delete, class: "btn btn-danger-outline" %>
+          <%=link_to "View review", review_url(review) , class: "btn btn-primary-outline"%>
         <% end %>
       </div>
-
     </div>
   </div>
   </div>
