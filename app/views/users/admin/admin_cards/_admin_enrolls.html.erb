@@ -1,4 +1,4 @@
-<div class="card pt-3">
+<div class="card pt-3 col-4">
   <div class="card-header">
     <div id="user" class="d-flex">
       <h5 >
@@ -16,7 +16,10 @@
   </div>
 
   <div class="card-footer">
-    <%=link_to "Edit Enroll", edit_enroll_url(enroll), class: "btn btn-outline-primary" %>
-    <%=button_to "Delete Enroll", enroll , method: :delete, class: "btn btn-outline-danger" %>
+    <div class="d-flex">
+      <%=link_to "Edit Enroll", edit_enroll_url(enroll), class: "btn btn-outline-primary" %>
+      <%=button_to "Delete Enroll", enroll , method: :delete, class: "btn btn-outline-danger" %>
+    </div>
+
   </div>
 </div>
