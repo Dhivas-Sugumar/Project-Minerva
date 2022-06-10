@@ -1,6 +1,13 @@
 <%= render "shared_views/header_main" %>
+<div class="text-center">
+  <h1 class="display-3">Reviews</h1>
+</div>
 
-<% @reviews.each do |review| %>
-  <%= render partial: "users/admin/admin_cards/admin_reviews", locals: {review:review} %>
-<% end %>
+  <div class="row">
+    <% @reviews.each do |review| %>
+      <%= render partial: "users/admin/admin_cards/admin_reviews", locals: {review:review} %>
+    <% end %>
+  </div>
+
+
 <%= render "shared_views/footer" %>
