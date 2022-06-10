@@ -3,6 +3,9 @@
 <div class="text-center">
   <h1 class="display-3">Enrolls</h1>
 </div>
+<div class="d-flex justify-content-center">
+  <%=link_to "New Enroll", new_enroll_url, class: "btn btn-outline-primary" %>
+</div>
 <div class="row">
   <% @enrolls.each do |enroll| %>
     <%= render partial: "users/admin/admin_cards/admin_enrolls", locals: {enroll: enroll} %>
