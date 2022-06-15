@@ -56,4 +56,5 @@ class Course < ApplicationRecord
 
 
 
+
 end

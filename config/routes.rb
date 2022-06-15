@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get '(page/:page)', action: :index, on: :collection, as: ''
   end
 
-  resources :enrolls
+  resources :enrolls, only: [:new, :create, :edit, :update, :destroy]
   devise_for :users
   resources :contacts, only: [:new, :create]
   resources :reviews, only: [:new, :create, :edit, :update, :destroy, :show]

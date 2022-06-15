@@ -63,7 +63,7 @@
         <p class="card-text"><%=Course.find(enroll.course_id).description%></p>
       </div>
       <div class="card-footer" style="background: inherit; border-color: inherit;">
-        <%= link_to "Open Enroll", enroll_url(enroll.id), class: "btn btn-outline-primary" %>
+        <%= link_to "Open Enroll", course_url(enroll.course_id), class: "btn btn-outline-primary" %>
       </div>
     </div>
 
