@@ -29,6 +29,11 @@ class Course < ApplicationRecord
     enrolls.any?
   end
 
+  #Returns the number of enrolls for a course.
+  def enrolls_count
+    enrolls.size
+  end
+
   # Returns a boolean value representing if a given user is enrolled in the course.
   def enrolled?(user)
      self.enrolls.find{|enroll| enroll.user_id == user.id}
@@ -47,6 +52,8 @@ class Course < ApplicationRecord
   def instructor?(user)
     user.id == user_id
   end
+
+
 
 
 end

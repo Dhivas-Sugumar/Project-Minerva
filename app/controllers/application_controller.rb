@@ -18,4 +18,6 @@ class ApplicationController < ActionController::Base
                                                                       :password_confirmation,
                                                                       :first_name, :last_name, :avatar)}
   end
+
+
 end

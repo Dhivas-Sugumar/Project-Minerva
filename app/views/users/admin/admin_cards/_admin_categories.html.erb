@@ -1,0 +1,33 @@
+<div class="card py-5">
+  <div class="card-header">
+    <div class="d-flex">
+      <h6> <%= category.category %></h6>
+      <p> <%= "Count: #{category.course_count}" %></p>
+    </div>
+  </div>
+
+  <div class="card-body admin-card-overflow">
+    <div>
+      <h6>Courses</h6>
+      <% category.get_courses.each do |course| %>
+        <div class="d-flex flex-row justify-content-between border-bottom border-top">
+
+          <div class="pr-3">
+            <h6 class="lead"><%= course.title %></h6>
+          </div>
+          <div class="d-inline-flex">
+            <%= link_to "Open course", course_url(course), class: "btn btn-outline-primary" %>
+            <%= link_to "Edit course", edit_course_url(course), class: "btn btn-outline-primary" %>
+            <%= button_to "Delete course", course, method: :delete, class: "btn btn-outline-danger" %>
+          </div>
+        </div>
+        </div>
+      <% end %>
+      </div>
+
+  <div class="card-footer d-flex">
+    <%= link_to "Open category", category_url(category),class: "btn btn-outline-primary"  %>
+    <%= link_to "Edit category", edit_category_url(category) , class: "btn btn-outline-primary"%>
+    <%= button_to "Delete category", category, method: :delete , class: "btn btn-outline-danger"%>
+  </div>
+</div>

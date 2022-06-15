@@ -1,0 +1,19 @@
+<div class="py-3 card col-6">
+  <div class="card-header">
+    <%= "User: #{review.get_user.username}" %>
+    <br>
+    <%= "Title: #{review.get_course.title}" %>
+  </div>
+  <div class="card-body">
+    <%= "Rating: #{review.rating}" %>
+    <p>Comment:</p>
+    <%= review.comment %>
+  </div>
+  <div class="card-footer">
+    <div class="d-flex">
+      <%= link_to "View Review", review_url(review), class: "btn btn-outline-primary" %>
+      <%= link_to "Edit Review", edit_review_url(review), class: "btn btn-outline-primary" %>
+      <%= button_to "Delete Review", review, method: :delete, class: "btn btn-outline-danger" %>
+    </div>
+  </div>
+</div>
