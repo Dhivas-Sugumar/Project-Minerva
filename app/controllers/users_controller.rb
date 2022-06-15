@@ -86,6 +86,12 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
   end
 
+  def is_admin?
+    set_user
+    redirect_to root_path unless current_user.admin?
+  end
+
+
   #setups all the variables for the admin dashboard.
   def admin_setup
     @courses = Course.all
@@ -95,9 +101,6 @@ class UsersController < ApplicationController
     @reviews = Review.all
   end
 
-  def is_admin?
-    set_user
-    redirect_to root_path unless @user.admin?
-  end
+
 
 end

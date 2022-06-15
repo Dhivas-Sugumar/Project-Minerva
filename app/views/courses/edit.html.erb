@@ -1,5 +1,5 @@
 <%= render 'shared_views/header_main' %>
-<%if user_signed_in? and @course.instructor?(current_user)%>
+<%if (user_signed_in? and @course.instructor?(current_user)) or current_user.admin?%>
   <h1 class="display-3 text-center pt-5">Editing course</h1>
 
   <%= render "form", course: @course %>

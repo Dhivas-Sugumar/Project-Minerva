@@ -16,8 +16,8 @@
             <h6 class="lead"><%= course.title %></h6>
           </div>
           <div class="d-inline-flex">
-            <%= button_to "Open course", course_url(course), class: "btn btn-outline-primary" %>
-            <%= button_to "Edit course", edit_course_url(course), class: "btn btn-outline-primary" %>
+            <%= link_to "Open course", course_url(course), class: "btn btn-outline-primary" %>
+            <%= link_to "Edit course", edit_course_url(course), class: "btn btn-outline-primary" %>
             <%= button_to "Delete course", course, method: :delete, class: "btn btn-outline-danger" %>
           </div>
         </div>
@@ -26,8 +26,8 @@
       </div>
 
   <div class="card-footer d-flex">
-    <%= button_to "Open category", category_url(category),class: "btn btn-outline-primary"  %>
-    <%= button_to "Edit category", edit_category_url(category) , class: "btn btn-outline-primary"%>
+    <%= link_to "Open category", category_url(category),class: "btn btn-outline-primary"  %>
+    <%= link_to "Edit category", edit_category_url(category) , class: "btn btn-outline-primary"%>
     <%= button_to "Delete category", category, method: :delete , class: "btn btn-outline-danger"%>
   </div>
 </div>

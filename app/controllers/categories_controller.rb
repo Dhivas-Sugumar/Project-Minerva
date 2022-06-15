@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ show edit update destroy ]
+  before_action :is_admin?, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /categories or /categories.json
   def index
@@ -69,9 +70,18 @@ class CategoriesController < ApplicationController
       @course_category = @category.get_courses.page(params[:page])
     end
 
+    # def set_user
+    #   puts params
+    #   @user = User.friendly.find(params[:id])
+    # end
+
+    def is_admin?
+      # set_user
+      redirect_to root_path unless current_user.admin?
+    end
 
 
-    # Only allow a list of trusted parameters through.
+  # Only allow a list of trusted parameters through.
     def category_params
       params.require(:category).permit(:category,:banner ,:category_id)
     end

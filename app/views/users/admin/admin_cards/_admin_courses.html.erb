@@ -35,8 +35,9 @@
                 <%= "Rating: #{review.rating} " %>
               </div>
               <div class="d-inline-flex">
-                <%= button_to "Remove review", review, method: :delete, class: "btn btn-outline-danger" %>
                 <%= link_to "View review", review_url(review), class: "btn btn-outline-primary" %>
+                <%= button_to "Remove review", review, method: :delete, class: "btn btn-outline-danger" %>
+
               </div>
             </div>
           <% end %>

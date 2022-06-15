@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: %i[ show edit update destroy ]
+  before_action :is_admin? , only: [:edit,:update]
 
   # GET /reviews or /reviews.json
   def index
@@ -67,4 +68,7 @@ class ReviewsController < ApplicationController
     def review_params
       params.require(:review).permit(:rating, :comment, :user_id, :course_id)
     end
+  def is_admin?
+    redirect_to root_path unless current_user.admin?
+  end
 end
