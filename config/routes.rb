@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :courses do
     member do
       patch :publish, to: "courses#publish"
+      post :enroll, to: "courses#enroll"
     end
   end
 
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
       get :admin, to: "users#admin_home"
     end
   end
+
 
 
   get "/users/:id/admin/users", to: "users#admin_users"

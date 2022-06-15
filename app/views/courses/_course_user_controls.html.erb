@@ -5,8 +5,7 @@
       <td><%= button_to "Unenroll",enroll_path(@id), method: :delete ,class:"btn btn-outline-danger"%></td>
 
     <%else %>
-      <td ><%= button_to 'Enroll in Course' , {:controller => 'enrolls', :enroll => {:action => 'create', :user_id => current_user.id, :course_id => @course.id, :completed => false}}, {:method => :post} %></td>
-
+      <%= link_to "Enroll", enroll_course_url, class: "btn btn-outline-primary", :method => :post %>
 
     <%end %>
   <%else %>

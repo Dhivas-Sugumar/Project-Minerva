@@ -116,6 +116,19 @@ class CoursesController < ApplicationController
 
   end
 
+  #enrolls a user to this course
+  def enroll
+    puts "hi"
+    puts params
+    attrs = {:user_id => current_user.id, :course_id => params["id"],:completed => false }
+    @enroll = Enroll.new(attrs)
+      if @enroll.save
+        redirect_to course_url(@enroll.course_id), notice: "Enrolled in course!"
+      else
+        redirect_to root_path
+      end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -140,11 +153,13 @@ class CoursesController < ApplicationController
       #   params[:course][:draft] = true
       #
       # end
+      puts params
       params.require(:course).permit(:title, :description,:draft, :members, :average, :rating, :course_id, :user_id,:_destroy,:category_id,
                                      sections_attributes: [:title, :body,:_destroy, lessons_attributes: [:title, :body,:_destroy,
                                                                                                videos_attributes: [:title, :description, :thumbnail,:videofile,:_destroy]]])
 
     end
+
 
   # def page_params
   #   params.require(:page).permit(:at)
