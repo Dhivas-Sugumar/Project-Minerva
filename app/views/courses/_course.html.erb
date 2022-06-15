@@ -17,7 +17,8 @@
   class="p-5 text-center bg-image"
   <%if course.banner? %>
   style="
-  background-image: <%=image_url(course.banner) %>;
+  background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
+
   "
   <%else %>
   style="
@@ -26,6 +27,8 @@
   "
   <%end %>
 >
+  <%= image_tag course.banner.url, id: 'img_prev', width: 300, height: 300, alt: 'your image', class: 'img-thumbnail hidden' %>
+
   <div class="mask" style="background-color: rgba(0, 0, 0, 0.1);">
     <div class="d-flex justify-content-center align-items-center h-100">
       <div class="text-white">

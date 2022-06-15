@@ -20,6 +20,10 @@
       <%= f.select :category_id, options_from_collection_for_select(@category.all, "id", "category") %>
     </div>
 
+    <div class="field lead">
+      <%=f.file_field :banner %>
+    </div>
+
       <div class="field lead">
         <%= f.text_area :title %>
       </div>

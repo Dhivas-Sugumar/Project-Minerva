@@ -154,7 +154,7 @@ class CoursesController < ApplicationController
       #
       # end
       puts params
-      params.require(:course).permit(:title, :description,:draft, :members, :average, :rating, :course_id, :user_id,:_destroy,:category_id,
+      params.require(:course).permit(:title, :description,:draft, :members, :average, :rating, :course_id, :user_id,:_destroy,:category_id,:banner,
                                      sections_attributes: [:title, :body,:_destroy, lessons_attributes: [:title, :body,:_destroy,
                                                                                                videos_attributes: [:title, :description, :thumbnail,:videofile,:_destroy]]])
 
