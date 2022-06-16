@@ -1,9 +1,9 @@
 <header>
 
-  <div>
-    <%= image_tag category.banner.url if category.banner? %>
+  <div style="background: url('<%= image_url category.banner %>'); height: 20em">
+
       <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="text-black">
+        <div class="text-white">
           <h1 class="mb-3"><%=category.category %></h1>
         </div>
       </div>
