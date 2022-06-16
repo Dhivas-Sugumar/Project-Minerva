@@ -33,9 +33,14 @@
           <%= f.password_field :password_confirmation, autocomplete: "new-password",required: true , class: "bg-light" %>
         </div>
 
-<!--        <div class="field">-->
-          <%#= f.file_field :avatar, class: "bg-light" %>
-<!--        </div>-->
+        <div class="field">
+          <div class="lead">
+            <p>Avatar</p>
+          </div>
+          <div>
+            <%= f.file_field_without_bootstrap :avatar %>
+          </div>
+        </div>
 
         <div class="actions d-flex justify-content-center mt-3">
           <%= f.submit "Sign up", class: "btn shadow btn-block bg-color text-blue" %>
