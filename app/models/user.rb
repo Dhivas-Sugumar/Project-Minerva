@@ -31,7 +31,7 @@ class User < ApplicationRecord
 
   end
 
-  # checks if a given user's email is a minereducation domain.To assign admin privileges.
+  # checks if a given user's email is a minervaeducation domain.To assign admin privileges.
   def assign_admin?
     email =~ /\b[A-Z0-9._%a-z\-]+@minervaeducation\.us\z/
 

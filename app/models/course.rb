@@ -53,6 +53,16 @@ class Course < ApplicationRecord
     user.id == user_id
   end
 
+  def get_banner
+    if banner?
+      banner
+    else
+      puts "hi"
+      puts category.banner
+      category.banner
+    end
+  end
+
 
 
 

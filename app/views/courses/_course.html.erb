@@ -15,16 +15,8 @@
 <div
   id="intro-example"
   class="p-5 text-center bg-image"
-  <%if course.banner? %>
-
-  <%else %>
-  style="
-  background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
-
-  "
-  <%end %>
+  style="background: url('<%= image_url course.get_banner %>') "
 >
-  <%= image_tag course.banner.url, id: 'img_prev', width: 300, height: 300, alt: 'your image', class: 'img-thumbnail hidden' %>
 
   <div class="mask" style="background-color: rgba(0, 0, 0, 0.1);">
     <div class="d-flex justify-content-center align-items-center h-100">
