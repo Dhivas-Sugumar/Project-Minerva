@@ -32,8 +32,10 @@
 
 
         <div class="field lead">
-          <%= f.rich_text_area :description %>
+          <%= f.text_area_without_bootstrap :description , class: "tinymce"%>
         </div>
+        <%= tinymce %>
+
 
 
         <%#= f.input :members %>
