@@ -30,8 +30,6 @@
 <%else %>
   <%= render @course %>
 
-  <%= render "course_instructor_controls" %>
-
   <div class="text-center mb-4" >
     <a href= "<%=category_url(@category) %>">
       <h6 class="mb-4">Category: <%=@category.category%></h6>
