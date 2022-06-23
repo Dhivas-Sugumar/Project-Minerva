@@ -12,8 +12,10 @@
 
     </div>
     <div class="field">
-      <%= f.rich_text_area :comment %>
+      <%= f.text_area_without_bootstrap :comment , class: "tinymce"%>
     </div>
+    <%= tinymce %>
+
     <div id="editor"></div>
 
     <div class="form-actions">

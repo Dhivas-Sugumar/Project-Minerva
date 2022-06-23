@@ -1,0 +1,6 @@
+height: 500
+menubar: false
+toolbar:
+  - undo redo | blocks | bold italic underline strikethrough| alignleft aligncenter alignright | bullist numlist outdent indent |lineheight|media |removeformat | blockquote
+plugins:
+  - insertdatetime lists media table code help wordcount

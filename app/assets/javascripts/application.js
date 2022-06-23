@@ -4,6 +4,7 @@
 
 //= require bootstrap-sprockets
 //= require cocoon
+//= require tinymce
 
 import "@hotwired/turbo-rails"
 import "controllers"
