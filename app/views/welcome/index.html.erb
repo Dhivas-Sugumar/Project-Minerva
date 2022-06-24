@@ -12,7 +12,8 @@
     <% if @enrolls.any? %>
       <div class="row ps-3 pt-3 m-auto">
         <% @enrolls.each do |enroll| %>
-          <%= render partial: "enrolls/enroll_card", locals: { enroll: enroll } %>
+          <%course = enroll.get_course%>
+          <%= render partial: "enrolls/enroll_card", locals: { course: course, enroll: enroll } %>
 
         <% end %>
       </div>

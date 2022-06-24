@@ -4,10 +4,11 @@
 //= require font-awesome
 //= require reviews
 //= require fonts
-//= require course_card
+@import "course_card";
 //= require actiontext
 //= require admin_cards_content
 
 div.hidden { display: none; }
 
 //= require_self
+//= require_tree
