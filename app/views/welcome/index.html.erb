@@ -1,11 +1,10 @@
 <%# stylesheet_link_tag "carousel" %>
 <%= render 'shared_views/header_main' %>
 
-<div id="enrolls">
+<div class="px-5 py-5" id="enrolls">
 
-  <div class="row ps-3 pt-5 m-auto">
+  <div class="row ps-3 m-auto">
     <h1 class="display-3">Enrolls</h1>
-
   </div>
   <% if user_signed_in? %>
 
@@ -34,20 +33,25 @@
 </div>
 
 
-<div id="courses">
-    <div class="row ps-3 pt-5 m-auto">
+<div class="px-5 py-5" id="courses">
+    <div class="row ps-3 m-auto">
       <h1 class="display-3">Courses</h1>
       <%= link_to("Show more", "/courses/") %>
-
     </div>
 
   <% if @courses.any? %>
-    <div class="d-flex flex-row flex-nowrap overflow-auto">
-      <% @courses.each do |course| %>
-        <%= render partial: "courses/course_card", locals: { course: course } %>
-      <% end %>
+<!--    <div class="d-flex flex-row flex-nowrap overflow-auto">-->
+      <%# @courses.each do |course| %>
+        <%#= render partial: "courses/course_card", locals: { course: course } %>
+      <%# end %>
 
+<!--    </div>-->
+    <div class="row ps-3 pt-3 m-auto">
+      <% @courses.each do |course| %>
+        <%= render partial: "courses/course_card", locals: { course: course} %>
+      <% end %>
     </div>
+
 
 
   <% else %>
@@ -58,21 +62,18 @@
   <% end %>
 </div>
 
-<div id="categories">
-  <div class="row ps-3 pt-5 m-auto">
-    <div class="col-xl-6">
-      <h1 class="display-3">Categories</h1>
-    </div>
-      <%= link_to("Show more", "/courses/") %>
+<div class="px-5 py-5" id="categories">
 
-
+  <div class="row ps-3 m-auto">
+    <h1 class="display-3">Categories</h1>
   </div>
-  <div class="row ">
 
+  <div class="row ps-3 pt-3 m-auto">
     <% @categories.each do |category| %>
       <%= render partial: "categories/category_card", locals: { category: category } %>
     <% end %>
   </div>
+
 </div>
 
 <%= render "shared_views/footer" %>
