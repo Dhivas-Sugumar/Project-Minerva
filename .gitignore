@@ -34,9 +34,5 @@ public/uploads
 /config/master.key
 
 
-# Ignore lock files
-/Gemfile.lock
-/yarn.lock
-
 # Ignore application configuration
 /config/application.yml

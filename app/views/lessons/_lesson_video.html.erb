@@ -1,0 +1,23 @@
+  <% if videos.size >= 1 %>
+    <div class="row">
+
+    <div id="video lessons">
+      <div class="text-center pb-4">
+        <h1 class="display-6">Videos</h1>
+
+      </div>
+      <% videos.each do |video| %>
+        <div class="d-flex justify-content-center ">
+          <div id="video">
+            <%if video.videofile? %>
+            <%= video_tag video.videofile.url  , controls: true%>
+              <%end %>
+          </div>
+
+        </div>
+
+      <% end %>
+    </div>
+    </div>
+
+  <%end %>
