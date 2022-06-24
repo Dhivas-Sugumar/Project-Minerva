@@ -1,34 +1,34 @@
 <%# stylesheet_link_tag "carousel" %>
-
-
 <%= render 'shared_views/header_main' %>
-
-
 
 <div id="enrolls">
 
-  <h2>Enrolls</h2>
-  <%if user_signed_in?  %>
+  <div class="row ps-3 pt-5 m-auto">
+    <h1 class="display-3">Enrolls</h1>
 
-  <% if @enrolls.any? %>
-      <div class="row pt-5 m-auto">
-  <% @enrolls.each do |enroll| %>
-    <%= render partial: "enrolls/enroll_card", locals: {enroll: enroll} %>
+  </div>
+  <% if user_signed_in? %>
 
-  <% end %>
+    <% if @enrolls.any? %>
+      <div class="row ps-3 pt-3 m-auto">
+        <% @enrolls.each do |enroll| %>
+          <%= render partial: "enrolls/enroll_card", locals: { enroll: enroll } %>
+
+        <% end %>
       </div>
-  <%else %>
-      <%=image_tag("Empty Course_Enroll.png", height: 400 ,width:300  , class: "rounded mx-auto d-block") %>
+    <% else %>
+      <%= image_tag("Empty Course_Enroll.png", height: 400, width: 300, class: "rounded mx-auto d-block") %>
       <div class="text-center ">
         <h5>Oh no, looks like your enrolls are empty.<br>Go enroll in some courses and start your learning journey</h5>
       </div>
-<%end %>
-      <%else %>
-    <%=image_tag("Empty Course_Enroll.png", height: 400 ,width:300  , class: "rounded mx-auto d-block") %>
+    <% end %>
+  <% else %>
+    <%= image_tag("Empty Course_Enroll.png", height: 400, width: 300, class: "rounded mx-auto d-block") %>
     <div class="text-center ">
-      <h5>Oh no, looks like your not signed in.<br><%=link_to("Sign In", new_user_session_path) %> to view your enrolls and continue your learning journey. </h5>
+      <h5>Oh no, looks like your not signed in.<br><%= link_to("Sign In", new_user_session_path) %> to view your enrolls
+        and continue your learning journey. </h5>
     </div>
-  <%end %>
+  <% end %>
 
 </div>
 
@@ -36,47 +36,46 @@
 
 
 <div id="courses">
-  <div class="d-flex justify-content-between" >
-    <div >
-      <h2>Courses</h2>
-    </div>
-    <div>
-      <%=link_to("Show more", "/courses/") %>
-    </div>
-  </div>
+    <div class="row ps-3 pt-5 m-auto">
+      <h1 class="display-3">Courses</h1>
+      <%= link_to("Show more", "/courses/") %>
 
-  <%if @courses.any? %>
-<!--  <div class="row pt-5 m-auto">-->
+    </div>
 
+  <% if @courses.any? %>
     <div class="d-flex flex-row flex-nowrap overflow-auto">
       <% @courses.each do |course| %>
-        <%= render partial: "courses/course_card", locals: {course: course} %>
+        <%= render partial: "courses/course_card", locals: { course: course } %>
       <% end %>
 
     </div>
 
 
-
-
-
-  <%else %>
-    <%=image_tag("Empty Course_Enroll.png", height: 400 ,width:300 , class: "rounded mx-auto d-block")%>
+  <% else %>
+    <%= image_tag("Empty Course_Enroll.png", height: 400, width: 300, class: "rounded mx-auto d-block") %>
     <div class="text-center ">
       <h5>Oh no, looks like there are no courses.<br>Consider creating your own course in anything that you love!</h5>
     </div>
   <% end %>
-  </div>
+</div>
 
 
 </div>
 
 <div id="categories">
-  <h2>Category</h2>
+  <div class="row ps-3 pt-5 m-auto">
+    <div class="col-xl-6">
+      <h1 class="display-3">Categories</h1>
+    </div>
+      <%= link_to("Show more", "/courses/") %>
+
+
+  </div>
   <div class="row ">
 
-  <% @categories.each do |category| %>
-    <%= render partial: "categories/category_card", locals: {category:category} %>
-  <% end %>
+    <% @categories.each do |category| %>
+      <%= render partial: "categories/category_card", locals: { category: category } %>
+    <% end %>
   </div>
 </div>
 
