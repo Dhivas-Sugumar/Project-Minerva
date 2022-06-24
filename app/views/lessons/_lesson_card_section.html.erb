@@ -1,0 +1,20 @@
+
+
+<div class="d-flex justify-content-center flex-lg-row flex-md-row flex-column mt-5">
+      <div class="pt-2 shadow pb-4 mt-5 container col-lg-7 col-md-12 mb-5">
+          <div class="row">
+            <div class="col-sm-6 mx-auto">
+              <ol>
+
+              <% lessons.each do |lesson| %>
+                <li class="lead">
+                  <h3 class="lead"><%= link_to lesson.title, lesson_path(lesson) , class: " text-decoration-none"%></h3>
+
+                </li>
+              <% end %>
+              </ol>
+
+            </div>
+          </div>
+      </div>
+</div>

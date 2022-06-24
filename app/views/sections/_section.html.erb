@@ -6,23 +6,22 @@
   </div>
 </div>
 
+
+
 <div class="d-flex justify-content-center py-4">
   <h1 class="display-2"><%=section.title %></h1>
 </div>
 
-
-<div>
-  <p><%= section.body %></p>
-</div>
-<div class="container">
-
-  <% @lessons.each_with_index do |lesson, index| %>
-    <div class="row">
-      <div class="col-sm-6 mx-auto">
-        <%= index + 1 %>. <%= link_to lesson.title, lesson_path(lesson) %>
+<div class="row">
+  <div class="d-flex justify-content-center">
+    <div class="col-xl-9 col-lg-8 justify-content-center">
+      <div class="row">
+        <p><%= section.body %></p>
       </div>
+      <%= render partial: "lessons/lesson_card_section", locals: {lessons: @lessons} %>
     </div>
-  <% end %>
-
+  </div>
 
 </div>
+
+
