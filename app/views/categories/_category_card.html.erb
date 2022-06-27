@@ -1,8 +1,17 @@
-<div class="card m-3" style="width: 18rem;">
-  <%= image_tag category.banner.url if category.banner? %>
-  <div class="card-body">
-    <h4 class="card-text"><%=category.category %></h4>
-    <%= link_to "Show Courses", category_url(category), class: "btn btn-outline-primary" %>
-    <h4 class="card-text text-end"><%=category.course_count %></h4>
+
+<a  class="category-card-link ps-3" href="<%=category_url category %>">
+  <div class="category-card">
+      <div class="category-card-image">
+        <%= image_tag category.banner.url , alt: "category image" if category.banner? %>
+      </div>
+      <div class="category-card-title title-white">
+        <%=category.category %>
+        <div class="text-hover">
+          <%= "#{category.course_count} lessons" %>
+        </div>
+      </div>
   </div>
-</div>
+</a>
+
+
+
