@@ -23,6 +23,7 @@ class CoursesController < ApplicationController
 
   # GET /courses/1/edit
   def edit
+    @category = Category.all
   end
 
   # POST /courses or /courses.json
