@@ -15,6 +15,11 @@
   <% else %>
   <%=image_tag("Empty Course_Enroll.png", height: 400 ,width:300  , class: "rounded mx-auto d-block") %>
   <div class="text-center ">
-    <h5>Oh no, looks like your enrolls are empty.<br>Go enroll in some courses and start your learning journey</h5>
+    <%if @user.id == current_user.id %>
+      <h5>Oh no, looks like your enrolls are empty.<br>Go enroll in some courses and start your learning journey</h5>
+  <%else %>
+      <h5><%=@user.username %> has no enrolls. </h5>
+
+    <%end %>
   </div>
 <%end %>
