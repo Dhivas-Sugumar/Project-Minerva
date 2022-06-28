@@ -40,16 +40,12 @@
     </div>
 
   <% if @courses.any? %>
-<!--    <div class="d-flex flex-row flex-nowrap overflow-auto">-->
-      <%# @courses.each do |course| %>
-        <%#= render partial: "courses/course_card", locals: { course: course } %>
-      <%# end %>
-
-<!--    </div>-->
     <div class="row ps-3 pt-3 m-auto">
-      <% @courses.each do |course| %>
-        <%= render partial: "courses/course_card", locals: { course: course} %>
-      <% end %>
+      <div class="d-flex flex-row flex-nowrap overflow-auto">
+        <% @courses.each do |course| %>
+          <%= render partial: "courses/course_card", locals: { course: course} %>
+        <% end %>
+      </div>
     </div>
 
 
