@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
     else
       @enrolls = nil
     end
-    @courses = Course.all.filter_by_draft(false)
+    @courses = Course.all.filter_by_draft(false).order("RANDOM()").limit(20)
     @categories = Category.all
   end
 end
