@@ -10,16 +10,16 @@
         <h4 class="ml-3">Edit Account</h4>
       </div>
       <div class="actions">
-        <%= f.submit "Save", class: "btn-red" %>
+        <%= f.submit "Save", class: "btn btn-outline-primary" %>
       </div>
     </div>
     <hr class="solid">
 
-    <div class="field">
+    <div class="field py-2">
       <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "bg-light" %>
     </div>
 
-    <div class="field">
+    <div class="field py-2">
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
 
@@ -27,19 +27,19 @@
       <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
 
-    <div class="field">
+    <div class="field py-2">
       <%= f.password_field :password, autocomplete: "new-password", help: "leave blank if you don't want to change it" %>
     </div>
 
-    <div class="field">
+    <div class="field py-2">
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
 
-    <div class="field">
+    <div class="field py-2">
       <%= f.password_field :current_password, autocomplete: "current-password", help: "we need your current password to confirm your changes" %>
     </div>
 
-    <div class="field">
+    <div class="field py-2">
       <%= f.file_field :avatar, class: "bg-light" %>
     </div>
   <% end %>
