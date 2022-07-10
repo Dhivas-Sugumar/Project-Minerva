@@ -13,7 +13,7 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
 
   enum role: [:user, :admin]
   after_initialize :set_default_role, :if => :new_record?
