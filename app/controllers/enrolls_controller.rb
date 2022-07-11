@@ -29,7 +29,7 @@ class EnrollsController < ApplicationController
         format.json { render :show, status: :created, location: @enroll }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @enroll.errors, status: :unprocessable_entity }
+        flash[:alert] = 'Could not enroll in course. Please try again.'
       end
     end
   end
@@ -42,7 +42,7 @@ class EnrollsController < ApplicationController
         format.json { render :show, status: :ok, location: @enroll }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @enroll.errors, status: :unprocessable_entity }
+        flash[:alert] = 'Could not update enroll. Please try again.'
       end
     end
   end
@@ -52,7 +52,7 @@ class EnrollsController < ApplicationController
     @enroll.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_path, notice: "Successfully un enrolled." }
+      format.html { redirect_to root_path, notice: "Successfully unenrolled." }
       format.json { head :no_content }
     end
   end

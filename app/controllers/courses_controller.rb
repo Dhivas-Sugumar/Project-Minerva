@@ -28,35 +28,17 @@ class CoursesController < ApplicationController
 
   # POST /courses or /courses.json
   def create
-    puts course_params[:draft]
-
     @course = Course.new(course_params)
-    puts @course.draft
-    #
-    # if @course.draft
-    #   if @course.save
-    #     flash.now[:notice] = "Course draft has been saved."
-    #   else
-    #     flash.now[:error] = "Course draft could not save succesfully."
-    #   end
-    # else
-
-
     respond_to do |format|
-
         if @course.save
-          format.html { redirect_to course_url(@course), notice: "Course was successfully created. #{@course.attributes}" }
+          format.html { redirect_to course_url(@course), notice: "Course was successfully created! Thank you for your contribution." }
           format.json { render :show, status: :created, location: @course }
         else
           format.html { render :new, status: :unprocessable_entity }
-          format.json { render json: @course.errors, status: :unprocessable_entity }
+          flash[:alert] = 'Could not create course. Please try again.'
 
         end
-
-
-
     end
-    # end
     end
 
 
@@ -71,7 +53,7 @@ class CoursesController < ApplicationController
           format.json { render :show, status: :ok, location: @course }
         else
           format.html { render :edit, status: :unprocessable_entity }
-          format.json { render json: @course.errors, status: :unprocessable_entity }
+          flash[:alert] = 'Could not update course draft. PLease try again later.'
         end
 
       else
@@ -80,7 +62,7 @@ class CoursesController < ApplicationController
           format.json { render :show, status: :ok, location: @course }
         else
           format.html { render :edit, status: :unprocessable_entity }
-          format.json { render json: @course.errors, status: :unprocessable_entity }
+          flash[:alert] = 'Could not update course. PLease try again later.'
         end
 
       end
@@ -98,7 +80,7 @@ class CoursesController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render :show, status: :unprocessable_entity }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
+        flash[:alert] = 'Could not destroy course. PLease try again later.'
     end
     end
   end
@@ -111,7 +93,7 @@ class CoursesController < ApplicationController
         format.json { render :show, status: :ok, location: @course }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
+        flash[:alert] = 'Could not publish course. PLease try again later.'
       end
     end
 
@@ -119,14 +101,14 @@ class CoursesController < ApplicationController
 
   #enrolls a user to this course
   def enroll
-    puts "hi"
-    puts params
     attrs = {:user_id => current_user.id, :course_id => params["id"],:completed => false }
     @enroll = Enroll.new(attrs)
       if @enroll.save
         redirect_to course_url(@enroll.course_id), notice: "Enrolled in course!"
       else
-        redirect_to root_path
+        redirect_to course_url(@enroll.course_id), notice: "Enrolled in course!"
+        flash[:alert] = 'Could not enroll in course. PLease try again later.'
+
       end
   end
 
@@ -148,23 +130,12 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-      # if params[:course][:draft] == 0
-      #   params[:course][:draft] = false
-      # else
-      #   params[:course][:draft] = true
-      #
-      # end
-      puts params
       params.require(:course).permit(:title, :description,:draft, :members, :average, :rating, :course_id, :user_id,:_destroy,:category_id,:banner,
                                      sections_attributes: [:title, :body,:_destroy, lessons_attributes: [:title, :body,:_destroy,
                                                                                                videos_attributes: [:title, :description, :thumbnail,:videofile,:_destroy]]])
 
     end
 
-
-  # def page_params
-  #   params.require(:page).permit(:at)
-  # end
 end
 
 
