@@ -30,7 +30,7 @@ class LessonsController < ApplicationController
         format.json { render :show, status: :created, location: @lesson }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @lesson.errors, status: :unprocessable_entity }
+        flash[:alert] = 'Could not create lesson. Please try again.'
       end
     end
   end
@@ -43,7 +43,7 @@ class LessonsController < ApplicationController
         format.json { render :show, status: :ok, location: @lesson }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @lesson.errors, status: :unprocessable_entity }
+        flash[:alert] = 'Could not update lesson. Please try again.'
       end
     end
   end
