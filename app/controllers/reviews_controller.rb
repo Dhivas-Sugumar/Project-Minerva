@@ -29,8 +29,8 @@ class ReviewsController < ApplicationController
         format.html { redirect_to course_url(@review.course_id), notice: "Review was successfully created." }
         format.json { render :show, status: :created, location: @review }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
+        format.html { redirect_to :back }
+        flash[:alert] = 'Could not create review. Please try again.'
       end
     end
   end
@@ -42,8 +42,8 @@ class ReviewsController < ApplicationController
         format.html { redirect_to review_url(@review), notice: "Review was successfully updated." }
         format.json { render :show, status: :ok, location: @review }
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
+        format.html { redirect_to :back }
+        flash[:alert] = 'Could not update review. Please try again.'
       end
     end
   end
