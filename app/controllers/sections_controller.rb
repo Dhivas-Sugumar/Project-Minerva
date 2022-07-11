@@ -30,7 +30,7 @@ class SectionsController < ApplicationController
         format.json { render :show, status: :created, location: @section }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @section.errors, status: :unprocessable_entity }
+        flash[:alert] = 'Could not create section. Please try again.'
       end
     end
   end
@@ -43,7 +43,7 @@ class SectionsController < ApplicationController
         format.json { render :show, status: :ok, location: @section }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @section.errors, status: :unprocessable_entity }
+        flash[:alert] = 'Could not update section. Please try again.'
       end
     end
   end
