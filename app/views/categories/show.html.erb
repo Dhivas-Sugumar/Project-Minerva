@@ -2,7 +2,7 @@
 <%=render "shared_views/header_main" %>
 <%= render @category %>
 <%if @course_category.any? %>
-  <div class="row pt-5 m-auto">
+  <div class="row pt-5 ">
 <%@course_category.each do |course|%>
 <%= render partial: "courses/course_card", locals: {course: course} %>
 <% end %>
