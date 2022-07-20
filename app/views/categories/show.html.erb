@@ -1,28 +1,30 @@
-
-<%=render "shared_views/header_main" %>
+<%= render "shared_views/header_main" %>
 <%= render @category %>
-<%if @course_category.any? %>
-  <div class="row pt-5 ">
-<%@course_category.each do |course|%>
-<%= render partial: "courses/course_card", locals: {course: course} %>
-<% end %>
+<% if @course_category.any? %>
+  <div class="px-5 py-5">
+    <div class="row pt-5 ">
+      <% @course_category.each do |course| %>
+        <%= render partial: "courses/course_card", locals: { course: course } %>
+      <% end %>
+    </div>
   </div>
+
   <div id="paginate" class="d-flex justify-content-center">
     <%= paginate @course_category %>
   </div>
-<%else %>
-  <%=image_tag("Empty Course_Enroll.png", height: 500 ,width:400  , class: "rounded mx-auto d-block") %>
+<% else %>
+  <%= image_tag("Empty Course_Enroll.png", height: 500, width: 400, class: "rounded mx-auto d-block") %>
   <div class="text-center ">
-    <h5>Oh no, looks like there are no courses.<br>Consider creating your own course in <%=@category.category %>!</h5>
+    <h5>Oh no, looks like there are no courses.<br>Consider creating your own course in <%= @category.category %>!</h5>
   </div>
-<%end %>
+<% end %>
 <%= render "shared_views/footer" %>
 
 
 
 <!--<div>-->
 <!--  <%#= link_to "Edit this category", edit_category_path(@category) %> |-->
-  <%#= link_to "Back to categories", categories_path %>
+<%#= link_to "Back to categories", categories_path %>
 
-  <%#= button_to "Destroy this category", @category, method: :delete %>
+<%#= button_to "Destroy this category", @category, method: :delete %>
 <!--</div>-->

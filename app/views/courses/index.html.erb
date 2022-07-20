@@ -1,12 +1,12 @@
 <%=render "shared_views/header_main" %>
 
 <div class="d-flex justify-content-center mt-4">
-  <h1>Courses</h1>
+  <h1 class="display-2">Courses</h1>
 </div>
 
 
 <div class="px-5 py-5"v>
-  <div id="courses" class="row ps-3 pt-3 ">
+  <div id="courses" class="row pt-5">
     <% @courses.each do |course| %>
       <%= render partial: "courses/course_card", locals: {course: course} %>
     <% end %>
