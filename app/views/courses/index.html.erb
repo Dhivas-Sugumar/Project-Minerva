@@ -5,11 +5,14 @@
 </div>
 
 
-  <div id="courses" class="row pt-5 m-3">
-  <% @courses.each do |course| %>
-    <%= render partial: "courses/course_card", locals: {course: course} %>
-  <% end %>
+<div class="px-5 py-5"v>
+  <div id="courses" class="row ps-3 pt-3 ">
+    <% @courses.each do |course| %>
+      <%= render partial: "courses/course_card", locals: {course: course} %>
+    <% end %>
   </div>
+</div>
+
 
 <div id="pagination" class="d-flex justify-content-center">
   <%= paginate @courses %>
