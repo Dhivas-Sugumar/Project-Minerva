@@ -41,12 +41,25 @@
 
   <% if @courses.any? %>
     <div class="row ps-3 pt-3 m-auto">
-      <div class="d-flex flex-row flex-nowrap overflow-auto">
-        <% @courses.each do |course| %>
-          <%= render partial: "courses/course_card", locals: { course: course} %>
-        <% end %>
+      <section class="splide" aria-label="Slide Container Example">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <%@courses.each_slice(4) do |batch| %>
+
+          <%batch.each do |course| %>
+              <li class="splide__slide">
+                <div class="splide__slide__container">
+                  <%= render partial: "courses/course_card", locals: { course: course} %>
+                </div>
+              </li>
+              <%end %>
+            <% end %>
+
+          </ul>
+        </div>
+      </section>
       </div>
-    </div>
+
 
   <% else %>
     <%= image_tag("Empty Course_Enroll.png", height: 400, width: 300, class: "rounded mx-auto d-block") %>
@@ -67,19 +80,7 @@
       <%= render partial: "categories/category_card", locals: { category: category } %>
     <% end %>
   </div>
-  <section class="splide" aria-label="...">
-    <div class="splide__track">
-      <ul class="splide__list">
-        <li class="splide__slide">Slide 01</li>
-        ...
-      </ul>
-    </div>
 
-    <!-- Add the progress bar element -->
-    <div class="my-carousel-progress">
-      <div class="my-carousel-progress-bar"></div>
-    </div>
-  </section>
 
 </div>
 

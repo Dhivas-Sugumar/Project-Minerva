@@ -35,17 +35,18 @@
   </body>
 
   <script>
-      new Splide( '#splide', {
-          autoplay: 'pause',
-          intersection: {
-              inView: {
-                  autoplay: true,
-              },
-              outView: {
-                  autoplay: false,
+
+      new Splide( '.splide', {
+          type       : 'loop',
+          height     : '100rem',
+          perPage    : 4,
+          breakpoints: {
+              640: {
+                  height: '6rem',
               },
           },
-      } );git status
+      } ).mount();
+
   </script>
 </html>
 
