@@ -1,27 +1,22 @@
 <div class="row ps-3 m-auto">
-  <h1 class="display-3"><%=@user.username %>'s Courses</h1>
+  <h1 class="display-3"><%= @user.username %>'s Courses</h1>
 </div>
 <% if @user.get_courses.any? %>
   <div class="row ps-3 pt-3 m-auto">
-
-  <div class="d-flex flex-row flex-nowrap overflow-auto">
-
-<% @user.get_courses.each do |course| %>
-  <%= render partial: "courses/course_card", locals: {course: course} %>
+    <% @user.get_courses.each do |course| %>
+      <%= render partial: "courses/course_card", locals: { course: course } %>
     <% end %>
   </div>
 
-    </div>
-
-  <% else %>
-  <%=image_tag("Empty Course_Enroll.png", height: 400 ,width:300 , class: "rounded mx-auto d-block")%>
+<% else %>
+  <%= image_tag("Empty Course_Enroll.png", height: 400, width: 300, class: "rounded mx-auto d-block") %>
 
   <div class="text-center ">
-    <%if @user.id == current_user.id %>
-    <h5>Oh no, looks like there are no courses.<br>Consider creating your own course in anything that you love!</h5>
-      <%else %>
-      <h5>There are no courses made by <%=@user.username %></h5>
+    <% if @user.id == current_user.id %>
+      <h5>Oh no, looks like there are no courses.<br>Consider creating your own course in anything that you love!</h5>
+    <% else %>
+      <h5>There are no courses made by <%= @user.username %></h5>
 
-  <%end %>
+    <% end %>
   </div>
-  <%end %>
+<% end %>
