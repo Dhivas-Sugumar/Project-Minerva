@@ -4,7 +4,8 @@
       <div class="card-custom-img" style="background: url('<%= image_url enroll.course.get_banner %>');"></div>
       <div class="card-body" style="overflow-y: auto">
         <h1 class="display-6" ><%= course.title %></h1>
-        <h6 class="card-text "><%=course.category.category %></h6>
+        <h4 class="card-text "><%= course.instructor_name %></h4>
+        <p class="card-text lead"><%= course.category.category %></p>
         <p class="card-text"><%=course.description%></p>
       </div>
       <div class="card-footer" style="background: inherit; border-color: inherit;">
