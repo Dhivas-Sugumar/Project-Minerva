@@ -7,3 +7,4 @@ import "@fortawesome/fontawesome-free/css/all.css";
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+

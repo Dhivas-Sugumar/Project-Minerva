@@ -1,13 +1,22 @@
 .title-link {
+  text-decoration: none;
+
+  a{
+    color: inherit;
+  }
+
   a:link {
     text-decoration: none;
     color: inherit;
+
   }
   a:hover {
     text-decoration: none;
+    color: #0d63fd;
   }
   a:active {
     text-decoration: none;
+    color: #0d63fd;
   }
 
 }
