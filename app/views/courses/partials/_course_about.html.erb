@@ -9,8 +9,12 @@
             <p class="lead"><%=@category.category%></p>
           </a>
         </div>
+        <div>
+          <p class="mb-4"><%=@course.description %></p>
+        </div>
+
         <div class="row">
-          <h4>Instructor</h4>
+          <hp class="lead">Instructor</hp>
         </div>
         <div class="row">
           <div class="d-flex">
@@ -18,9 +22,9 @@
               <%= image_tag(@instructor.avatar.url, :class => "rounded-circle mr-2 profile-pic-show", size: "75x75", alt: "Profile pic") %>
             <% end %>
             <div class="ms-3 align-self-center black-link">
-              <h5>
+              <p class="lead">
                 <%=link_to "#{@instructor.username}" ,  user_path(@instructor)%>
-              </h5>
+              </p>
             </div>
           </div>
         </div>
