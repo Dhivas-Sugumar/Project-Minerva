@@ -30,13 +30,11 @@
 <%else %>
   <%= render @course %>
 
-  <div class="text-center mb-4" >
-    <a href= "<%=category_url(@category) %>">
-      <h6 class="mb-4">Category: <%=@category.category%></h6>
-    </a>
+  <div class="row ps-3 py-3 card-grey">
+    <%= render "courses/partials/course_about" %>
+
   </div>
 
-  <%= render "course_user_controls" %>
 
   <div id="sections" class="text-center mb-5">
     <h1>Sections</h1>
