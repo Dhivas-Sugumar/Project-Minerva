@@ -30,9 +30,12 @@
         </div>
       </div>
 
+      <%unless @course.draft? %>
+
       <div class="col">
         <%= render "course_user_controls"%>
       </div>
+        <%end %>
     </div>
 
 

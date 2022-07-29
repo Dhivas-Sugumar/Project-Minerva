@@ -1,54 +1,22 @@
 <%= javascript_include_tag 'review' %>
 <%= render "shared_views/header_main" %>
 
-<% if @course.draft? %>
-  <%if @course.instructor?(current_user) %>
-  <%= render @course %>
-
-  <%= render "course_instructor_controls" %>
-
-  <div class="text-center mb-4" >
-    <a href= "<%=category_url(@category) %>">
-      <h6 class="mb-4">Category: <%=@category.category%></h6>
-    </a>
-  </div>
-
-    <div id="sections" class="text-center mb-5">
-      <h1>Sections</h1>
-      <% @sections.each do |section| %>
-        <%= render partial: "sections/section_card" , locals: {section: section}  %>
-      <% end %>
-
-    </div>
-
-    <% else %>
-    <h1 class="display-1">
-      ERROR
-    </h1>
-    <%end %>
-
-<%else %>
   <%= render @course %>
 
   <div class="row ps-3 py-3 card-grey">
     <%= render "courses/partials/course_about" %>
-
   </div>
 
+<%if @course.draft? and @course.instructor?(current_user) %>
+  <%= render "course_instructor_controls" %>
+<%end %>
 
   <div id="sections" class="text-center mb-5">
     <h1>Sections</h1>
     <% @sections.each do |section| %>
       <%= render partial: "sections/section_card" , locals: {section: section}  %>
     <% end %>
-
   </div>
-
-<%end %>
-
-
-
-
 
 <%unless @course.draft? %>
 <%= render partial:"reviews/reviews_course_show" %>
