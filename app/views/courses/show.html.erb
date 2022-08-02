@@ -12,7 +12,7 @@
 <%end %>
 
   <div id="sections" class="text-center mb-5">
-    <h1>Sections</h1>
+    <h1 class="display-3">Sections</h1>
     <% @sections.each do |section| %>
       <%= render partial: "sections/section_card" , locals: {section: section}  %>
     <% end %>
