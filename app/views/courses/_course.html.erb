@@ -5,6 +5,10 @@
         height: 400px;
     }
 
+    .header-image{
+        background-color: #000;
+    }
+
     /* Height for devices larger than 992px */
     @media (min-width: 1080px) {
         #intro-example {
@@ -12,22 +16,36 @@
         }
     }
 </style>
-<div
-  id="intro-example"
-  class="p-5 text-center bg-image"
-  style="background: url('<%= image_url course.get_banner %>') "
->
+<!--<div-->
+<!--  id="intro-example"-->
+<!--  class="p-5 text-center bg-image"-->
+<!--  style="background: url('<%#= image_url course.get_banner %>') "-->
 
-  <div class="mask" style="background-color: rgba(0, 0, 0, 0.1);">
-    <div class="d-flex justify-content-center align-items-center h-100">
-      <div class="text-white">
-        <h1 class="display-1"><%= course.title %></h1>
+<!--  <div class="mask" style="background-color: rgba(0, 0, 0, 0.1);">-->
+<!--    <div class="d-flex justify-content-center align-items-center h-100">-->
+<!--      <div class="text-white">-->
+<!--        <h1 class="display-1"><%#= course.title %></h1>-->
 
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--</div>-->
+
+  <header>
+    <div class="container my-3">
+      <div class="row justify-content-center">
+        <div class="col-2">
+          <%=image_tag course.get_banner.url , width: 200, height: 200, class: "header-image"%>
+
+        </div>
+        <div class="col-10 align-self-center">
+          <div class="row justify-content-center">
+            <h1 class="display-3"><%= course.title %></h1>
+
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-
-
-</div>
+  </header>
 
