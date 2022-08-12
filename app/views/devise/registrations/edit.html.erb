@@ -39,8 +39,13 @@
       <%= f.password_field :current_password, autocomplete: "current-password", help: "we need your current password to confirm your changes" %>
     </div>
 
-    <div class="field py-2">
-      <%= f.file_field :avatar, class: "bg-light" %>
+    <div class="field">
+      <div class="lead">
+        <p>Avatar</p>
+      </div>
+      <div>
+        <%= f.file_field_without_bootstrap :avatar, class: "form-control" %>
+      </div>
     </div>
   <% end %>
 </div>
