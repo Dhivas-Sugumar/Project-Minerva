@@ -1,9 +1,7 @@
 <div class="p-1 text-center bg-light">
-  <% if @user.avatar? %>
     <div class="mb-3 pe-3">
-      <%= image_tag(@user.avatar.url, :class => "rounded-circle mr-2 profile-pic-show", size: "150x150", alt: "Profile pic") %>
+      <%= image_tag(@user.get_avatar, :class => "rounded-circle mr-2 profile-pic-show", size: "150x150", alt: "Profile pic") %>
     </div>
-  <% end %>
   <div class="d-flex justify-content-center">
     <h1 class="display-5 px-3"><strong><%= @user.username %></strong></h1>
     <% if @user.id == current_user.id %>

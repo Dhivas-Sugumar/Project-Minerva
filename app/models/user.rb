@@ -39,7 +39,7 @@ class User < ApplicationRecord
 
   # gets users avatar
   def get_avatar
-    avatar.url
+    return avatar? ? avatar.url : "user.png"
   end
 
   # gets users courses

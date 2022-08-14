@@ -11,9 +11,9 @@
     <hr class="solid">
     <div class="row h-100">
       <div class="col-lg-3 col-sm-4 mt-3 account-border">
-        <% if current_user.avatar? %>
-          <%= image_tag(current_user.avatar.url, :class => "rounded-circle mr-2 profile-pic-show", size: "150x150", alt: "Profile pic") %>
-        <% end %>
+
+          <%= image_tag(current_user.get_avatar, :class => "rounded-circle mr-2 profile-pic-show", size: "150x150", alt: "Profile pic") %>
+
         <h3 class="ps-4">
           <%= current_user.username %>
         </h3>
