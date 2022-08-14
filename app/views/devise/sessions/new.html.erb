@@ -6,7 +6,7 @@
 
 <div class="d-flex justify-content-center flex-lg-row flex-md-row flex-column mt-5">
   <div class="pb-5 col-lg-5 col-md-5">
-    <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name), inline_errors: true) do |f| %>
       <div class="pt-2 shadow pb-4 mt-5 container col-lg-7 col-md-12 mb-5">
         <div class="field">
           <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "bg-light" %>

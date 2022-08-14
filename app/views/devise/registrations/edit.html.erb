@@ -1,7 +1,7 @@
 <% content_for(:title, 'Edit Account') %>
 <%= render "shared_views/header" %>
 <div class="col-sm-11 col-lg-4  container shadow mt-5 pt-4 pl-3 pb-4 profile">
-  <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), inline_errors: true, html: { method: :put }) do |f| %>
     <div class="d-flex justify-content-between">
       <div class="d-flex mt-3 ml-3">
         <%= link_to :back do %>

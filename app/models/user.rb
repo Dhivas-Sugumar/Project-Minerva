@@ -22,10 +22,8 @@ class User < ApplicationRecord
   # Is either admin or user
   def set_default_role
     if assign_admin?
-      puts "is admin"
       self.role = :admin
     else
-      puts "not admin "
       self.role = :user
     end
 
