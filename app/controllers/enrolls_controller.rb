@@ -1,5 +1,7 @@
 class EnrollsController < ApplicationController
   before_action :set_enroll, only: %i[ show edit update destroy ]
+  before_action :is_admin? , only: [:edit,:update]
+
 
   # GET /enrolls or /enrolls.json
   def index

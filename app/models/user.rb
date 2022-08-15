@@ -22,10 +22,8 @@ class User < ApplicationRecord
   # Is either admin or user
   def set_default_role
     if assign_admin?
-      puts "is admin"
       self.role = :admin
     else
-      puts "not admin "
       self.role = :user
     end
 
@@ -39,7 +37,7 @@ class User < ApplicationRecord
 
   # gets users avatar
   def get_avatar
-    avatar.url
+    return avatar? ? avatar.url : "user.png"
   end
 
   # gets users courses

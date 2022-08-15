@@ -12,6 +12,7 @@ class CoursesController < ApplicationController
     unless @course.draft
       @review = Review.new
     end
+    @instructor = @course.user
   end
 
   # GET /courses/new
