@@ -1,18 +1,31 @@
-<h2>Forgot your password?</h2>
+<%= render "shared_views/header" %>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
+<div class="d-flex justify-content-center flex-lg-row flex-md-row flex-column mt-5">
+
+  <div class="pb-5 col-lg-5 col-md-5">
+    <div>
+      <h1 class="display-6">Forgot your password?</h1>
+      <p class="text-muted"> Enter the email you signed up with and an email containing instructions will be sent
+        to that email. </p>
+    </div>
+
+    <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+      <div class="form-inputs my-3">
+        <%= f.text_field :email,
+                         required: true,
+                         autofocus: true,
+                         input_html: { autocomplete: "email" } %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit "Reset Password", class: "btn shadow btn-block bg-color text-blue" %>
+      </div>
+    <% end %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+
+<%= render "shared_views/footer" %>
