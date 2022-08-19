@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :enrolls, dependent: :destroy
   has_many :courses ,dependent: :destroy
   validates :username, presence: true, length: { minimum: 1, maximum: 50 }
+  validate :password_complexity
+
   mount_uploader :avatar, AvatarUploader
 
   devise :database_authenticatable, :registerable,
@@ -27,6 +29,13 @@ class User < ApplicationRecord
       self.role = :user
     end
 
+  end
+
+  #Added ability for password complexity.
+  def password_complexity
+    return if password.blank? || password =~ /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/
+
+    errors.add :password, 'Passwords must contain at least one number, alphabet,and special character.'
   end
 
   # checks if a given user's email is a minervaeducation domain.To assign admin privileges.
