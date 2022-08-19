@@ -35,7 +35,7 @@ class User < ApplicationRecord
   def password_complexity
     return if password.blank? || password =~ /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/
 
-    errors.add :password, 'Complexity requirement not met. Please use: 1 uppercase, 1 lowercase, 1 digit and 1 special character'
+    errors.add :password, 'Passwords must contain at least one number, alphabet,and special character.'
   end
 
   # checks if a given user's email is a minervaeducation domain.To assign admin privileges.
