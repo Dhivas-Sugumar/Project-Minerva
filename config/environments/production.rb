@@ -92,8 +92,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
 
-  config.action_mailer_default_url_options = { host: 'https://minervaeducation.us' }
-  Rails.application.routes.default_url_options[:host] = 'https://minervaeducation.us'
+  config.action_mailer_default_url_options = { host: 'https://www.minervaeducation.us' }
+  Rails.application.routes.default_url_options[:host] = 'https://www.minervaeducation.us'
   config.action_mailer.default charset: 'utf-8'
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
