@@ -66,6 +66,8 @@ gem 'jquery-rails'
 
 # for handling file uploads
 gem 'carrierwave', '~> 2.0'
+gem 'mini_magick', '~> 4.11.0'
+gem 'fog', '~> 0.9.0'
 
 #for handling nested forms
 gem "cocoon"
