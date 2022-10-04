@@ -7,8 +7,4 @@
 //= require cocoon
 //= require tinymce
 
-import "@hotwired/turbo-rails"
-import "controllers"
-import "trix"
-import "@rails/actiontext"
 //= stub './review'

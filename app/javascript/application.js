@@ -2,7 +2,8 @@
 //= require jquery
 //= require bootstrap
 import "@hotwired/turbo-rails";
-import "./components/application";
+import "./controllers/index.js"
+import "@fortawesome/fontawesome-free";
 //= require turbolinks
 //= require_tree .
 
