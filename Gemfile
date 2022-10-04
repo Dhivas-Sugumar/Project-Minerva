@@ -27,6 +27,9 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Added jsbundling for javascript bundling.
+gem 'jsbundling-rails', '~> 1.0', '>= 1.0.2'
+
 # Used for pagination
 gem 'kaminari'
 
