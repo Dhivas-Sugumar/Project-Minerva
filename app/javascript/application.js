@@ -5,5 +5,8 @@ import "@popperjs/core/dist/umd/popper";
 import "@hotwired/turbo-rails";
 import "@nathanvda/cocoon";
 import "@fortawesome/fontawesome-free";
-import "./review";
 import "@splidejs/splide/dist/js/splide.min";
+import "tinymce/tinymce.min"
+import "./custom/review"
+import "./custom/splide-config"
+import "./custom/tinymce-config"

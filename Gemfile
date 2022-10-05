@@ -63,9 +63,6 @@ gem 'sassc', '~> 2.4.0'
 gem 'bootstrap_form', '~> 4.5'
 gem "bootstrap-kaminari-views"
 
-# for js
-gem 'jquery-rails'
-
 # for handling file uploads
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick', '~> 4.11.0'
@@ -89,9 +86,6 @@ gem 'friendly_id', '~> 5.4.0'
 
 # for environmnet variables
 gem 'figaro'
-
-# for wysiwyg editor
-gem 'tinymce-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
