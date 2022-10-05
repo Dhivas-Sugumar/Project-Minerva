@@ -9,9 +9,6 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
   </head>
   <body class=" d-flex flex-column min-vh-100" >
-  <%= tinymce_assets %>
-  <script type="text/javascript" src="/assets/tinymce.js"></script>
-
   <% if flash[:notice] %>
     <div class="alert alert-primary alert-dismissible fade show" role="alert">
       <%=flash[:notice] %>
@@ -35,7 +32,6 @@
           autoWidth: true,
           autoHeight: true,
       } ).mount();
-
   </script>
 </html>
 
