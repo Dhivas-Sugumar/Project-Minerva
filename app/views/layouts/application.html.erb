@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.6/dist/css/splide.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.6/dist/js/splide.min.js"></script>
     <script src="path-to-the-script/splide-extension-intersection.min.js"></script>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag  %>
-
+    <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
   </head>
   <body class=" d-flex flex-column min-vh-100" >
   <%= tinymce_assets %>
