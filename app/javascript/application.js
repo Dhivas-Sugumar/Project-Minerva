@@ -7,3 +7,4 @@ import "./controllers/index.js"
 import "@fortawesome/fontawesome-free";
 import "./review"
 
+import * as bootstrap from "bootstrap"

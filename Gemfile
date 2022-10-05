@@ -58,8 +58,6 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'ruby-progressbar', '~> 1.11.0'
 
 # for css styling
-gem 'bootstrap', '~> 5.1.3'
-gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'sassc', '~> 2.4.0'
 gem 'bootstrap_form', '~> 4.5'
@@ -123,3 +121,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "cssbundling-rails", "~> 1.1"
