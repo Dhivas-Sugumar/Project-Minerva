@@ -33,6 +33,9 @@ gem 'jsbundling-rails', '~> 1.0', '>= 1.0.2'
 # Used for pagination
 gem 'kaminari'
 
+# foreman to start server
+gem 'foreman', '~> 0.87.2'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
