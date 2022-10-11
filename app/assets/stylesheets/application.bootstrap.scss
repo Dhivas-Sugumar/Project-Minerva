@@ -1,9 +1,9 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
-@import '@fortawesome/fontawesome-free/css/fontawesome';
-@import '@fortawesome/fontawesome-free/css/brands';
-@import '@fortawesome/fontawesome-free/css/solid';
-@import '@splidejs/splide/src/css/core';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@splidejs/splide/dist/css/splide.min';
 @import "./reviews";
 @import "./course_card";
 @import "./category_card";
@@ -13,4 +13,3 @@
 @import "./course_category_banner";
 @import "./admin_cards_content";
 div.hidden { display: none; }
-
