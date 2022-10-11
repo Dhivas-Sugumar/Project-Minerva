@@ -1,7 +1,6 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
+import './custom/jquery-config'
 import "@hotwired/turbo-rails";
-import "./controllers"
-
 import "@nathanvda/cocoon";
 import "@fortawesome/fontawesome-free";
 import "@splidejs/splide/dist/js/splide.min";
