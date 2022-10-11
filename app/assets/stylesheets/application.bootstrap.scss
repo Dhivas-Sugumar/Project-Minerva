@@ -3,7 +3,7 @@
 @import '@fortawesome/fontawesome-free/css/fontawesome';
 @import '@fortawesome/fontawesome-free/css/brands';
 @import '@fortawesome/fontawesome-free/css/solid';
-@import '@splidejs/splide/dist/css/splide.min';
+@import '@splidejs/splide/src/css/core';
 @import "./reviews";
 @import "./course_card";
 @import "./category_card";
@@ -12,4 +12,5 @@
 @import "./images";
 @import "./course_category_banner";
 @import "./admin_cards_content";
+div.hidden { display: none; }
 
