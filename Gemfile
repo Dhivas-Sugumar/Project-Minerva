@@ -58,6 +58,7 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'ruby-progressbar', '~> 1.11.0'
 
 # for css styling
+gem "cssbundling-rails", "~> 1.1"
 gem 'sassc-rails', '>= 2.1.0'
 gem 'sassc', '~> 2.4.0'
 gem 'bootstrap_form', '~> 4.5'
@@ -71,6 +72,8 @@ gem 'fog', '~> 0.9.0'
 #for handling nested forms
 gem "cocoon"
 
+#for rich text editor
+gem 'tinymce-rails', '~> 6.2.0'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
@@ -116,4 +119,3 @@ group :test do
   gem "webdrivers"
 end
 
-gem "cssbundling-rails", "~> 1.1"

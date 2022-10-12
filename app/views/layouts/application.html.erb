@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= tinymce_assets %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", defer: true %>
+
   </head>
   <body class=" d-flex flex-column min-vh-100" >
   <% if flash[:notice] %>
@@ -22,7 +24,9 @@
     </div>
 <% end %>
 <%= yield %>
+<%= tinymce %>
 
   </body>
+
 </html>
 
