@@ -35,7 +35,9 @@
           <label for="course_description">Description</label>
 
           <%= f.text_area_without_bootstrap :description , class: "tinymce"%>
+
         </div>
+        <%= tinymce %>
 
         <div id="sections">
           <%= f.fields_for :sections do |section| %>
