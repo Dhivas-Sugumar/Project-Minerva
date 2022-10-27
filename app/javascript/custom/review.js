@@ -1,6 +1,8 @@
-$(document).ready(function(){
-    $('a#show-review-form').click(function(eve){
-        eve.preventDefault();
-        $('#review-form').toggle();
-    });
-});
+window.reviewToggle = function (){
+    var x = document.getElementById("review-form");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
