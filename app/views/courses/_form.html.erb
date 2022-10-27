@@ -35,15 +35,10 @@
           <label for="course_description">Description</label>
 
           <%= f.text_area_without_bootstrap :description , class: "tinymce"%>
+
         </div>
+        <%= tinymce %>
 
-
-
-
-        <%#= f.input :members %>
-        <%#= f.input :average %>
-        <%#= f.input :rating %>
-        <%#= f.input :course_id %>
         <div id="sections">
           <%= f.fields_for :sections do |section| %>
             <%= render 'section_fields', f: section %>

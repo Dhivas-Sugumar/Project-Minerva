@@ -3,7 +3,7 @@
 # Uncomment this and change the path if necessary to include your own
 # components.
 # See https://github.com/heartcombo/simple_form#custom-components to know
-# more about custom components.
+# more about vendor components.
 # Dir[Rails.root.join('lib/components/**/*.rb')].each { |f| require f }
 #
 # Use this setup block to configure all options available in SimpleForm.
@@ -138,7 +138,7 @@ SimpleForm.setup do |config|
   # type as key and the wrapper that will be used for all inputs with specified type.
   # config.wrapper_mappings = { string: :prepend }
 
-  # Namespaces where SimpleForm should look for custom input classes that
+  # Namespaces where SimpleForm should look for vendor input classes that
   # override default inputs.
   # config.custom_inputs_namespaces << "CustomInputs"
 

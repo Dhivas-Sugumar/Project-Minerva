@@ -15,11 +15,8 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
-# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
-
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
+gem "turbo-rails","~> 1.3.0"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
@@ -27,8 +24,14 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Added jsbundling for javascript bundling.
+gem 'jsbundling-rails', '~> 1.0', '>= 1.0.2'
+
 # Used for pagination
 gem 'kaminari'
+
+# foreman to start server
+gem 'foreman', '~> 0.87.2'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -55,15 +58,11 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'ruby-progressbar', '~> 1.11.0'
 
 # for css styling
-gem 'bootstrap', '~> 5.1.3'
-gem 'bootstrap-sass', '~> 3.4.1'
+gem "cssbundling-rails", "~> 1.1"
 gem 'sassc-rails', '>= 2.1.0'
 gem 'sassc', '~> 2.4.0'
 gem 'bootstrap_form', '~> 4.5'
 gem "bootstrap-kaminari-views"
-
-# for js
-gem 'jquery-rails'
 
 # for handling file uploads
 gem 'carrierwave', '~> 2.0'
@@ -73,6 +72,8 @@ gem 'fog', '~> 0.9.0'
 #for handling nested forms
 gem "cocoon"
 
+#for rich text editor
+gem 'tinymce-rails', '~> 6.2.0'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
@@ -88,9 +89,6 @@ gem 'friendly_id', '~> 5.4.0'
 
 # for environmnet variables
 gem 'figaro'
-
-# for wysiwyg editor
-gem 'tinymce-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -120,3 +118,4 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+

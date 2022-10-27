@@ -28,3 +28,10 @@ by PostgreSQL. The entire web application was built using the Model View Control
 
 ### Future Plans 
 Launch it as a fully fledged website using Heroku and Amazon Webservices. 
+
+
+## Setup 
+- Node 18 
+- Rails 7
+- Ruby 3.0.3
+
