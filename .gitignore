@@ -40,4 +40,4 @@ public/uploads
 /app/assets/builds/*
 !/app/assets/builds/.keep
 
-./node_modules
+node_modules
