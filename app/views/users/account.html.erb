@@ -34,7 +34,7 @@
             <hr class="solid">
             <%= link_to "Deactivate account", registration_path(current_user), data: { confirm: "Are you sure you want to deactivate this account?" }, method: :delete, class: "text-decoration-none text-color" %>
             <hr class="solid">
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure you want to logout?" }, class: "text-dark" %>
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure you want to logout?", turbo_method: :delete }, class: "text-dark" %>
           </div>
         </div>
       </div>
