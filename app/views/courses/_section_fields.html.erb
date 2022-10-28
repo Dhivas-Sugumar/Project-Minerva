@@ -11,7 +11,7 @@
     <%= f.text_area :title %>
   </div>
   <div class="field lead">
-    <label for="section_body">Body</label>
+    <label for="section_body">Body <p><small>(Must be more than 400 characters)</small></p></label>
     <%= f.text_area_without_bootstrap :body , class: "tinymce"%>
     <%= tinymce %>
 
